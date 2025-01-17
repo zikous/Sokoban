@@ -25,7 +25,7 @@
           <ATTRIBUTES>
             <ATT name="IsElementary">true</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
             <ATT name="IsRoot">false</ATT>
             <ATT name="Visibility">Public</ATT>
             <ATT name="Name"><![CDATA[Direction]]></ATT>
@@ -61,6 +61,57 @@
                 <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="5f1a12c6-ea37-49c2-96e1-4756f00c7f9e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[DROITE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="TypeElement" mc="Standard.Enumeration" uid="026988a7-013c-403c-a50f-0fe1f32038e7"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[TypeElement]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="MUR" mc="Standard.EnumerationLiteral" uid="37f9a353-e689-457d-b1f9-2cede8edf36b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MUR]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CIBLE" mc="Standard.EnumerationLiteral" uid="449041a5-a80f-4ce1-babf-2e11fdab586d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CIBLE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CAISSE" mc="Standard.EnumerationLiteral" uid="d8b3b326-f46f-4f1a-bc14-f2a53ccf05c7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CAISSE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="GARDIEN" mc="Standard.EnumerationLiteral" uid="f4cb7489-5246-47bf-a17f-d489f196986f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[GARDIEN]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

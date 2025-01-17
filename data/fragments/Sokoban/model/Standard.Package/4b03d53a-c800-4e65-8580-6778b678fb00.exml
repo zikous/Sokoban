@@ -16,6 +16,7 @@
       <COMP relation="OwnedElement">
         <COMPID name="entity" mc="Standard.Package" uid="ff319cd5-b5e2-4db4-8d27-f3da1bcfaf11"/>
         <COMPID name="control" mc="Standard.Package" uid="57308277-cba6-432d-910c-3b34788341cf"/>
+        <COMPID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

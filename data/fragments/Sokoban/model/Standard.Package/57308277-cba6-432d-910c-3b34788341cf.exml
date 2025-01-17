@@ -15,6 +15,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="Controleur" mc="Standard.Class" uid="14f91e90-d328-4cde-b2ef-ec5fcc074d37"/>
+        <COMPID name="TestSokoban" mc="Standard.Class" uid="ec84e489-bafb-4824-8cf4-41ae8cb5eb6a"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
