@@ -210,22 +210,22 @@ entrepot.initialiser(niveau.length, niveau[0].length);
 for (int i = 0; i < niveau.length; i++) {
     for (int j = 0; j < niveau[0].length; j++) {
         switch (niveau[i][j]) {
-            case 1: // Mur
+            case 1: 
                 entrepot.placerElement(i, j, TypeElement.MUR);
                 break;
-            case 2: // Cible
+            case 2: 
                 entrepot.placerElement(i, j, TypeElement.CIBLE);
                 break;
-            case 3: // Caisse
+            case 3: 
                 entrepot.placerElement(i, j, TypeElement.CAISSE);
                 break;
-            case 4: // Gardien
+            case 4: 
                 Position pos = entrepot.getPosition(i, j);
                 if (pos != null && pos.getZone().estLibre()) {
                     gardien.setZone(pos.getZone());
                 }
                 break;
-            case 5: // Caisse sur cible
+            case 5: 
                 entrepot.placerElement(i, j, TypeElement.CIBLE);
                 entrepot.placerElement(i, j, TypeElement.CAISSE);
                 break;
@@ -429,20 +429,6 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="6377153c-0613-4cd5-95e3-405a2bb35c01"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Ajout du getter pour le gardien]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="0c50cc68-73b5-4a85-bf46-89c578335488"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return gardien;]]></ATT>
@@ -529,7 +515,7 @@ for (int i = 0; i < niveau.length; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0c33e049-013d-4e3c-8cc5-761a85bc5349"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2fe2e0c6-2884-4cd6-9759-b7cee4cc6231"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -606,7 +592,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b21e4502-a981-4cd7-9a34-805f7fb7b0be"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e2e1606a-efb9-405b-b358-619199b9ef98"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -681,7 +667,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a70d9d20-a6ee-4059-8ca3-3ffdd4a3dc93"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5fa9950f-ae42-48b9-beb5-9e4c6b89e96b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

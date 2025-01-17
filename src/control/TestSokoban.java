@@ -7,6 +7,7 @@ import entity.Direction;
 
 @objid ("ec84e489-bafb-4824-8cf4-41ae8cb5eb6a")
 public class TestSokoban {
+    // Affiche le niveau sous forme de grille avec les symboles correspondants
     @objid ("73e38ded-55b6-424b-9e64-e554fbec53a4")
     private static void afficherNiveau(Controleur controleur, int lignes, int colonnes) {
         Entrepot entrepot = controleur.getEntrepot();
@@ -26,14 +27,15 @@ public class TestSokoban {
                 Zone zone = pos.getZone();
         
                 char symbole = ' ';
+                // Choix du symbole selon le type de zone
                 if (zone.isEstMur()) {
-                    symbole = '#';
+                    symbole = '#';  // Mur
                 } else if (zone == gardien.getZone()) {
-                    symbole = '@';
+                    symbole = '@';  // Gardien
                 } else if (zone.contientCaisse()) {
-                    symbole = zone.isEstCible() ? '*' : '$';
+                    symbole = zone.isEstCible() ? '*' : '$'; // Caisse ou caisse sur cible
                 } else if (zone.isEstCible()) {
-                    symbole = '.';
+                    symbole = '.';  // Cible
                 }
                 System.out.print(symbole + " ");
             }
@@ -41,11 +43,13 @@ public class TestSokoban {
         }
     }
 
+    // Méthode principale pour lancer le jeu
     @objid ("7fadbec0-3ad7-45dc-a85e-7abaa8511f72")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Controleur controleur = new Controleur();
         
+        // Définition du niveau initial
         int[][] niveau = {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
                 { 1, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
@@ -61,7 +65,7 @@ public class TestSokoban {
         
         controleur.chargerNiveau(niveau);
         
-        afficherInstructions();
+        afficherInstructions();  // Affiche les instructions du jeu
         
         boolean playing = true;
         while (playing) {
@@ -71,21 +75,21 @@ public class TestSokoban {
             System.out.print("\nEntrez un mouvement (z/q/s/d, x pour quitter, r pour recommencer) : ");
             String input = scanner.nextLine().toLowerCase();
         
-            if (input.equals("x")) {
+            if (input.equals("x")) {  // Quitter le jeu
                 playing = false;
                 continue;
             }
         
-            if (input.equals("r")) {
+            if (input.equals("r")) {  // Recommencer le niveau
                 controleur.reinitialiserNiveau();
                 continue;
             }
         
-            Direction direction = convertirEntree(input);
+            Direction direction = convertirEntree(input);  // Convertir l'entrée utilisateur en direction
             if (direction != null) {
-                controleur.action(direction);
+                controleur.action(direction);  // Déplacer le gardien
         
-                if (controleur.estTermine()) {
+                if (controleur.estTermine()) {  // Vérifier si le niveau est terminé
                     System.out.println("\nFélicitations ! Vous avez terminé le niveau !");
                     afficherNiveau(controleur, niveau.length, niveau[0].length);
                     playing = false;
@@ -99,6 +103,7 @@ public class TestSokoban {
         System.out.println("Merci d'avoir joué !");
     }
 
+    // Affiche les instructions et la légende des symboles
     @objid ("c7506ab6-1481-4c68-9428-61f0e73d0d04")
     private static void afficherInstructions() {
         System.out.println("Bienvenue dans Sokoban !");
@@ -117,6 +122,7 @@ public class TestSokoban {
         System.out.println("* = Caisse sur cible");
     }
 
+    // Convertit l'entrée utilisateur en direction correspondante
     @objid ("dcd6d086-0dd5-4a34-9285-e45c36c9969c")
     private static Direction convertirEntree(String input) {
         switch (input) {
@@ -129,8 +135,7 @@ public class TestSokoban {
             case "d":
                 return Direction.DROITE;
             default:
-                return null;
+                return null;  // Entrée invalide
         }
     }
-
 }

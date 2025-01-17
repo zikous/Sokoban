@@ -97,10 +97,13 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="2bef0d99-5dd7-453f-a7eb-3bce0e20526a"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Position positionCible = getZone().getPosition().getPositionAdjacente(direction);
+                  <ATT name="Content"><![CDATA[if (getZone() == null) {
+    return false; 
+}
 
+Position positionCible = getZone().getPosition().getPositionAdjacente(direction);
 if (positionCible == null) {
-    return false;
+    return false; 
 }
 
 Zone zoneCible = positionCible.getZone();

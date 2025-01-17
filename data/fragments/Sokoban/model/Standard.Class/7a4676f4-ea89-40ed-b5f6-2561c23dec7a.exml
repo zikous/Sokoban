@@ -266,8 +266,8 @@ for (int i = 0; i < lignes; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="7927cca3-7d1b-4751-bd11-75dc820228c3"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return zones.stream()
-                        .filter(Zone::isEstCible)
-                        .allMatch(Zone::estComplete);]]></ATT>
+                                                                        .filter(Zone::isEstCible)
+                                                                        .allMatch(Zone::estComplete);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

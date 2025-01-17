@@ -104,7 +104,6 @@
                   <ATT name="Content"><![CDATA[Entrepot entrepot = controleur.getEntrepot();
 Gardien gardien = controleur.getGardien();
 
-// Afficher les numéros de colonnes
 System.out.print("  ");
 for (int j = 0; j < colonnes; j++) {
     System.out.print(j % 10 + " ");
@@ -112,7 +111,6 @@ for (int j = 0; j < colonnes; j++) {
 System.out.println();
 
 for (int i = 0; i < lignes; i++) {
-    // Afficher le numéro de ligne
     System.out.print(i % 10 + " ");
 
     for (int j = 0; j < colonnes; j++) {
@@ -164,7 +162,7 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="args" mc="Standard.Parameter" uid="1194d29c-e8a7-4199-99a6-7eb48809a925"/>
                 <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
                   <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
                   <ATT name="TypeConstraint"></ATT>
@@ -178,6 +176,9 @@ for (int i = 0; i < lignes; i++) {
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
                       <ID name="" mc="Infrastructure.TaggedValue" uid="ef6f8dcf-8553-4c35-9d5a-20272741de1e"/>
