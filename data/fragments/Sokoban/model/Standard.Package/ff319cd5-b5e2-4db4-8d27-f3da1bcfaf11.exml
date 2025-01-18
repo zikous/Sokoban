@@ -39,7 +39,24 @@
                   <ATT name="Name"><![CDATA[HAUT]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="878066dd-10bf-461d-8a95-3915a7a91365"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Direction vers le haut]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="BAS" mc="Standard.EnumerationLiteral" uid="6204679a-75c6-4251-ac22-cf8e51ef0b60"/>
@@ -47,7 +64,24 @@
                   <ATT name="Name"><![CDATA[BAS]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="3ebc0df7-e4c8-4bbf-bf7d-2ecabe05040a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Direction vers le bas]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="29a98ad2-e6d3-44c0-b89d-e0534e37c2a9"/>
@@ -55,7 +89,24 @@
                   <ATT name="Name"><![CDATA[GAUCHE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="bc46e65b-f6a2-406e-b7dd-b99440e856de"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Direction vers la gauche]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="5f1a12c6-ea37-49c2-96e1-4756f00c7f9e"/>
@@ -63,7 +114,24 @@
                   <ATT name="Name"><![CDATA[DROITE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="738d1989-d28e-4cc2-9efe-92c5b225bc8c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Direction vers la droite]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
             </COMP>
             <LINK relation="Extension">
@@ -90,7 +158,24 @@
                   <ATT name="Name"><![CDATA[MUR]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="6d930774-1e40-4699-9a53-f2375040d3c4"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Représente un mur dans l'entrepôt]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="CIBLE" mc="Standard.EnumerationLiteral" uid="449041a5-a80f-4ce1-babf-2e11fdab586d"/>
@@ -98,7 +183,24 @@
                   <ATT name="Name"><![CDATA[CIBLE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="6ec8e32c-d7d9-4561-905c-b37035eb525e"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Représente une cible dans l'entrepôt]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="CAISSE" mc="Standard.EnumerationLiteral" uid="d8b3b326-f46f-4f1a-bc14-f2a53ccf05c7"/>
@@ -106,7 +208,24 @@
                   <ATT name="Name"><![CDATA[CAISSE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="a3e37ebf-18ad-4a63-8cd4-30004ed0e9b7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Représente une caisse dans l'entrepôt]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
                 <ID name="GARDIEN" mc="Standard.EnumerationLiteral" uid="f4cb7489-5246-47bf-a17f-d489f196986f"/>
@@ -114,7 +233,24 @@
                   <ATT name="Name"><![CDATA[GARDIEN]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
+                <DEPENDENCIES>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="f7065f8d-939f-46f3-be17-ad56d285c24a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Représente un gardien dans l'entrepôt]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="69ee7ff8-7402-11e1-9ca8-002564c97630"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
               </OBJECT>
             </COMP>
             <LINK relation="Extension">

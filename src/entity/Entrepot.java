@@ -6,15 +6,15 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("7a4676f4-ea89-40ed-b5f6-2561c23dec7a")
 public class Entrepot {
-    // Liste des positions dans l'entrepôt
+// Liste des positions dans l'entrepôt
     @objid ("4310f7f9-a42f-4231-9f22-c3fb5a313aaa")
     private List<Position> positions = new ArrayList<>();
 
-    // Liste des zones dans l'entrepôt
+// Liste des zones dans l'entrepôt
     @objid ("de67d322-7095-427b-a023-70a20df7efd9")
     private List<Zone> zones = new ArrayList<>();
 
-    // Initialisation de l'entrepôt avec un certain nombre de lignes et de colonnes
+// Initialisation de l'entrepôt avec un certain nombre de lignes et de colonnes
     @objid ("9ddd3eb1-b3cc-42e3-a42d-b67786b0044c")
     public void initialiser(int lignes, int colonnes) {
         positions.clear();  // Vide la liste des positions
@@ -31,7 +31,7 @@ public class Entrepot {
         }
     }
 
-    // Récupère une position par ses coordonnées de ligne et de colonne
+// Récupère une position par ses coordonnées de ligne et de colonne
     @objid ("7468f5a2-4bbc-47ba-bc0e-54933163df92")
     public Position getPosition(int ligne, int colonne) {
         // Recherche la position dans la liste
@@ -40,17 +40,17 @@ public class Entrepot {
                 return position;  // Retourne la position correspondante
             }
         }
-        return null;  // Retourne null si la position n'est pas trouvée
+        return null; // Retourne null si la position n'est pas trouvée
     }
 
-    // Vérifie si le niveau est terminé (toutes les cibles sont complètes)
+// Vérifie si le niveau est terminé (toutes les cibles sont complètes)
     @objid ("7a0cd4ae-1ffa-470d-aae2-e6ebba6ace44")
     public boolean estTermine() {
         // Vérifie que toutes les zones de type "CIBLE" sont complètes
         return zones.stream().filter(Zone::isEstCible).allMatch(Zone::estComplete);
     }
 
-    // Réinitialise l'état de toutes les zones de l'entrepôt
+// Réinitialise l'état de toutes les zones de l'entrepôt
     @objid ("fdb8a6de-2e02-4763-8477-c3626f258a52")
     public void clear() {
         // Réinitialise chaque zone (enlevant les mobiles, les murs, et les cibles)
@@ -61,7 +61,7 @@ public class Entrepot {
         }
     }
 
-    // Place un élément (mur, cible, caisse) dans l'entrepôt à une position donnée
+// Place un élément (mur, cible, caisse) dans l'entrepôt à une position donnée
     @objid ("263b23fd-11b0-4738-bbbd-17ade85eb29a")
     public void placerElement(int ligne, int colonne, TypeElement type) {
         // Récupère la position de l'élément à placer
@@ -87,4 +87,38 @@ public class Entrepot {
                 throw new IllegalArgumentException("Type d'élément non géré : " + type);
         }
     }
+
+    @objid ("b8f732dd-8ce8-49ff-84c9-d0e4459da509")
+    @Override
+    public String toString() {
+        int maxLigne = -1;
+        int maxColonne = -1;
+        for (Position pos : positions) {
+            maxLigne = Math.max(maxLigne, pos.getLigne());
+            maxColonne = Math.max(maxColonne, pos.getColonne());
+        }
+        
+        String result = "";
+        for (int i = 0; i <= maxLigne; i++) {
+            for (int j = 0; j <= maxColonne; j++) {
+                Position pos = getPosition(i, j);
+                Zone zone = pos.getZone();
+        
+                char symbole = ' ';
+                if (zone.isEstMur()) {
+                    symbole = '#';
+                } else if (zone.getMobile() instanceof Gardien) {
+                    symbole = '@';
+                } else if (zone.contientCaisse()) {
+                    symbole = zone.isEstCible() ? '*' : '$';
+                } else if (zone.isEstCible()) {
+                    symbole = '.';
+                }
+                result += symbole + " ";
+            }
+            result += "\n";
+        }
+        return result;
+    }
+
 }

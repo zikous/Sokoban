@@ -79,15 +79,16 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="12073be2-0976-498b-b72e-4e89f6c40f14"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[positions.clear();
-zones.clear();
+                  <ATT name="Content"><![CDATA[positions.clear();  // Vide la liste des positions
+zones.clear();      // Vide la liste des zones
 
+// Crée une position et une zone pour chaque cellule de la grille
 for (int i = 0; i < lignes; i++) {
     for (int j = 0; j < colonnes; j++) {
         Position position = new Position(i, j, this);
         Zone zone = new Zone(position);
-        positions.add(position);
-        zones.add(zone);
+        positions.add(position);  // Ajoute la position à la liste
+        zones.add(zone);          // Ajoute la zone à la liste
     }
 }
 ]]></ATT>
@@ -98,6 +99,20 @@ for (int i = 0; i < lignes; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="9c8e058c-3abd-419a-8bc1-23dc1dfe2e4d"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Initialisation de l'entrepôt avec un certain nombre de lignes et de colonnes]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -191,7 +206,7 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="e361a871-2b75-474a-9d2d-3e49d7d47fb0"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return null;]]></ATT>
+                  <ATT name="Content"><![CDATA[return null; // Retourne null si la position n'est pas trouvée]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -205,9 +220,10 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="5c6f5ccb-aca9-482d-8d60-a539ab61738c"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[for (Position position : positions) {
+                  <ATT name="Content"><![CDATA[// Recherche la position dans la liste
+for (Position position : positions) {
     if (position.getLigne() == ligne && position.getColonne() == colonne) {
-        return position;
+        return position;  // Retourne la position correspondante
     }
 }
 ]]></ATT>
@@ -218,6 +234,20 @@ for (int i = 0; i < lignes; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="10f4eb93-2003-420c-894b-9ef406ae51e1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Récupère une position par ses coordonnées de ligne et de colonne]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -265,9 +295,7 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="7927cca3-7d1b-4751-bd11-75dc820228c3"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return zones.stream()
-                                                                        .filter(Zone::isEstCible)
-                                                                        .allMatch(Zone::estComplete);]]></ATT>
+                  <ATT name="Content"><![CDATA[return zones.stream().filter(Zone::isEstCible).allMatch(Zone::estComplete);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -275,6 +303,34 @@ for (int i = 0; i < lignes; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="2d75083f-728b-49e4-853d-afdaa50fa6bc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Vérifie si le niveau est terminé (toutes les cibles sont complètes)]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="135e04d4-1c3c-415b-a8e6-493f0506a153"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Vérifie que toutes les zones de type "CIBLE" sont complètes]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -298,10 +354,11 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="ae119305-28f4-463b-afbc-4801ff9f2429"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[for (Zone zone : zones) {
-    zone.setMobile(null);
-    zone.setEstMur(false);
-    zone.setEstCible(false);
+                  <ATT name="Content"><![CDATA[// Réinitialise chaque zone (enlevant les mobiles, les murs, et les cibles)
+for (Zone zone : zones) {
+    zone.setMobile(null);   // Retire tout objet mobile dans la zone
+    zone.setEstMur(false);  // Enlève le mur de la zone
+    zone.setEstCible(false); // Enlève la cible de la zone
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -311,6 +368,20 @@ for (int i = 0; i < lignes; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="31c1f19f-f450-4a03-a6b8-6890ee322cf0"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Réinitialise l'état de toutes les zones de l'entrepôt]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -404,25 +475,172 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="961b6820-296d-43e1-a692-f1c1b374aa69"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Position position = getPosition(ligne, colonne);
-if (position == null)
-    return;
+                  <ATT name="Content"><![CDATA[// Récupère la position de l'élément à placer
+Position position = getPosition(ligne, colonne);
+if (position == null) return;  // Si la position n'existe pas, on ne fait rien
 
-Zone zone = position.getZone();
+Zone zone = position.getZone();  // Récupère la zone associée à cette position
 switch (type) {
     case MUR:
-        zone.setEstMur(true);
+        zone.setEstMur(true);  // Définit la zone comme un mur
         break;
     case CIBLE:
-        zone.setEstCible(true);
+        zone.setEstCible(true);  // Définit la zone comme une cible
         break;
     case CAISSE:
+        // Si la zone est libre, crée une nouvelle caisse et l'assigne à cette zone
         if (zone.estLibre()) {
             new Caisse().setZone(zone);
         }
         break;
     default:
+        // Si le type d'élément n'est pas reconnu, on lance une exception
         throw new IllegalArgumentException("Type d'élément non géré : " + type);
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4ed64b8d-ec2b-4c5a-b72b-983103eb7141"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Place un élément (mur, cible, caisse) dans l'entrepôt à une position donnée]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="toString" mc="Standard.Operation" uid="b8f732dd-8ce8-49ff-84c9-d0e4459da509"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[toString]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="c3288576-4cbd-40f8-9295-d1fc9845578b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="67584fe2-01cc-48a1-83cf-7836b17db301"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="51cbd6f1-06dc-4297-850a-6064f7b989ca"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[String]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6a0a4b3e-0210-4559-91ff-68100f9ef257"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@Override]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="33c0edd4-2fc1-4280-ae54-cd9fbd48bc62"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return result;]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="53918982-8e28-4843-aad3-a4d73e67814b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[int maxLigne = -1;
+int maxColonne = -1;
+for (Position pos : positions) {
+    maxLigne = Math.max(maxLigne, pos.getLigne());
+    maxColonne = Math.max(maxColonne, pos.getColonne());
+}
+
+String result = "";
+for (int i = 0; i <= maxLigne; i++) {
+    for (int j = 0; j <= maxColonne; j++) {
+        Position pos = getPosition(i, j);
+        Zone zone = pos.getZone();
+
+        char symbole = ' ';
+        if (zone.isEstMur()) {
+            symbole = '#';
+        } else if (zone.getMobile() instanceof Gardien) {
+            symbole = '@';
+        } else if (zone.contientCaisse()) {
+            symbole = zone.isEstCible() ? '*' : '$';
+        } else if (zone.isEstCible()) {
+            symbole = '.';
+        }
+        result += symbole + " ";
+    }
+    result += "\n";
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -465,9 +683,25 @@ switch (type) {
               <ID name="Zone" mc="Standard.Class" uid="9af2c4bd-37a4-4f34-842d-16cbf4b86195"/>
             </LINK>
             <COMP relation="Opposite">
-              <REFOBJ>
+              <OBJECT>
                 <ID name="" mc="Standard.AssociationEnd" uid="e25c9b93-2933-48fd-8c9d-e849f1d32250"/>
-              </REFOBJ>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
             </COMP>
             <COMP relation="Association">
               <OBJECT>
@@ -515,6 +749,20 @@ switch (type) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaInitValue" mc="Infrastructure.NoteType" uid="00380080-0000-0994-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4cbc818a-5b98-44f1-afa7-01ab52975bb1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Liste des zones dans l'entrepôt]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

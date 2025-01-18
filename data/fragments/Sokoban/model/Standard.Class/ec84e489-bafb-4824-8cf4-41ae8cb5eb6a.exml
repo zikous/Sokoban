@@ -17,135 +17,6 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="afficherNiveau" mc="Standard.Operation" uid="73e38ded-55b6-424b-9e64-e554fbec53a4"/>
-          <ATTRIBUTES>
-            <ATT name="Concurrency">false</ATT>
-            <ATT name="Final">false</ATT>
-            <ATT name="Passing">MethodOut</ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">true</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[afficherNiveau]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="IO">
-              <OBJECT>
-                <ID name="controleur" mc="Standard.Parameter" uid="813d84d4-76df-497e-b431-83f7f4fd30b6"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[controleur]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="Controleur" mc="Standard.Class" uid="14f91e90-d328-4cde-b2ef-ec5fcc074d37"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="lignes" mc="Standard.Parameter" uid="d232552b-35a1-49de-8f06-e1c55cb3ecdd"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[lignes]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="colonnes" mc="Standard.Parameter" uid="3272ce71-753a-4f52-b02b-62c8613e60f2"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[colonnes]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="6dd95c3b-5930-4774-ab23-25994c19df59"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Entrepot entrepot = controleur.getEntrepot();
-Gardien gardien = controleur.getGardien();
-
-System.out.print("  ");
-for (int j = 0; j < colonnes; j++) {
-    System.out.print(j % 10 + " ");
-}
-System.out.println();
-
-for (int i = 0; i < lignes; i++) {
-    System.out.print(i % 10 + " ");
-
-    for (int j = 0; j < colonnes; j++) {
-        Position pos = entrepot.getPosition(i, j);
-        Zone zone = pos.getZone();
-
-        char symbole = ' ';
-        if (zone.isEstMur()) {
-            symbole = '#';
-        } else if (zone == gardien.getZone()) {
-            symbole = '@';
-        } else if (zone.contientCaisse()) {
-            symbole = zone.isEstCible() ? '*' : '$';
-        } else if (zone.isEstCible()) {
-            symbole = '.';
-        }
-        System.out.print(symbole + " ");
-    }
-    System.out.println();
-}
-]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
           <ID name="main" mc="Standard.Operation" uid="7fadbec0-3ad7-45dc-a85e-7abaa8511f72"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
@@ -162,7 +33,7 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="args" mc="Standard.Parameter" uid="1194d29c-e8a7-4199-99a6-7eb48809a925"/>
                 <ATTRIBUTES>
-                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
                   <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
                   <ATT name="TypeConstraint"></ATT>
@@ -176,9 +47,6 @@ for (int i = 0; i < lignes; i++) {
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
-                  </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
                       <ID name="" mc="Infrastructure.TaggedValue" uid="ef6f8dcf-8553-4c35-9d5a-20272741de1e"/>
@@ -255,7 +123,8 @@ afficherInstructions();
 boolean playing = true;
 while (playing) {
     System.out.println("\nPlateau actuel :");
-    afficherNiveau(controleur, niveau.length, niveau[0].length);
+    // Using the new toString method instead of afficherNiveau
+    System.out.println(controleur.getEntrepot().toString());
 
     System.out.print("\nEntrez un mouvement (z/q/s/d, x pour quitter, r pour recommencer) : ");
     String input = scanner.nextLine().toLowerCase();
@@ -276,7 +145,7 @@ while (playing) {
 
         if (controleur.estTermine()) {
             System.out.println("\nFélicitations ! Vous avez terminé le niveau !");
-            afficherNiveau(controleur, niveau.length, niveau[0].length);
+            System.out.println(controleur.getEntrepot().toString());
             playing = false;
         }
     } else {
@@ -294,6 +163,20 @@ System.out.println("Merci d'avoir joué !");
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b23b18c2-65da-46cd-9917-2ddaca8216d1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Méthode principale pour lancer le jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -339,6 +222,20 @@ System.out.println("* = Caisse sur cible");
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="3e1d1e60-d7c7-402a-996e-5df5cc33e71d"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Affiche les instructions et la légende des symboles]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -443,7 +340,7 @@ System.out.println("* = Caisse sur cible");
     case "d":
         return Direction.DROITE;
     default:
-        return null;
+        return null;  // Entrée invalide
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -456,22 +353,21 @@ System.out.println("* = Caisse sur cible");
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="7d97b6a9-4e20-46b7-ab59-12ba4931277c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Convertit l'entrée utilisateur en direction correspondante]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-      </COMP>
-      <COMP relation="OwnedPackageImport">
-        <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="0918f823-dde0-4ec5-a5b1-8c3c16893d53"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="entity" mc="Standard.Package" uid="ff319cd5-b5e2-4db4-8d27-f3da1bcfaf11"/>
-            </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

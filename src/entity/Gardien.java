@@ -4,8 +4,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("8ae70f11-a494-4244-886a-d50771bc499c")
 public class Gardien extends Mobile {
-    
-    // Implémente la méthode de déplacement du gardien
+// Implémente la méthode de déplacement du gardien
     @objid ("f401de07-e62a-4410-8901-5ffe6b7d7d61")
     @Override
     public boolean deplacer(Direction direction) {
@@ -48,4 +47,5 @@ public class Gardien extends Mobile {
         // Si aucune des conditions de déplacement n'est remplie, le mouvement échoue
         return false;
     }
+
 }
