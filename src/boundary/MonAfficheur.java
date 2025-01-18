@@ -37,6 +37,9 @@ public class MonAfficheur extends JPanel {
     @objid ("821005a5-eb9a-4f47-a6fa-4c4fa18866be")
     private BufferedImage imgGardienSurCible;
 
+    @objid ("8425206c-ef8c-4c12-a001-53e07ceeebea")
+    private static final long serialVersionUID = 1L;
+
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
     private Controleur controleur;
 
