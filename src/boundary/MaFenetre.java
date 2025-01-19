@@ -1,5 +1,6 @@
 package boundary;
 
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
@@ -23,13 +24,10 @@ public class MaFenetre extends JFrame implements KeyListener {
         this.controleur = controleur;
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.monAfficheur = new MonAfficheur(controleur);
-        add(monAfficheur);
-        
-        addKeyListener(this);
-        setFocusable(true);
-        pack();
+        setSize(800, 600);
         setLocationRelativeTo(null);
+        
+        afficherEcranAccueil();
         setVisible(true);
     }
 
@@ -64,37 +62,32 @@ public class MaFenetre extends JFrame implements KeyListener {
         
         if (controleur.estTermine()) {
             if (controleur.estDernierNiveau()) {
-                JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !", 
-                    "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !",
+                        "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             } else {
-                // Demander si l'utilisateur veut passer au niveau suivant
                 int choix = JOptionPane.showConfirmDialog(this,
-                    "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
-                    "Niveau terminé",
-                    JOptionPane.YES_NO_OPTION);
+                        "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
+                        "Niveau terminé",
+                        JOptionPane.YES_NO_OPTION);
         
                 if (choix == JOptionPane.YES_OPTION) {
-                    // Passer au niveau suivant
                     controleur.passerAuNiveauSuivant();
                     monAfficheur.repaint();
                 } else {
-                    // Si l'utilisateur choisit "Non", afficher une nouvelle boîte de dialogue
                     Object[] options = { "Quitter", "Rejouer le niveau" };
                     int choixQuitterOuRejouer = JOptionPane.showOptionDialog(this,
-                        "Que souhaitez-vous faire ?",
-                        "Niveau terminé",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,
-                        null,
-                        options,
-                        options[1]);
+                            "Que souhaitez-vous faire ?",
+                            "Niveau terminé",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            options,
+                            options[1]);
         
                     if (choixQuitterOuRejouer == JOptionPane.YES_OPTION) {
-                        // Quitter le jeu
                         System.exit(0);
                     } else {
-                        // Rejouer le niveau actuel
                         controleur.reinitialiserNiveau();
                         monAfficheur.repaint();
                     }
@@ -111,6 +104,36 @@ public class MaFenetre extends JFrame implements KeyListener {
     @objid ("d796e4a7-3eed-4144-9060-a4eb1e368c01")
     @Override
     public void keyReleased(KeyEvent e) {
+    }
+
+    @objid ("1a7abc4a-dbce-4cd8-8085-aabbc1924d0b")
+    private void afficherEcranAccueil() {
+        EcranAccueil ecranAccueil = new EcranAccueil(this);
+        getContentPane().removeAll();
+        getContentPane().add(ecranAccueil);
+        revalidate();
+        repaint();
+    }
+
+    @objid ("3acb5fac-4910-46bf-9187-f335163ceebb")
+    public void demarrerJeu() {
+        getContentPane().removeAll();
+        
+        JPanel panelCentre = new JPanel(new BorderLayout());
+        panelCentre.setBackground(new Color(240, 240, 240));
+        
+        this.monAfficheur = new MonAfficheur(controleur);
+        panelCentre.add(monAfficheur, BorderLayout.CENTER);
+        
+        getContentPane().add(panelCentre);
+        
+        addKeyListener(this);
+        setFocusable(true);
+        requestFocusInWindow();
+        
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
 }

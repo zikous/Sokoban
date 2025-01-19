@@ -13,9 +13,8 @@ import entity.*;
 @objid ("52ef6f21-2604-4f8f-8bea-0a23c5eacf4d")
 public class MonAfficheur extends JPanel {
     @objid ("293286de-b362-41ac-8cd0-db3df6ac97a8")
-    private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
+    private static final int TAILLE_CASE = 40;
 
-// Déclaration des images
     @objid ("d5748cd7-4b72-4efd-87ac-f66365b10328")
     private BufferedImage imgMur;
 
@@ -34,7 +33,6 @@ public class MonAfficheur extends JPanel {
     @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
     private static final long serialVersionUID = 1L;
 
-// Déclaration des images du gardien pour chaque direction
     @objid ("bf22745d-1592-429a-a97b-6a08bad00e65")
     private BufferedImage imgGardienHaut;
 
@@ -53,8 +51,8 @@ public class MonAfficheur extends JPanel {
     @objid ("9cd1286c-7544-4211-9571-c1649b59ea41")
     public MonAfficheur(Controleur controleur) {
         this.controleur = controleur;
-        setPreferredSize(new Dimension(800, 600)); // Taille de la fenêtre
-        chargerImages(); // Charger les images au démarrage
+        setPreferredSize(new Dimension(800, 600));
+        chargerImages();
     }
 
     @objid ("82d6f3f2-c611-4fb2-8a5c-59cabe8b5bb3")
@@ -63,7 +61,6 @@ public class MonAfficheur extends JPanel {
         super.paintComponent(g);
         Entrepot entrepot = controleur.getEntrepot();
         
-        // Parcourir chaque case de l'entrepôt
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
@@ -72,19 +69,16 @@ public class MonAfficheur extends JPanel {
                     int x = j * TAILLE_CASE;
                     int y = i * TAILLE_CASE;
         
-                    // Dessiner le sol de base
                     if (imgSol != null) {
                         g.drawImage(imgSol, x, y, null);
                     }
         
-                    // Dessiner les éléments selon leur type
                     if (zone.isEstMur()) {
                         dessinerMur(g, x, y);
                     } else if (zone.isEstCible() && zone.getMobile() == null) {
                         dessinerCible(g, x, y);
                     }
         
-                    // Dessiner les mobiles (caisses et gardien)
                     if (zone.getMobile() instanceof Caisse) {
                         dessinerCaisse(g, x, y, zone.isEstCible());
                     } else if (zone.getMobile() instanceof Gardien) {
@@ -100,7 +94,6 @@ public class MonAfficheur extends JPanel {
         if (imgMur != null) {
             g.drawImage(imgMur, x, y, null);
         } else {
-            // Fallback au rendu par défaut si l'image n'est pas disponible
             g.setColor(Color.DARK_GRAY);
             g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
         }
@@ -111,7 +104,6 @@ public class MonAfficheur extends JPanel {
         if (imgCible != null) {
             g.drawImage(imgCible, x, y, null);
         } else {
-            // Fallback au rendu par défaut
             g.setColor(Color.RED);
             int marge = TAILLE_CASE / 4;
             g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
@@ -125,7 +117,6 @@ public class MonAfficheur extends JPanel {
         } else if (imgCaisse != null) {
             g.drawImage(imgCaisse, x, y, null);
         } else {
-            // Fallback au rendu par défaut
             g.setColor(surCible ? new Color(139, 69, 19) : Color.ORANGE);
             g.fillRect(x + 2, y + 2, TAILLE_CASE - 4, TAILLE_CASE - 4);
         }
@@ -135,10 +126,8 @@ public class MonAfficheur extends JPanel {
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
         BufferedImage imageGardien = null;
         
-        // Récupérer la direction actuelle du gardien
         Direction direction = controleur.getGardien().getCurrentDirection();
         
-        // Sélectionner l'image du gardien en fonction de sa direction
         switch (direction) {
             case HAUT:
                 imageGardien = imgGardienHaut;
@@ -154,23 +143,19 @@ public class MonAfficheur extends JPanel {
                 break;
         }
         
-        // Dessiner la cible si nécessaire
         if (surCible) {
             if (imgCible != null) {
                 g.drawImage(imgCible, x, y, null);
             } else {
-                // Fallback au rendu par défaut pour la cible
                 g.setColor(Color.RED);
                 int marge = TAILLE_CASE / 4;
                 g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
             }
         }
         
-        // Dessiner le gardien
         if (imageGardien != null) {
             g.drawImage(imageGardien, x, y, null);
         } else {
-            // Fallback au rendu par défaut pour le gardien
             g.setColor(Color.BLUE);
             g.fillOval(x + 4, y + 4, TAILLE_CASE - 8, TAILLE_CASE - 8);
         }
@@ -179,21 +164,18 @@ public class MonAfficheur extends JPanel {
     @objid ("ad14a453-8817-4442-b2fa-728e2f122a6a")
     private void chargerImages() {
         try {
-            // Charger toutes les images depuis le dossier "images"
             imgMur = chargerEtRedimensionnerImage("images/mur.png");
             imgSol = chargerEtRedimensionnerImage("images/sol.png");
             imgCible = chargerEtRedimensionnerImage("images/cible.png");
             imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
             imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
         
-            // Charger les images du gardien pour chaque direction
             imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
             imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
             imgGardienGauche = chargerEtRedimensionnerImage("images/gardien_gauche.png");
             imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
         } catch (IOException e) {
             System.err.println("Erreur lors du chargement des images : " + e.getMessage());
-            // En cas d'erreur, on revient au rendu par défaut avec des formes colorées
             imgMur = null;
             imgSol = null;
             imgCible = null;
