@@ -44,6 +44,8 @@ public class MonAfficheur extends JPanel {
 
     @objid ("398f6d68-e40c-4ac2-b38c-251cfcad7f16")
     private BufferedImage imgGardienDroite;
+    
+    private BufferedImage imgHerbe;
 
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
     private Controleur controleur;
@@ -60,25 +62,34 @@ public class MonAfficheur extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Entrepot entrepot = controleur.getEntrepot();
-        
+
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
+                int x = j * TAILLE_CASE;
+                int y = i * TAILLE_CASE;
+
+                // Dessiner l'herbe en arrière-plan
+                if (imgHerbe != null) {
+                    g.drawImage(imgHerbe, x, y, null);
+                } else {
+                    g.setColor(Color.GREEN); // Couleur de secours si l'image herbe.png n'est pas chargée
+                    g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
+                }
+
                 if (pos != null) {
                     Zone zone = pos.getZone();
-                    int x = j * TAILLE_CASE;
-                    int y = i * TAILLE_CASE;
-        
+
                     if (imgSol != null) {
                         g.drawImage(imgSol, x, y, null);
                     }
-        
+
                     if (zone.isEstMur()) {
                         dessinerMur(g, x, y);
                     } else if (zone.isEstCible() && zone.getMobile() == null) {
                         dessinerCible(g, x, y);
                     }
-        
+
                     if (zone.getMobile() instanceof Caisse) {
                         dessinerCaisse(g, x, y, zone.isEstCible());
                     } else if (zone.getMobile() instanceof Gardien) {
@@ -169,6 +180,7 @@ public class MonAfficheur extends JPanel {
             imgCible = chargerEtRedimensionnerImage("images/cible.png");
             imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
             imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
+            imgHerbe = chargerEtRedimensionnerImage("images/herbe.png");
         
             imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
             imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
@@ -181,6 +193,7 @@ public class MonAfficheur extends JPanel {
             imgCible = null;
             imgCaisse = null;
             imgCaisseSurCible = null;
+            imgHerbe = null;
             imgGardienHaut = null;
             imgGardienBas = null;
             imgGardienGauche = null;
