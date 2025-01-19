@@ -59,11 +59,17 @@ public class MaFenetre extends JFrame implements KeyListener {
                         "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             } else {
-                int choix = JOptionPane.showConfirmDialog(this,
+                Object[] oui_non = {"Oui", "Non"};
+                int choix = JOptionPane.showOptionDialog(
+                        this,
                         "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
                         "Niveau terminé",
-                        JOptionPane.YES_NO_OPTION);
-        
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        oui_non,
+                        oui_non[0]);
+
                 if (choix == JOptionPane.YES_OPTION) {
                     controleur.passerAuNiveauSuivant();
                     monAfficheur.repaint();
