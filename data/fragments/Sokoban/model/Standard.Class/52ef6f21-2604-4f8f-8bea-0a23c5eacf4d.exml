@@ -1041,7 +1041,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6cfc6e5f-d966-47da-941d-cb98a12d573d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b8b5765b-3add-490e-80d2-2284cf97d751"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1114,7 +1114,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2157f03d-64c9-49e7-b70e-f57683c8a3f9"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8a66b0c5-db01-425b-a8f5-e8aca1150f94"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1171,7 +1171,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="548ad976-3fcb-4d0b-9f52-4bba4b0fc7bb"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8b4282dd-6af7-4384-b398-23672908ebdc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1228,7 +1228,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="65b74e75-7f04-4286-a27d-a531d2a62d44"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c3d5f5fc-f737-4114-a99e-621656cfe181"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1285,7 +1285,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5bde7024-aafe-403c-83ca-4fbbcefa1447"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4ae7b53c-65a4-4e2d-b6bd-9f525b93b809"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1342,7 +1342,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9d81bfeb-1ee5-4f36-a7ac-2168294df914"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0e44b3d7-b3f7-4919-8ac5-b4087181f231"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1399,7 +1399,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="45daa037-4214-4c10-afb1-c14b34f8e206"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="056d1b55-70e7-49c5-bcbe-acf610d58ec1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1407,6 +1407,44 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="serialVersionUID" mc="Standard.Attribute" uid="9bcf29e4-4ca9-415e-bf56-c3a896935fbd"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[1L]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[serialVersionUID]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="long" mc="Standard.DataType" uid="00000004-0000-0011-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5ecac334-712b-4fdb-b7dc-bce733065ba3"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="003800a8-0000-0161-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1476,7 +1514,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="86e25ebd-d1c5-4085-809c-8a4acc229d80"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="443d746a-95f3-4c77-9ea3-d48d7680859e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1543,7 +1581,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="06d310e2-01ab-4451-8e33-5d927a7b446f"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
+                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -1551,7 +1589,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="3d2eaaca-1bbb-441a-9d00-75b4ce754d7d"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
+                  <ATT name="Value"><![CDATA[java.awt.image.BufferedImage]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -1559,7 +1597,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="166326d6-b897-4ab7-802e-b7545b19cba5"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.image.BufferedImage]]></ATT>
+                  <ATT name="Value"><![CDATA[java.io.File]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -1567,7 +1605,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="aa576813-2c9e-4b68-b1df-171f8dee08d6"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.imageio.ImageIO]]></ATT>
+                  <ATT name="Value"><![CDATA[java.io.IOException]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -1575,7 +1613,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="68b39ffd-27fc-4f48-b969-707ff4c1ff8e"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.io.File]]></ATT>
+                  <ATT name="Value"><![CDATA[javax.imageio.ImageIO]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -1583,7 +1621,7 @@ g.dispose();
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="c6e10073-e753-431a-adae-af0f46b693a9"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.io.IOException]]></ATT>
+                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

@@ -459,7 +459,7 @@ if (controleur.estTermine()) {  // Vérifie si le niveau est terminé
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ecf1e238-2c55-4384-b3ab-7fd4883010d4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="934768f8-4125-4b59-b6d4-dafd3e1bbc23"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -534,7 +534,7 @@ if (controleur.estTermine()) {  // Vérifie si le niveau est terminé
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a7a285fb-0104-4e25-9ed3-c1cf407c97a1"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4c4538fe-6ebb-40d0-98d1-a95cf53eb5ab"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

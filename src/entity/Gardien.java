@@ -4,10 +4,15 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("8ae70f11-a494-4244-886a-d50771bc499c")
 public class Gardien extends Mobile {
-// Implémente la méthode de déplacement du gardien
+    @objid ("77664739-eb59-49a2-866e-7aed85cf9ecd")
+    private Direction currentDirection = Direction.BAS; // Direction par défaut
+
     @objid ("f401de07-e62a-4410-8901-5ffe6b7d7d61")
     @Override
     public boolean deplacer(Direction direction) {
+        // Mettre à jour la direction actuelle
+        this.currentDirection = direction;
+        
         // Vérifie si la zone actuelle du gardien est nulle (non définie)
         if (getZone() == null) {
             return false;  // Si la zone est nulle, le gardien ne peut pas se déplacer
@@ -34,7 +39,7 @@ public class Gardien extends Mobile {
         if (zoneCible.getMobile() instanceof Caisse) {
             // Récupère la position après la caisse dans la même direction
             Position positionApresCaisse = positionCible.getPositionAdjacente(direction);
-            
+        
             // Vérifie si la position après la caisse est valide et libre
             if (positionApresCaisse != null && positionApresCaisse.getZone().estLibre()) {
                 Caisse caisse = (Caisse) zoneCible.getMobile();  // Récupère la caisse
@@ -46,6 +51,12 @@ public class Gardien extends Mobile {
         
         // Si aucune des conditions de déplacement n'est remplie, le mouvement échoue
         return false;
+    }
+
+// Getter pour la direction actuelle
+    @objid ("fba84f75-1fc2-4123-a231-67b0a97fdb3a")
+    public Direction getCurrentDirection() {
+        return currentDirection;
     }
 
 }

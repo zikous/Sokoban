@@ -13,9 +13,9 @@ import entity.*;
 @objid ("52ef6f21-2604-4f8f-8bea-0a23c5eacf4d")
 public class MonAfficheur extends JPanel {
     @objid ("293286de-b362-41ac-8cd0-db3df6ac97a8")
-    private static final int TAILLE_CASE = 40;
+    private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
 
-// Déclaration des images
+    // Déclaration des images
     @objid ("d5748cd7-4b72-4efd-87ac-f66365b10328")
     private BufferedImage imgMur;
 
@@ -31,13 +31,13 @@ public class MonAfficheur extends JPanel {
     @objid ("3491388b-0cf3-42fc-9227-a4534f529808")
     private BufferedImage imgCaisseSurCible;
 
-    @objid ("2785e069-4820-4ef5-9507-4a9ed30d4474")
-    private BufferedImage imgGardien;
+    // Déclaration des images du gardien pour chaque direction
+    private BufferedImage imgGardienHaut;
+    private BufferedImage imgGardienBas;
+    private BufferedImage imgGardienGauche;
+    private BufferedImage imgGardienDroite;
 
-    @objid ("821005a5-eb9a-4f47-a6fa-4c4fa18866be")
-    private BufferedImage imgGardienSurCible;
-
-    @objid ("8425206c-ef8c-4c12-a001-53e07ceeebea")
+    @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
     private static final long serialVersionUID = 1L;
 
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
@@ -46,19 +46,17 @@ public class MonAfficheur extends JPanel {
     @objid ("9cd1286c-7544-4211-9571-c1649b59ea41")
     public MonAfficheur(Controleur controleur) {
         this.controleur = controleur;
-        setPreferredSize(new Dimension(800, 600));
-        chargerImages();
+        setPreferredSize(new Dimension(800, 600)); // Taille de la fenêtre
+        chargerImages(); // Charger les images au démarrage
     }
 
     @objid ("82d6f3f2-c611-4fb2-8a5c-59cabe8b5bb3")
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        
         Entrepot entrepot = controleur.getEntrepot();
         
+        // Parcourir chaque case de l'entrepôt
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
@@ -69,21 +67,21 @@ public class MonAfficheur extends JPanel {
         
                     // Dessiner le sol de base
                     if (imgSol != null) {
-                        g2d.drawImage(imgSol, x, y, null);
+                        g.drawImage(imgSol, x, y, null);
                     }
         
                     // Dessiner les éléments selon leur type
                     if (zone.isEstMur()) {
-                        dessinerMur(g2d, x, y);
+                        dessinerMur(g, x, y);
                     } else if (zone.isEstCible() && zone.getMobile() == null) {
-                        dessinerCible(g2d, x, y);
+                        dessinerCible(g, x, y);
                     }
         
-                    // Dessiner les mobiles
+                    // Dessiner les mobiles (caisses et gardien)
                     if (zone.getMobile() instanceof Caisse) {
-                        dessinerCaisse(g2d, x, y, zone.isEstCible());
+                        dessinerCaisse(g, x, y, zone.isEstCible());
                     } else if (zone.getMobile() instanceof Gardien) {
-                        dessinerGardien(g2d, x, y, zone.isEstCible());
+                        dessinerGardien(g, x, y, zone.isEstCible());
                     }
                 }
             }
@@ -91,7 +89,7 @@ public class MonAfficheur extends JPanel {
     }
 
     @objid ("a8838635-eaae-4f5f-ac9c-7278ec19b826")
-    private void dessinerMur(Graphics2D g, int x, int y) {
+    private void dessinerMur(Graphics g, int x, int y) {
         if (imgMur != null) {
             g.drawImage(imgMur, x, y, null);
         } else {
@@ -102,7 +100,7 @@ public class MonAfficheur extends JPanel {
     }
 
     @objid ("76580f48-4b01-4fba-9429-8fcb98b6af51")
-    private void dessinerCible(Graphics2D g, int x, int y) {
+    private void dessinerCible(Graphics g, int x, int y) {
         if (imgCible != null) {
             g.drawImage(imgCible, x, y, null);
         } else {
@@ -114,7 +112,7 @@ public class MonAfficheur extends JPanel {
     }
 
     @objid ("4d159fe8-d959-4a1c-a822-ab44c536c032")
-    private void dessinerCaisse(Graphics2D g, int x, int y, boolean surCible) {
+    private void dessinerCaisse(Graphics g, int x, int y, boolean surCible) {
         if (surCible && imgCaisseSurCible != null) {
             g.drawImage(imgCaisseSurCible, x, y, null);
         } else if (imgCaisse != null) {
@@ -127,17 +125,45 @@ public class MonAfficheur extends JPanel {
     }
 
     @objid ("90fb6c94-200c-47f9-a903-2a458665d1fb")
-    private void dessinerGardien(Graphics2D g, int x, int y, boolean surCible) {
-        if (surCible && imgGardienSurCible != null) {
-            g.drawImage(imgGardienSurCible, x, y, null);
-        } else if (imgGardien != null) {
-            g.drawImage(imgGardien, x, y, null);
-        } else {
-            // Fallback au rendu par défaut
-            if (surCible) {
-                g.setColor(new Color(255, 192, 203));
-                g.fillOval(x + 2, y + 2, TAILLE_CASE - 4, TAILLE_CASE - 4);
+    private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
+        BufferedImage imageGardien = null;
+
+        // Récupérer la direction actuelle du gardien
+        Direction direction = controleur.getGardien().getCurrentDirection();
+
+        // Sélectionner l'image du gardien en fonction de sa direction
+        switch (direction) {
+            case HAUT:
+                imageGardien = imgGardienHaut;
+                break;
+            case BAS:
+                imageGardien = imgGardienBas;
+                break;
+            case GAUCHE:
+                imageGardien = imgGardienGauche;
+                break;
+            case DROITE:
+                imageGardien = imgGardienDroite;
+                break;
+        }
+
+        // Dessiner la cible si nécessaire
+        if (surCible) {
+            if (imgCible != null) {
+                g.drawImage(imgCible, x, y, null);
+            } else {
+                // Fallback au rendu par défaut pour la cible
+                g.setColor(Color.RED);
+                int marge = TAILLE_CASE / 4;
+                g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
             }
+        }
+
+        // Dessiner le gardien
+        if (imageGardien != null) {
+            g.drawImage(imageGardien, x, y, null);
+        } else {
+            // Fallback au rendu par défaut pour le gardien
             g.setColor(Color.BLUE);
             g.fillOval(x + 4, y + 4, TAILLE_CASE - 8, TAILLE_CASE - 8);
         }
@@ -147,38 +173,39 @@ public class MonAfficheur extends JPanel {
     private void chargerImages() {
         try {
             // Charger toutes les images depuis le dossier "images"
-            imgMur = ImageIO.read(new File("images/mur.png"));
-            imgSol = ImageIO.read(new File("images/sol.png"));
-            imgCible = ImageIO.read(new File("images/cible.png"));
-            imgCaisse = ImageIO.read(new File("images/caisse.png"));
-            imgCaisseSurCible = ImageIO.read(new File("images/caisse_sur_cible.png"));
-            imgGardien = ImageIO.read(new File("images/gardien.png"));
-            imgGardienSurCible = ImageIO.read(new File("images/gardien_sur_cible.png"));
-            
-            // Redimensionner les images à la taille d'une case
-            imgMur = redimensionnerImage(imgMur);
-            imgSol = redimensionnerImage(imgSol);
-            imgCible = redimensionnerImage(imgCible);
-            imgCaisse = redimensionnerImage(imgCaisse);
-            imgCaisseSurCible = redimensionnerImage(imgCaisseSurCible);
-            imgGardien = redimensionnerImage(imgGardien);
-            imgGardienSurCible = redimensionnerImage(imgGardienSurCible);
-            
+            imgMur = chargerEtRedimensionnerImage("images/mur.png");
+            imgSol = chargerEtRedimensionnerImage("images/sol.png");
+            imgCible = chargerEtRedimensionnerImage("images/cible.png");
+            imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
+            imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
+
+            // Charger les images du gardien pour chaque direction
+            imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
+            imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
+            imgGardienGauche = chargerEtRedimensionnerImage("images/gardien_gauche.png");
+            imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
         } catch (IOException e) {
             System.err.println("Erreur lors du chargement des images : " + e.getMessage());
             // En cas d'erreur, on revient au rendu par défaut avec des formes colorées
             imgMur = null;
+            imgSol = null;
+            imgCible = null;
+            imgCaisse = null;
+            imgCaisseSurCible = null;
+            imgGardienHaut = null;
+            imgGardienBas = null;
+            imgGardienGauche = null;
+            imgGardienDroite = null;
         }
     }
 
-    @objid ("23112b1b-092c-4ef3-8f5c-7f9bd4420cb6")
-    private BufferedImage redimensionnerImage(BufferedImage originalImage) {
-        BufferedImage resizedImage = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g = resizedImage.createGraphics();
-        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g.drawImage(originalImage, 0, 0, TAILLE_CASE, TAILLE_CASE, null);
+    @objid ("5cba608c-f834-4d74-8b6d-b5676fc66451")
+    private BufferedImage chargerEtRedimensionnerImage(String chemin) throws IOException {
+        BufferedImage imageOriginale = ImageIO.read(new File(chemin));
+        BufferedImage imageRedimensionnee = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = imageRedimensionnee.createGraphics();
+        g.drawImage(imageOriginale, 0, 0, TAILLE_CASE, TAILLE_CASE, null);
         g.dispose();
-        return resizedImage;
+        return imageRedimensionnee;
     }
-
 }

@@ -20,17 +20,17 @@ public class MaFenetre extends JFrame implements KeyListener {
     @objid ("4dc4b2fe-2142-4d76-9dd9-bda64da17297")
     public MaFenetre(Controleur controleur) {
         super("Sokoban");
-        this.controleur = controleur; 
+        this.controleur = controleur;
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Ferme l'application lors de la fermeture de la fenêtre
-        this.monAfficheur = new MonAfficheur(controleur); 
-        add(monAfficheur);  // Ajoute l'afficheur au JFrame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.monAfficheur = new MonAfficheur(controleur);
+        add(monAfficheur);
         
-        addKeyListener(this);  // Ajoute l'écouteur de touches
-        setFocusable(true);  // Permet à la fenêtre de capter les événements clavier
-        pack();  // Ajuste la taille de la fenêtre
-        setLocationRelativeTo(null);  // Centre la fenêtre
-        setVisible(true);  // Rends la fenêtre visible
+        addKeyListener(this);
+        setFocusable(true);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     @objid ("682aa214-9b02-4dff-bdb9-8ba4997aba72")
@@ -52,17 +52,54 @@ public class MaFenetre extends JFrame implements KeyListener {
                 direction = Direction.DROITE;
                 break;
             case KeyEvent.VK_R:
-                controleur.reinitialiserNiveau();  // Réinitialise le niveau si "R" est pressé
+                controleur.reinitialiserNiveau();
                 break;
         }
         
         if (direction != null) {
-            controleur.action(direction);  // Applique l'action dans le contrôleur
+            controleur.action(direction);
         }
         
-        monAfficheur.repaint();  // Rafraîchit l'affichage
-        if (controleur.estTermine()) {  // Vérifie si le niveau est terminé
-            JOptionPane.showMessageDialog(this, "Niveau terminé !", "Félicitations", JOptionPane.INFORMATION_MESSAGE);
+        monAfficheur.repaint();
+        
+        if (controleur.estTermine()) {
+            if (controleur.estDernierNiveau()) {
+                JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !", 
+                    "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            } else {
+                // Demander si l'utilisateur veut passer au niveau suivant
+                int choix = JOptionPane.showConfirmDialog(this,
+                    "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
+                    "Niveau terminé",
+                    JOptionPane.YES_NO_OPTION);
+        
+                if (choix == JOptionPane.YES_OPTION) {
+                    // Passer au niveau suivant
+                    controleur.passerAuNiveauSuivant();
+                    monAfficheur.repaint();
+                } else {
+                    // Si l'utilisateur choisit "Non", afficher une nouvelle boîte de dialogue
+                    Object[] options = { "Quitter", "Rejouer le niveau" };
+                    int choixQuitterOuRejouer = JOptionPane.showOptionDialog(this,
+                        "Que souhaitez-vous faire ?",
+                        "Niveau terminé",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        options,
+                        options[1]);
+        
+                    if (choixQuitterOuRejouer == JOptionPane.YES_OPTION) {
+                        // Quitter le jeu
+                        System.exit(0);
+                    } else {
+                        // Rejouer le niveau actuel
+                        controleur.reinitialiserNiveau();
+                        monAfficheur.repaint();
+                    }
+                }
+            }
         }
     }
 
