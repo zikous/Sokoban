@@ -15,7 +15,7 @@ public class MonAfficheur extends JPanel {
     @objid ("293286de-b362-41ac-8cd0-db3df6ac97a8")
     private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
 
-    // Déclaration des images
+// Déclaration des images
     @objid ("d5748cd7-4b72-4efd-87ac-f66365b10328")
     private BufferedImage imgMur;
 
@@ -31,14 +31,21 @@ public class MonAfficheur extends JPanel {
     @objid ("3491388b-0cf3-42fc-9227-a4534f529808")
     private BufferedImage imgCaisseSurCible;
 
-    // Déclaration des images du gardien pour chaque direction
-    private BufferedImage imgGardienHaut;
-    private BufferedImage imgGardienBas;
-    private BufferedImage imgGardienGauche;
-    private BufferedImage imgGardienDroite;
-
     @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
     private static final long serialVersionUID = 1L;
+
+// Déclaration des images du gardien pour chaque direction
+    @objid ("bf22745d-1592-429a-a97b-6a08bad00e65")
+    private BufferedImage imgGardienHaut;
+
+    @objid ("7f87e5f4-7bc3-4f9a-b06e-c5b51740a3a6")
+    private BufferedImage imgGardienBas;
+
+    @objid ("a71ae2a4-00b9-4e94-8dac-53c5901083a1")
+    private BufferedImage imgGardienGauche;
+
+    @objid ("398f6d68-e40c-4ac2-b38c-251cfcad7f16")
+    private BufferedImage imgGardienDroite;
 
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
     private Controleur controleur;
@@ -127,10 +134,10 @@ public class MonAfficheur extends JPanel {
     @objid ("90fb6c94-200c-47f9-a903-2a458665d1fb")
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
         BufferedImage imageGardien = null;
-
+        
         // Récupérer la direction actuelle du gardien
         Direction direction = controleur.getGardien().getCurrentDirection();
-
+        
         // Sélectionner l'image du gardien en fonction de sa direction
         switch (direction) {
             case HAUT:
@@ -146,7 +153,7 @@ public class MonAfficheur extends JPanel {
                 imageGardien = imgGardienDroite;
                 break;
         }
-
+        
         // Dessiner la cible si nécessaire
         if (surCible) {
             if (imgCible != null) {
@@ -158,7 +165,7 @@ public class MonAfficheur extends JPanel {
                 g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
             }
         }
-
+        
         // Dessiner le gardien
         if (imageGardien != null) {
             g.drawImage(imageGardien, x, y, null);
@@ -178,7 +185,7 @@ public class MonAfficheur extends JPanel {
             imgCible = chargerEtRedimensionnerImage("images/cible.png");
             imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
             imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
-
+        
             // Charger les images du gardien pour chaque direction
             imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
             imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
@@ -208,4 +215,5 @@ public class MonAfficheur extends JPanel {
         g.dispose();
         return imageRedimensionnee;
     }
+
 }
