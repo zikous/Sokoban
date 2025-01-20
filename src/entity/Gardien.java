@@ -4,7 +4,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("8ae70f11-a494-4244-886a-d50771bc499c")
 public class Gardien extends Mobile {
-    @objid ("77664739-eb59-49a2-866e-7aed85cf9ecd")
+    @objid ("e9983594-8e0e-4692-9917-6bfbc3579265")
     private Direction currentDirection = Direction.BAS; // Direction par défaut
 
     @objid ("f401de07-e62a-4410-8901-5ffe6b7d7d61")
@@ -54,7 +54,7 @@ public class Gardien extends Mobile {
     }
 
 // Getter pour la direction actuelle
-    @objid ("fba84f75-1fc2-4123-a231-67b0a97fdb3a")
+    @objid ("309a5466-4196-4512-b17e-633277cea512")
     public Direction getCurrentDirection() {
         return currentDirection;
     }

@@ -2,9 +2,9 @@ package control;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("6ba4275c-89a6-4275-b1c3-013068fdeaf3")
+@objid ("c434b8c5-f6cd-467e-9fdd-b099fbb0ae65")
 public class NiveauManager {
-    @objid ("f3b6038f-7e88-4247-8b0c-0cfb3a725456")
+    @objid ("558f7496-3377-4a8e-ab51-48386b6fa107")
     private static final int[][][] NIVEAUX = {
     	    // Niveau 1 
     	    {
@@ -28,15 +28,15 @@ public class NiveauManager {
             },
     	};
 
-    @objid ("4accb8d1-23ea-4ad9-b67e-50c2dbca6ae0")
+    @objid ("3418c9de-8e94-439a-8db4-923d5d4946b2")
     private int niveauCourant = 0;
 
-    @objid ("69f6fa46-efe5-4d68-89f3-fed7698a29f1")
+    @objid ("5f507c65-bb08-48db-97d3-283fdf031c42")
     public int[][] getNiveauCourant() {
         return NIVEAUX[niveauCourant];
     }
 
-    @objid ("334d7b0b-5852-4eb6-ab43-e8e24748f5cd")
+    @objid ("c9f7c36e-c579-4660-886f-e79c3173045c")
     public boolean passerAuNiveauSuivant() {
         if (niveauCourant < NIVEAUX.length - 1) {
             niveauCourant++;
@@ -45,7 +45,7 @@ public class NiveauManager {
         return false;
     }
 
-    @objid ("c6363e6c-19a2-4f93-9736-3da0ed95c950")
+    @objid ("15d9655b-6e6d-4383-ae44-d6f30d0b7775")
     public boolean estDernierNiveau() {
         return niveauCourant == NIVEAUX.length - 1;
     }

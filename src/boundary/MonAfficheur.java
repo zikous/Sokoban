@@ -33,18 +33,19 @@ public class MonAfficheur extends JPanel {
     @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
     private static final long serialVersionUID = 1L;
 
-    @objid ("bf22745d-1592-429a-a97b-6a08bad00e65")
+    @objid ("16ac0ead-f9f7-4dfb-8b00-bbe2d717d666")
     private BufferedImage imgGardienHaut;
 
-    @objid ("7f87e5f4-7bc3-4f9a-b06e-c5b51740a3a6")
+    @objid ("4391e953-fa6e-416a-84b0-a4727b08d446")
     private BufferedImage imgGardienBas;
 
-    @objid ("a71ae2a4-00b9-4e94-8dac-53c5901083a1")
+    @objid ("bf27c7f3-0c97-434a-bff9-b3e9a53a9795")
     private BufferedImage imgGardienGauche;
 
-    @objid ("398f6d68-e40c-4ac2-b38c-251cfcad7f16")
+    @objid ("04873657-e3a5-47d0-a54c-1b2ee82bc70d")
     private BufferedImage imgGardienDroite;
-    
+
+    @objid ("809a9762-1041-4dbd-ab92-b6af10559807")
     private BufferedImage imgHerbe;
 
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
@@ -62,34 +63,26 @@ public class MonAfficheur extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Entrepot entrepot = controleur.getEntrepot();
-
+        
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
                 int x = j * TAILLE_CASE;
                 int y = i * TAILLE_CASE;
-
-                // Dessiner l'herbe en arrière-plan
-                if (imgHerbe != null) {
-                    g.drawImage(imgHerbe, x, y, null);
-                } else {
-                    g.setColor(Color.GREEN); // Couleur de secours si l'image herbe.png n'est pas chargée
-                    g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
-                }
-
+        
+                dessinerHerbe(g, x, y);
+        
                 if (pos != null) {
                     Zone zone = pos.getZone();
-
-                    if (imgSol != null) {
-                        g.drawImage(imgSol, x, y, null);
-                    }
-
+        
+                    dessinerSol(g, x, y);
+        
                     if (zone.isEstMur()) {
                         dessinerMur(g, x, y);
                     } else if (zone.isEstCible() && zone.getMobile() == null) {
                         dessinerCible(g, x, y);
                     }
-
+        
                     if (zone.getMobile() instanceof Caisse) {
                         dessinerCaisse(g, x, y, zone.isEstCible());
                     } else if (zone.getMobile() instanceof Gardien) {
@@ -135,33 +128,10 @@ public class MonAfficheur extends JPanel {
 
     @objid ("90fb6c94-200c-47f9-a903-2a458665d1fb")
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
-        BufferedImage imageGardien = null;
-        
-        Direction direction = controleur.getGardien().getCurrentDirection();
-        
-        switch (direction) {
-            case HAUT:
-                imageGardien = imgGardienHaut;
-                break;
-            case BAS:
-                imageGardien = imgGardienBas;
-                break;
-            case GAUCHE:
-                imageGardien = imgGardienGauche;
-                break;
-            case DROITE:
-                imageGardien = imgGardienDroite;
-                break;
-        }
+        BufferedImage imageGardien = getImageGardien();
         
         if (surCible) {
-            if (imgCible != null) {
-                g.drawImage(imgCible, x, y, null);
-            } else {
-                g.setColor(Color.RED);
-                int marge = TAILLE_CASE / 4;
-                g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
-            }
+            dessinerCible(g, x, y);
         }
         
         if (imageGardien != null) {
@@ -201,7 +171,36 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("5cba608c-f834-4d74-8b6d-b5676fc66451")
+    @objid ("d52c1df9-0179-4ea0-aa26-21a1386c22ce")
+    private void dessinerHerbe(Graphics g, int x, int y) {
+        if (imgHerbe != null) {
+            g.drawImage(imgHerbe, x, y, null);
+        } else {
+            g.setColor(Color.GREEN);
+            g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
+        }
+    }
+
+    @objid ("6950601e-9b59-4138-9a85-71f00a3152e9")
+    private void dessinerSol(Graphics g, int x, int y) {
+        if (imgSol != null) {
+            g.drawImage(imgSol, x, y, null);
+        }
+    }
+
+    @objid ("0671d5b5-d53c-4f67-9444-2c9be6acbb44")
+    private BufferedImage getImageGardien() {
+        Direction direction = controleur.getGardien().getCurrentDirection();
+        switch (direction) {
+            case HAUT: return imgGardienHaut;
+            case BAS: return imgGardienBas;
+            case GAUCHE: return imgGardienGauche;
+            case DROITE: return imgGardienDroite;
+            default: return null;
+        }
+    }
+
+    @objid ("6ff5f19d-704d-4f79-9853-b73ea670f89c")
     private BufferedImage chargerEtRedimensionnerImage(String chemin) throws IOException {
         BufferedImage imageOriginale = ImageIO.read(new File(chemin));
         BufferedImage imageRedimensionnee = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);

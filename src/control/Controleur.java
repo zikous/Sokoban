@@ -17,7 +17,7 @@ public class Controleur {
     @objid ("54da0ef2-d468-468a-9149-9b67e21c4ff3")
     private Entrepot entrepot;
 
-    @objid ("afb21de7-564d-4f9a-a5ad-c1b8fb64f3dd")
+    @objid ("bdfc2043-f164-416d-be07-b50d22d00c43")
     private NiveauManager niveauManager;
 
     @objid ("b4eb871f-b7e0-471c-a89a-31c91670ec60")
@@ -101,17 +101,17 @@ public class Controleur {
         return gardien;
     }
 
-    @objid ("15e80bed-8b08-4b8b-af92-9f17e3c1969b")
+    @objid ("32529473-bfad-45de-b9c7-9e8b44bc8335")
     private void chargerNiveauCourant() {
         chargerNiveau(niveauManager.getNiveauCourant());
     }
 
-    @objid ("31eb1263-8853-489d-af0b-63a1500d0a29")
+    @objid ("13a92df4-cb65-4ad3-b66f-8693f523ce61")
     public boolean estDernierNiveau() {
         return niveauManager.estDernierNiveau();
     }
 
-    @objid ("b5a95c97-2880-40c0-9d30-f32d7e4b5ed1")
+    @objid ("db2e28bd-6f3f-41d4-880e-85c39f48d325")
     public void passerAuNiveauSuivant() {
         if (niveauManager.passerAuNiveauSuivant()) {
             chargerNiveauCourant();

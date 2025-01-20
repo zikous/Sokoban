@@ -6,6 +6,7 @@ import javax.swing.*;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import control.Controleur;
 import entity.*;
+import entity.Direction;
 
 @objid ("2c98f262-fb7c-420e-8e27-d7b44a78c0dc")
 public class MaFenetre extends JFrame implements KeyListener {
@@ -34,65 +35,18 @@ public class MaFenetre extends JFrame implements KeyListener {
     @objid ("682aa214-9b02-4dff-bdb9-8ba4997aba72")
     @Override
     public void keyPressed(KeyEvent e) {
-        Direction direction = null;
-        
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP:
-                direction = Direction.HAUT;
-                break;
-            case KeyEvent.VK_DOWN:
-                direction = Direction.BAS;
-                break;
-            case KeyEvent.VK_LEFT:
-                direction = Direction.GAUCHE;
-                break;
-            case KeyEvent.VK_RIGHT:
-                direction = Direction.DROITE;
-                break;
-            case KeyEvent.VK_R:
-                controleur.reinitialiserNiveau();
-                break;
-        }
+        Direction direction = getDirectionFromKeyEvent(e);
         
         if (direction != null) {
             controleur.action(direction);
+        } else if (e.getKeyCode() == KeyEvent.VK_R) {
+            controleur.reinitialiserNiveau();
         }
         
         monAfficheur.repaint();
         
         if (controleur.estTermine()) {
-            if (controleur.estDernierNiveau()) {
-                JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !",
-                        "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
-                System.exit(0);
-            } else {
-                int choix = JOptionPane.showConfirmDialog(this,
-                        "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
-                        "Niveau terminé",
-                        JOptionPane.YES_NO_OPTION);
-        
-                if (choix == JOptionPane.YES_OPTION) {
-                    controleur.passerAuNiveauSuivant();
-                    monAfficheur.repaint();
-                } else {
-                    Object[] options = { "Quitter", "Rejouer le niveau" };
-                    int choixQuitterOuRejouer = JOptionPane.showOptionDialog(this,
-                            "Que souhaitez-vous faire ?",
-                            "Niveau terminé",
-                            JOptionPane.YES_NO_OPTION,
-                            JOptionPane.QUESTION_MESSAGE,
-                            null,
-                            options,
-                            options[1]);
-        
-                    if (choixQuitterOuRejouer == JOptionPane.YES_OPTION) {
-                        System.exit(0);
-                    } else {
-                        controleur.reinitialiserNiveau();
-                        monAfficheur.repaint();
-                    }
-                }
-            }
+            handleNiveauTermine();
         }
     }
 
@@ -106,7 +60,53 @@ public class MaFenetre extends JFrame implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
-    @objid ("1a7abc4a-dbce-4cd8-8085-aabbc1924d0b")
+    @objid ("576d5ee2-3ee6-4ba4-b6b1-15328f6227fb")
+    private Direction getDirectionFromKeyEvent(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_UP: return Direction.HAUT;
+            case KeyEvent.VK_DOWN: return Direction.BAS;
+            case KeyEvent.VK_LEFT: return Direction.GAUCHE;
+            case KeyEvent.VK_RIGHT: return Direction.DROITE;
+            default: return null;
+        }
+    }
+
+    @objid ("9696e72f-0a60-4834-8cf4-a095d30a5115")
+    private void handleNiveauTermine() {
+        if (controleur.estDernierNiveau()) {
+            JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !",
+                    "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        } else {
+            int choix = JOptionPane.showConfirmDialog(this,
+                    "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
+                    "Niveau terminé",
+                    JOptionPane.YES_NO_OPTION);
+            
+            if (choix == JOptionPane.YES_OPTION) {
+                controleur.passerAuNiveauSuivant();
+            } else {
+                Object[] options = { "Quitter", "Rejouer le niveau" };
+                int choixQuitterOuRejouer = JOptionPane.showOptionDialog(this,
+                        "Que souhaitez-vous faire ?",
+                        "Niveau terminé",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        options,
+                        options[1]);
+            
+                if (choixQuitterOuRejouer == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                } else {
+                    controleur.reinitialiserNiveau();
+                }
+            }
+            monAfficheur.repaint();
+        }
+    }
+
+    @objid ("86f6bddc-edb6-4480-be7c-08793c3fece8")
     private void afficherEcranAccueil() {
         EcranAccueil ecranAccueil = new EcranAccueil(this);
         getContentPane().removeAll();
@@ -115,7 +115,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         repaint();
     }
 
-    @objid ("3acb5fac-4910-46bf-9187-f335163ceebb")
+    @objid ("79cb8945-73dc-434d-957c-f7834ff1e553")
     public void demarrerJeu() {
         getContentPane().removeAll();
         

@@ -1,97 +1,101 @@
 package boundary;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("c46ba35e-38a7-4c65-a95d-ca39d70f960f")
-public class EcranAccueil extends JPanel {
-    @objid ("d2609eb5-9d21-4db0-a385-69454518e779")
+@objid ("d90c584a-242a-4be9-93e0-7080ac40e14c")
+public class EcranAccueil extends PanneauAvecFond {
+    @objid ("82cc66d1-83a6-4733-ae5f-f4405f8db157")
     private static final long serialVersionUID = 1L;
 
-    @objid ("8544744b-ddc3-408b-b068-d5a7c3c30e88")
+    @objid ("c8d13d18-9c13-4111-b045-e7e2fd9957fd")
     private JButton boutonCommencer;
 
-    @objid ("c905e5f7-a676-4dc7-bc33-04fb86750d0f")
+    @objid ("03cff891-69e0-400c-8502-593f133bceba")
     public EcranAccueil(MaFenetre fenetrePrincipale) {
         setLayout(new BorderLayout());
-        setBackground(new Color(245, 245, 245)); // Fond clair et moderne
+        add(createTitre(), BorderLayout.NORTH);
+        add(createPanelInfos(), BorderLayout.CENTER);
+        add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH);
+    }
 
-        // Titre du jeu
+    @objid ("09dd40b8-4668-44fa-8f7d-205d94d3e7b2")
+    private JLabel createTitre() {
         JLabel titre = new JLabel("Sokoban", SwingConstants.CENTER);
-        titre.setFont(new Font("Roboto", Font.BOLD, 72)); // Police moderne
-        titre.setForeground(new Color(33, 150, 243)); // Bleu vif
-        titre.setBorder(BorderFactory.createEmptyBorder(50, 0, 30, 0));
-        add(titre, BorderLayout.NORTH);
+        titre.setFont(new Font("Roboto", Font.BOLD, 80)); // Taille augmentée pour plus d'impact
+        titre.setForeground(new Color(255, 255, 255)); // Blanc pur
+        titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Espacement ajusté
+        return titre;
+    }
 
-        // Panel pour les informations supplémentaires
+    @objid ("fe64f8d5-b318-42ab-b49b-ccda9d74e073")
+    private JPanel createPanelInfos() {
         JPanel panelInfos = new JPanel();
         panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS));
-        panelInfos.setBackground(new Color(245, 245, 245)); // Fond clair
-        panelInfos.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        panelInfos.setOpaque(false); // Transparent pour laisser voir le fond
+        panelInfos.setBorder(BorderFactory.createEmptyBorder(30, 20, 30, 20)); // Espacement ajusté
+        
+        panelInfos.add(createCredits());
+        panelInfos.add(Box.createRigidArea(new Dimension(0, 30))); // Espacement augmenté
+        panelInfos.add(createInstructions("Utilisez les flèches pour déplacer le gardien."));
+        panelInfos.add(Box.createRigidArea(new Dimension(0, 10))); // Espacement entre les instructions
+        panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau."));
+        return panelInfos;
+    }
 
-        // Crédits
+    @objid ("85b84feb-79e0-4d7c-8c7a-51e56c164e22")
+    private JLabel createCredits() {
         JLabel credits = new JLabel("Fait par Zakaria Bheddar et Mohamed Cheikh Rouhou", SwingConstants.CENTER);
-        credits.setFont(new Font("Roboto", Font.ITALIC, 18));
-        credits.setForeground(new Color(97, 97, 97)); // Gris foncé
+        credits.setFont(new Font("Roboto", Font.ITALIC, 20)); // Taille augmentée pour plus de visibilité
+        credits.setForeground(new Color(255, 255, 255)); // Blanc pur
         credits.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panelInfos.add(credits);
+        return credits;
+    }
 
-        // Espacement
-        panelInfos.add(Box.createRigidArea(new Dimension(0, 20)));
-
-        // Instructions
-        JLabel instructions = new JLabel("Utilisez les flèches pour déplacer le gardien.", SwingConstants.CENTER);
-        instructions.setFont(new Font("Roboto", Font.PLAIN, 16));
-        instructions.setForeground(new Color(33, 33, 33)); // Noir doux
+    @objid ("84e42052-b96a-4ed9-beb1-2a468dcfccb5")
+    private JLabel createInstructions(String text) {
+        JLabel instructions = new JLabel(text, SwingConstants.CENTER);
+        instructions.setFont(new Font("Roboto", Font.PLAIN, 18)); // Taille augmentée pour une meilleure lisibilité
+        instructions.setForeground(new Color(255, 255, 255)); // Blanc pur
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panelInfos.add(instructions);
+        return instructions;
+    }
 
-        JLabel instructions2 = new JLabel("Appuyez sur 'R' pour réinitialiser le niveau.", SwingConstants.CENTER);
-        instructions2.setFont(new Font("Roboto", Font.PLAIN, 16));
-        instructions2.setForeground(new Color(33, 33, 33)); // Noir doux
-        instructions2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panelInfos.add(instructions2);
+    @objid ("713fb87d-8122-4280-a34c-61516bd6a0fb")
+    private JPanel createPanelBouton(MaFenetre fenetrePrincipale) {
+        JPanel panelBouton = new JPanel();
+        panelBouton.setOpaque(false); // Transparent pour laisser voir le fond
+        panelBouton.setBorder(BorderFactory.createEmptyBorder(30, 0, 60, 0)); // Espacement ajusté
+        panelBouton.add(createBoutonCommencer(fenetrePrincipale));
+        return panelBouton;
+    }
 
-        add(panelInfos, BorderLayout.CENTER);
-
-        // Bouton pour commencer
+    @objid ("704b68fb-d6ce-425d-a7d9-fa1392796d92")
+    private JButton createBoutonCommencer(MaFenetre fenetrePrincipale) {
         boutonCommencer = new JButton("Commencer");
-        boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 20));
+        boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 24)); // Taille augmentée pour plus d'impact
         boutonCommencer.setBackground(new Color(33, 150, 243)); // Bleu vif
-        boutonCommencer.setForeground(Color.WHITE);
-        boutonCommencer.setFocusPainted(false);
-        boutonCommencer.setBorder(BorderFactory.createEmptyBorder(15, 30, 15, 30));
+        boutonCommencer.setForeground(Color.WHITE); // Texte blanc
+        boutonCommencer.setFocusPainted(false); // Supprime le contour de focus
         boutonCommencer.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(25, 118, 210), 2), // Bordure bleue
-            BorderFactory.createEmptyBorder(10, 20, 10, 20)
+            BorderFactory.createLineBorder(new Color(25, 118, 210), 3), // Bordure plus épaisse
+            BorderFactory.createEmptyBorder(15, 40, 15, 40) // Padding augmenté
         ));
         boutonCommencer.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Curseur en forme de main
-        boutonCommencer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fenetrePrincipale.demarrerJeu();
-            }
-        });
-
-        // Effet de survol sur le bouton
+        boutonCommencer.addActionListener(e -> fenetrePrincipale.demarrerJeu());
+        
+        // Effet de survol
         boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boutonCommencer.setBackground(new Color(25, 118, 210)); // Bleu plus foncé au survol
             }
-
+        
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 boutonCommencer.setBackground(new Color(33, 150, 243)); // Retour à la couleur d'origine
             }
         });
-
-        // Ajouter une ombre au bouton
-        JPanel panelBouton = new JPanel();
-        panelBouton.setBackground(new Color(245, 245, 245)); // Fond clair
-        panelBouton.setBorder(BorderFactory.createEmptyBorder(20, 0, 50, 0));
-        panelBouton.add(boutonCommencer);
-        add(panelBouton, BorderLayout.SOUTH);
+        return boutonCommencer;
     }
+
 }
