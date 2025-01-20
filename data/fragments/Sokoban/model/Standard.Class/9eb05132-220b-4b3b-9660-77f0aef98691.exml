@@ -97,19 +97,14 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="ee90ff4d-1d06-4631-8db2-490445dbe460"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Vérifie si la caisse n'est pas dans une zone
-if (getZone() == null) {
-    return false;  // Impossible de déplacer si la caisse n'est pas assignée à une zone
+                  <ATT name="Content"><![CDATA[if (getZone() == null) {
+    return false;
 }
 
-// Récupère la position cible en fonction de la direction
 Position positionCible = getZone().getPosition().getPositionAdjacente(direction);
-
-// Vérifie si la position cible est valide et que la zone est libre
 if (positionCible != null && positionCible.getZone().estLibre()) {
-    // Déplace la caisse vers la zone cible
     setZone(positionCible.getZone());
-    return true;  // Le déplacement a réussi
+    return true;
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -125,7 +120,7 @@ if (positionCible != null && positionCible.getZone().estLibre()) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="dfe2db8e-3f90-4926-8c3d-efb908b1c285"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false; // Le déplacement a échoué si la zone n'est pas libre ou la position est invalide]]></ATT>
+                  <ATT name="Content"><![CDATA[return false;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -133,20 +128,6 @@ if (positionCible != null && positionCible.getZone().estLibre()) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="c4efd038-54aa-4971-8518-1ad351f1a76d"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Définition de la méthode de déplacement pour la caisse]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

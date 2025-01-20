@@ -100,25 +100,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="362040a6-5dde-4c8b-80cf-a4c0de49b703"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Création du niveau (exemple)
-int[][] niveau = {
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-        { 1, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
-        { 1, 0, 3, 0, 1, 0, 3, 0, 0, 1 },
-        { 1, 0, 0, 0, 0, 3, 0, 0, 2, 1 },
-        { 1, 0, 3, 0, 1, 0, 0, 0, 0, 1 },
-        { 1, 1, 1, 0, 1, 1, 0, 1, 1, 1 },
-        { 1, 2, 0, 0, 0, 0, 0, 0, 2, 1 },
-        { 1, 0, 0, 0, 1, 1, 0, 0, 0, 1 },
-        { 1, 0, 6, 3, 0, 0, 0, 2, 0, 1 },
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
-};
-
-// Initialisation du jeu
-Controleur controleur = new Controleur();
-controleur.chargerNiveau(niveau);
-
-// Lancement de l'interface graphique
+                  <ATT name="Content"><![CDATA[Controleur controleur = new Controleur();
 SwingUtilities.invokeLater(() -> new MaFenetre(controleur));
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>

@@ -97,43 +97,33 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="2bef0d99-5dd7-453f-a7eb-3bce0e20526a"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Vérifie si la zone actuelle du gardien est nulle (non définie)
+                  <ATT name="Content"><![CDATA[this.currentDirection = direction;
+
 if (getZone() == null) {
-    return false;  // Si la zone est nulle, le gardien ne peut pas se déplacer
+    return false;
 }
 
-// Récupère la position cible adjacente dans la direction souhaitée
 Position positionCible = getZone().getPosition().getPositionAdjacente(direction);
-
-// Vérifie si la position cible est valide
 if (positionCible == null) {
-    return false;  // Si la position cible est invalide, le déplacement échoue
+    return false;
 }
 
-// Récupère la zone associée à la position cible
 Zone zoneCible = positionCible.getZone();
 
-// Si la zone cible est libre, déplace le gardien
 if (zoneCible.estLibre()) {
-    setZone(zoneCible);  // Déplace le gardien dans la nouvelle zone
-    return true;  // Déplacement réussi
+    setZone(zoneCible);
+    return true;
 }
 
-// Si la zone cible contient une caisse, essaie de déplacer la caisse
 if (zoneCible.getMobile() instanceof Caisse) {
-    // Récupère la position après la caisse dans la même direction
     Position positionApresCaisse = positionCible.getPositionAdjacente(direction);
-    
-    // Vérifie si la position après la caisse est valide et libre
     if (positionApresCaisse != null && positionApresCaisse.getZone().estLibre()) {
-        Caisse caisse = (Caisse) zoneCible.getMobile();  // Récupère la caisse
-        caisse.setZone(positionApresCaisse.getZone());  // Déplace la caisse dans la nouvelle zone
-        setZone(zoneCible);  // Déplace le gardien dans la zone cible
-        return true;  // Déplacement réussi
+        Caisse caisse = (Caisse) zoneCible.getMobile();
+        caisse.setZone(positionApresCaisse.getZone());
+        setZone(zoneCible);
+        return true;
     }
 }
-
-// Si aucune des conditions de déplacement n'est remplie, le mouvement échoue
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -159,21 +149,92 @@ if (zoneCible.getMobile() instanceof Caisse) {
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getCurrentDirection" mc="Standard.Operation" uid="309a5466-4196-4512-b17e-633277cea512"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getCurrentDirection]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="303cb045-4c06-4363-8279-858254a3cef4"/>
+                <ID name="" mc="Standard.Parameter" uid="8002b277-3966-4311-bcdc-d99ef24dfb8f"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Implémente la méthode de déplacement du gardien]]></ATT>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <REFOBJ>
+                      <ID name="Direction" mc="Standard.Enumeration" uid="9e75f810-7048-4e4f-bc62-ec8206e08cbf"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="9fac0e82-f88a-4a5b-8481-22d21010ed16"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return currentDirection;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="currentDirection" mc="Standard.Attribute" uid="e9983594-8e0e-4692-9917-6bfbc3579265"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[Direction.BAS]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[currentDirection]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <REFOBJ>
+                <ID name="Direction" mc="Standard.Enumeration" uid="9e75f810-7048-4e4f-bc62-ec8206e08cbf"/>
+              </REFOBJ>
+            </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

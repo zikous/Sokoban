@@ -154,36 +154,25 @@ chargerImages();
                 <ID name="" mc="Infrastructure.Note" uid="32de219c-70e6-4ffd-98d6-29f1e8fdb5d4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[super.paintComponent(g);
-Graphics2D g2d = (Graphics2D) g;
-g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
 Entrepot entrepot = controleur.getEntrepot();
-
 for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 20; j++) {
         Position pos = entrepot.getPosition(i, j);
+        int x = j * TAILLE_CASE;
+        int y = i * TAILLE_CASE;
+        dessinerHerbe(g, x, y);
         if (pos != null) {
             Zone zone = pos.getZone();
-            int x = j * TAILLE_CASE;
-            int y = i * TAILLE_CASE;
-
-            // Dessiner le sol de base
-            if (imgSol != null) {
-                g2d.drawImage(imgSol, x, y, null);
-            }
-
-            // Dessiner les éléments selon leur type
+            dessinerSol(g, x, y);
             if (zone.isEstMur()) {
-                dessinerMur(g2d, x, y);
+                dessinerMur(g, x, y);
             } else if (zone.isEstCible() && zone.getMobile() == null) {
-                dessinerCible(g2d, x, y);
+                dessinerCible(g, x, y);
             }
-
-            // Dessiner les mobiles
             if (zone.getMobile() instanceof Caisse) {
-                dessinerCaisse(g2d, x, y, zone.isEstCible());
+                dessinerCaisse(g, x, y, zone.isEstCible());
             } else if (zone.getMobile() instanceof Gardien) {
-                dessinerGardien(g2d, x, y, zone.isEstCible());
+                dessinerGardien(g, x, y, zone.isEstCible());
             }
         }
     }
@@ -245,7 +234,7 @@ for (int i = 0; i < 20; i++) {
                           <OBJECT>
                             <ID name="" mc="Infrastructure.TagParameter" uid="3516d9da-38ec-469d-9f9c-19ce61fd01c7"/>
                             <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[Graphics2D]]></ATT>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
                             </ATTRIBUTES>
                             <DEPENDENCIES></DEPENDENCIES>
@@ -311,7 +300,6 @@ for (int i = 0; i < 20; i++) {
                   <ATT name="Content"><![CDATA[if (imgMur != null) {
     g.drawImage(imgMur, x, y, null);
 } else {
-    // Fallback au rendu par défaut si l'image n'est pas disponible
     g.setColor(Color.DARK_GRAY);
     g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
 }
@@ -372,7 +360,7 @@ for (int i = 0; i < 20; i++) {
                           <OBJECT>
                             <ID name="" mc="Infrastructure.TagParameter" uid="682d896f-3583-4d66-a5d1-d6be6be4aba7"/>
                             <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[Graphics2D]]></ATT>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
                             </ATTRIBUTES>
                             <DEPENDENCIES></DEPENDENCIES>
@@ -438,7 +426,6 @@ for (int i = 0; i < 20; i++) {
                   <ATT name="Content"><![CDATA[if (imgCible != null) {
     g.drawImage(imgCible, x, y, null);
 } else {
-    // Fallback au rendu par défaut
     g.setColor(Color.RED);
     int marge = TAILLE_CASE / 4;
     g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
@@ -500,7 +487,7 @@ for (int i = 0; i < 20; i++) {
                           <OBJECT>
                             <ID name="" mc="Infrastructure.TagParameter" uid="be1d2df1-c577-4336-8f30-41048275e333"/>
                             <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[Graphics2D]]></ATT>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
                             </ATTRIBUTES>
                             <DEPENDENCIES></DEPENDENCIES>
@@ -590,7 +577,6 @@ for (int i = 0; i < 20; i++) {
 } else if (imgCaisse != null) {
     g.drawImage(imgCaisse, x, y, null);
 } else {
-    // Fallback au rendu par défaut
     g.setColor(surCible ? new Color(139, 69, 19) : Color.ORANGE);
     g.fillRect(x + 2, y + 2, TAILLE_CASE - 4, TAILLE_CASE - 4);
 }
@@ -651,7 +637,7 @@ for (int i = 0; i < 20; i++) {
                           <OBJECT>
                             <ID name="" mc="Infrastructure.TagParameter" uid="7700ce44-b5f3-4aba-bf8e-e2eb8311149e"/>
                             <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[Graphics2D]]></ATT>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
                             </ATTRIBUTES>
                             <DEPENDENCIES></DEPENDENCIES>
@@ -736,16 +722,13 @@ for (int i = 0; i < 20; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="42411af9-3988-4f8c-a079-6a5742284723"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[if (surCible && imgGardienSurCible != null) {
-    g.drawImage(imgGardienSurCible, x, y, null);
-} else if (imgGardien != null) {
-    g.drawImage(imgGardien, x, y, null);
+                  <ATT name="Content"><![CDATA[BufferedImage imageGardien = getImageGardien();
+if (surCible) {
+    dessinerCible(g, x, y);
+}
+if (imageGardien != null) {
+    g.drawImage(imageGardien, x, y, null);
 } else {
-    // Fallback au rendu par défaut
-    if (surCible) {
-        g.setColor(new Color(255, 192, 203));
-        g.fillOval(x + 2, y + 2, TAILLE_CASE - 4, TAILLE_CASE - 4);
-    }
     g.setColor(Color.BLUE);
     g.fillOval(x + 4, y + 4, TAILLE_CASE - 8, TAILLE_CASE - 8);
 }
@@ -781,28 +764,20 @@ for (int i = 0; i < 20; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="7aaaec0e-88ae-4e90-a285-3511579c11da"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try {
-    // Charger toutes les images depuis le dossier "images"
-    imgMur = ImageIO.read(new File("images/mur.png"));
-    imgSol = ImageIO.read(new File("images/sol.png"));
-    imgCible = ImageIO.read(new File("images/cible.png"));
-    imgCaisse = ImageIO.read(new File("images/caisse.png"));
-    imgCaisseSurCible = ImageIO.read(new File("images/caisse_sur_cible.png"));
-    imgGardien = ImageIO.read(new File("images/gardien.png"));
-    imgGardienSurCible = ImageIO.read(new File("images/gardien_sur_cible.png"));
-    
-    // Redimensionner les images à la taille d'une case
-    imgMur = redimensionnerImage(imgMur);
-    imgSol = redimensionnerImage(imgSol);
-    imgCible = redimensionnerImage(imgCible);
-    imgCaisse = redimensionnerImage(imgCaisse);
-    imgCaisseSurCible = redimensionnerImage(imgCaisseSurCible);
-    imgGardien = redimensionnerImage(imgGardien);
-    imgGardienSurCible = redimensionnerImage(imgGardienSurCible);
-    
+    imgMur = chargerEtRedimensionnerImage("images/mur.png");
+    imgSol = chargerEtRedimensionnerImage("images/sol.png");
+    imgCible = chargerEtRedimensionnerImage("images/cible.png");
+    imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
+    imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
+    imgHerbe = chargerEtRedimensionnerImage("images/herbe.png");
+    imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
+    imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
+    imgGardienGauche = chargerEtRedimensionnerImage("images/gardien_gauche.png");
+    imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
 } catch (IOException e) {
     System.err.println("Erreur lors du chargement des images : " + e.getMessage());
-    // En cas d'erreur, on revient au rendu par défaut avec des formes colorées
-    imgMur = null;
+    imgMur = imgSol = imgCible = imgCaisse = imgCaisseSurCible = imgHerbe = null;
+    imgGardienHaut = imgGardienBas = imgGardienGauche = imgGardienDroite = null;
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -819,7 +794,7 @@ for (int i = 0; i < 20; i++) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="redimensionnerImage" mc="Standard.Operation" uid="23112b1b-092c-4ef3-8f5c-7f9bd4420cb6"/>
+          <ID name="dessinerHerbe" mc="Standard.Operation" uid="d52c1df9-0179-4ea0-aa26-21a1386c22ce"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -827,13 +802,13 @@ for (int i = 0; i < 20; i++) {
             <ATT name="Visibility">Private</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[redimensionnerImage]]></ATT>
+            <ATT name="Name"><![CDATA[dessinerHerbe]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="originalImage" mc="Standard.Parameter" uid="aeb44539-cc34-403f-96c5-74af36764d92"/>
+                <ID name="g" mc="Standard.Parameter" uid="e497ac66-1216-4d22-97c0-dcb1f720925d"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -845,13 +820,13 @@ for (int i = 0; i < 20; i++) {
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[originalImage]]></ATT>
+                  <ATT name="Name"><![CDATA[g]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="eb0c6ab8-ad67-4072-8bff-b5d47cacdd02"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="ba445515-5443-441a-8b27-0507b51481fe"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -859,9 +834,9 @@ for (int i = 0; i < 20; i++) {
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="ef574cd5-07bb-4634-95f3-dd0a0ea2cd5d"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="61cb9a57-7adc-48e1-9149-e995b4af55b2"/>
                             <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
                             </ATTRIBUTES>
                             <DEPENDENCIES></DEPENDENCIES>
@@ -875,10 +850,214 @@ for (int i = 0; i < 20; i++) {
                   </COMP>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="x" mc="Standard.Parameter" uid="e4f1f496-4742-4ad0-aa65-9e407578159a"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[x]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="y" mc="Standard.Parameter" uid="61ca04b2-5ecb-4221-a5cc-1fa211982c30"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[y]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="3dc777c6-74e5-4993-a40c-ada49668f7d4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (imgHerbe != null) {
+    g.drawImage(imgHerbe, x, y, null);
+} else {
+    g.setColor(Color.GREEN);
+    g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="dessinerSol" mc="Standard.Operation" uid="6950601e-9b59-4138-9a85-71f00a3152e9"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[dessinerSol]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="g" mc="Standard.Parameter" uid="ebaef4ee-9e7d-4dbe-b6cc-30fd11e5db71"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[g]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="134d7d54-38ae-4f25-b6db-c59595cc9873"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="70f29f06-b634-4778-a873-169db692105b"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="x" mc="Standard.Parameter" uid="b0b8c1ef-af08-4cec-a0a3-f3f7f0367d96"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[x]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="y" mc="Standard.Parameter" uid="f7bb014b-6b0e-48fe-9716-8b47854d1005"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[y]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="e6d11891-2e54-4705-889c-d63044ffb526"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (imgSol != null) {
+    g.drawImage(imgSol, x, y, null);
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getImageGardien" mc="Standard.Operation" uid="0671d5b5-d53c-4f67-9444-2c9be6acbb44"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getImageGardien]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="321dbe83-6f01-497b-b80c-a8048ea93b88"/>
+                <ID name="" mc="Standard.Parameter" uid="694c9283-999c-4bbb-9c8d-f2a9fd09f35e"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -896,7 +1075,7 @@ for (int i = 0; i < 20; i++) {
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="fb9ecd6b-4952-4cd9-9866-9d7877e1159a"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="7e529357-9f66-44ea-a8ca-0f4d2853cc59"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -904,7 +1083,7 @@ for (int i = 0; i < 20; i++) {
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="d3c7d09e-8464-4cff-92b9-fd4a1044d036"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="fc5285df-90ab-4f82-ab6b-7baec98dbf8e"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -923,9 +1102,162 @@ for (int i = 0; i < 20; i++) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="2e06c97c-cd9b-40aa-8334-723195d547bf"/>
+                <ID name="" mc="Infrastructure.Note" uid="6a3c8f68-d6ae-49f7-b2c0-2aeef4773f74"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return resizedImage;]]></ATT>
+                  <ATT name="Content"><![CDATA[Direction direction = controleur.getGardien().getCurrentDirection();
+switch (direction) {
+    case HAUT: return imgGardienHaut;
+    case BAS: return imgGardienBas;
+    case GAUCHE: return imgGardienGauche;
+    case DROITE: return imgGardienDroite;
+    default: return null;
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="chargerEtRedimensionnerImage" mc="Standard.Operation" uid="6ff5f19d-704d-4f79-9853-b73ea670f89c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[chargerEtRedimensionnerImage]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="chemin" mc="Standard.Parameter" uid="cca54105-2f68-445e-bf3d-2324f2f44411"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[chemin]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="5b0d3e47-60f2-4a79-825a-84abc4559011"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="832959bf-2419-4aeb-ae68-6d4605411b67"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[String]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="75681152-d077-48c9-8626-15b88ab73a81"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b68c6b4e-8f94-4681-a08a-de68e51c432c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="33edffb7-410d-4857-8165-347a4a31713b"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b7972e76-34ea-4ee1-b623-b2718f34136f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="ba0852d7-02dd-475b-8815-7f2fbd556234"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[IOException]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaThrownException" mc="Infrastructure.TagType" uid="003800a8-0000-017c-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="973cd3ba-1507-4042-be15-559e448611a9"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return imageRedimensionnee;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -937,12 +1269,12 @@ for (int i = 0; i < 20; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="26e94975-893b-4486-b49f-c2386053bb2e"/>
+                <ID name="" mc="Infrastructure.Note" uid="4d21d032-c4fa-436f-862d-ab803c9939e1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[BufferedImage resizedImage = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);
-Graphics2D g = resizedImage.createGraphics();
-g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-g.drawImage(originalImage, 0, 0, TAILLE_CASE, TAILLE_CASE, null);
+                  <ATT name="Content"><![CDATA[BufferedImage imageOriginale = ImageIO.read(new File(chemin));
+BufferedImage imageRedimensionnee = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);
+Graphics2D g = imageRedimensionnee.createGraphics();
+g.drawImage(imageOriginale, 0, 0, TAILLE_CASE, TAILLE_CASE, null);
 g.dispose();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -1041,7 +1373,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b8b5765b-3add-490e-80d2-2284cf97d751"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f29b0b1e-f91b-40a3-a069-72ebc9ac312b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1049,22 +1381,6 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="abb7aa30-de6d-4718-ace5-2087426be04d"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Déclaration des images]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1114,7 +1430,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8a66b0c5-db01-425b-a8f5-e8aca1150f94"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b4aa241e-3895-459c-ae2b-24713aa7697b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1171,7 +1487,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8b4282dd-6af7-4384-b398-23672908ebdc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0ab31a6e-7622-4501-86f6-878534f25d39"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1228,7 +1544,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c3d5f5fc-f737-4114-a99e-621656cfe181"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f7b7b737-f632-4242-a98a-f6eee9e8d27c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1285,121 +1601,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4ae7b53c-65a4-4e2d-b6bd-9f525b93b809"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="imgGardien" mc="Standard.Attribute" uid="2785e069-4820-4ef5-9507-4a9ed30d4474"/>
-          <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[imgGardien]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="Tag">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d3f6ecf4-1bda-4453-9f4d-0bbac671621c"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Actual">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="e7d3284a-a750-40f9-8522-093d7acedc57"/>
-                      <ATTRIBUTES>
-                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES></DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0e44b3d7-b3f7-4919-8ac5-b4087181f231"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="imgGardienSurCible" mc="Standard.Attribute" uid="821005a5-eb9a-4f47-a6fa-4c4fa18866be"/>
-          <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[imgGardienSurCible]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="Tag">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8287d391-c9d0-48c4-b9b6-f5a8ad3a4344"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Actual">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="c0877b98-b034-4543-b30f-f969c093e20c"/>
-                      <ATTRIBUTES>
-                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES></DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="056d1b55-70e7-49c5-bcbe-acf610d58ec1"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="02a02b3f-8379-4f9d-8788-d0ed06481281"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1445,6 +1647,291 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="003800a8-0000-0161-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="imgGardienHaut" mc="Standard.Attribute" uid="16ac0ead-f9f7-4dfb-8b00-bbe2d717d666"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[imgGardienHaut]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="799abf17-2761-47f1-b5b0-a16de0be713a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="9b96424e-3e53-4db2-b38f-98d83cdf64bd"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="78834d31-e5e3-4696-9689-dfc1f759c6c0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="imgGardienBas" mc="Standard.Attribute" uid="4391e953-fa6e-416a-84b0-a4727b08d446"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[imgGardienBas]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8a7fc5b1-0060-47c8-b53d-d1c846dfc48c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="db6222c7-49ba-4060-82e9-b61a64776116"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1fdc1765-28e8-40dd-af2e-5ac444c1c0f9"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="imgGardienGauche" mc="Standard.Attribute" uid="bf27c7f3-0c97-434a-bff9-b3e9a53a9795"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[imgGardienGauche]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b3806e6b-f52d-4312-b415-539177d0a922"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="7d098cd1-9373-4f20-b8c4-6eddc6bce182"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="63584666-42b7-4881-88cb-46eaa740a0fc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="imgGardienDroite" mc="Standard.Attribute" uid="04873657-e3a5-47d0-a54c-1b2ee82bc70d"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[imgGardienDroite]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b64a5038-856b-4e20-9370-0b1150c45620"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="6ed9a5e2-ea69-49d5-b0b0-95f1b069c0e3"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c7bd5422-e58a-4d93-9ab1-95e4466fc6f6"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="imgHerbe" mc="Standard.Attribute" uid="809a9762-1041-4dbd-ab92-b6af10559807"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[imgHerbe]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="028e8e14-721b-4b4e-ad58-0d5510168d09"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="0d6b4a35-ddf0-4877-b6b7-fca6d2efa8cd"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5afd9c1c-c1c7-4a7b-8020-ed8059d5a088"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1514,7 +2001,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="443d746a-95f3-4c77-9ea3-d48d7680859e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4bac674d-b8e0-4bf1-98f5-3f72a75e2982"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

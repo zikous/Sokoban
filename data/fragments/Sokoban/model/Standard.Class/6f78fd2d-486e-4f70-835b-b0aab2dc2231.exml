@@ -79,23 +79,6 @@
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="c9d6b841-9f1c-4faa-8f5d-d3a3331a6b73"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Méthode abstraite qui permet à chaque sous-classe (par exemple, Gardien ou Caisse) de définir son propre comportement
-// de déplacement. Cette méthode sera implémentée dans les sous-classes.]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -150,20 +133,6 @@
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="fd982663-4f92-42c8-90c3-6d006dd6f90e"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Permet de récupérer la zone actuelle de l'objet mobile.]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -208,16 +177,12 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="e303e7b0-1999-4d9c-a8c5-76bfafea3602"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Si l'objet mobile était déjà dans une zone, on enlève la référence à cet objet dans cette zone
-if (this.zone != null) {
-    this.zone.setMobile(null);  // On enlève l'objet mobile de l'ancienne zone
+                  <ATT name="Content"><![CDATA[if (this.zone != null) {
+    this.zone.setMobile(null);
 }
-
-this.zone = zone;  // On définit la nouvelle zone de l'objet mobile
-
-// Si la nouvelle zone n'est pas nulle, on associe l'objet mobile à cette zone
+this.zone = zone;
 if (zone != null) {
-    zone.setMobile(this);  // On place l'objet mobile dans la nouvelle zone
+    zone.setMobile(this);
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -227,21 +192,6 @@ if (zone != null) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ddd1487a-9ff0-4202-a162-858effa2fc94"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Permet de définir la zone de l'objet mobile. Cette méthode met à jour la zone et veille à maintenir
-// la cohérence de la relation entre l'objet mobile et la zone (en la retirant de l'ancienne zone si nécessaire).]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

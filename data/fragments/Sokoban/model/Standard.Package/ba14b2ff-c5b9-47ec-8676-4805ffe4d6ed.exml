@@ -16,6 +16,8 @@
       <COMP relation="OwnedElement">
         <COMPID name="MonAfficheur" mc="Standard.Class" uid="52ef6f21-2604-4f8f-8bea-0a23c5eacf4d"/>
         <COMPID name="MaFenetre" mc="Standard.Class" uid="2c98f262-fb7c-420e-8e27-d7b44a78c0dc"/>
+        <COMPID name="EcranAccueil" mc="Standard.Class" uid="d90c584a-242a-4be9-93e0-7080ac40e14c"/>
+        <COMPID name="PanneauAvecFond" mc="Standard.Class" uid="300cc6b9-f489-4167-a57d-84ebfd6a60f7"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
