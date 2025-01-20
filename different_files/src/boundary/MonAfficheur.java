@@ -46,26 +46,20 @@ public class MonAfficheur extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Entrepot entrepot = controleur.getEntrepot();
-        
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
                 int x = j * TAILLE_CASE;
                 int y = i * TAILLE_CASE;
-        
                 dessinerHerbe(g, x, y);
-        
                 if (pos != null) {
                     Zone zone = pos.getZone();
-        
                     dessinerSol(g, x, y);
-        
                     if (zone.isEstMur()) {
                         dessinerMur(g, x, y);
                     } else if (zone.isEstCible() && zone.getMobile() == null) {
                         dessinerCible(g, x, y);
                     }
-        
                     if (zone.getMobile() instanceof Caisse) {
                         dessinerCaisse(g, x, y, zone.isEstCible());
                     } else if (zone.getMobile() instanceof Gardien) {
@@ -108,11 +102,9 @@ public class MonAfficheur extends JPanel {
 
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
         BufferedImage imageGardien = getImageGardien();
-        
         if (surCible) {
             dessinerCible(g, x, y);
         }
-        
         if (imageGardien != null) {
             g.drawImage(imageGardien, x, y, null);
         } else {
@@ -129,23 +121,14 @@ public class MonAfficheur extends JPanel {
             imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
             imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
             imgHerbe = chargerEtRedimensionnerImage("images/herbe.png");
-        
             imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
             imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
             imgGardienGauche = chargerEtRedimensionnerImage("images/gardien_gauche.png");
             imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
         } catch (IOException e) {
             System.err.println("Erreur lors du chargement des images : " + e.getMessage());
-            imgMur = null;
-            imgSol = null;
-            imgCible = null;
-            imgCaisse = null;
-            imgCaisseSurCible = null;
-            imgHerbe = null;
-            imgGardienHaut = null;
-            imgGardienBas = null;
-            imgGardienGauche = null;
-            imgGardienDroite = null;
+            imgMur = imgSol = imgCible = imgCaisse = imgCaisseSurCible = imgHerbe = null;
+            imgGardienHaut = imgGardienBas = imgGardienGauche = imgGardienDroite = null;
         }
     }
 

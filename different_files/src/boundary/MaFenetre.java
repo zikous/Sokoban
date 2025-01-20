@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import control.Controleur;
-import entity.*;
 import entity.Direction;
 
 public class MaFenetre extends JFrame implements KeyListener {
@@ -17,27 +16,19 @@ public class MaFenetre extends JFrame implements KeyListener {
     public MaFenetre(Controleur controleur) {
         super("Sokoban");
         this.controleur = controleur;
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setLocationRelativeTo(null);
-        
+        initFrame();
         afficherEcranAccueil();
-        setVisible(true);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         Direction direction = getDirectionFromKeyEvent(e);
-        
         if (direction != null) {
             controleur.action(direction);
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             controleur.reinitialiserNiveau();
         }
-        
         monAfficheur.repaint();
-        
         if (controleur.estTermine()) {
             handleNiveauTermine();
         }
@@ -63,33 +54,14 @@ public class MaFenetre extends JFrame implements KeyListener {
 
     private void handleNiveauTermine() {
         if (controleur.estDernierNiveau()) {
-            JOptionPane.showMessageDialog(this, "Félicitations ! Vous avez terminé tous les niveaux !",
-                    "Jeu terminé", JOptionPane.INFORMATION_MESSAGE);
+            showMessage("Félicitations ! Vous avez terminé tous les niveaux !", "Jeu terminé");
             System.exit(0);
         } else {
-            int choix = JOptionPane.showConfirmDialog(this,
-                    "Niveau terminé ! Voulez-vous passer au niveau suivant ?",
-                    "Niveau terminé",
-                    JOptionPane.YES_NO_OPTION);
-            
+            int choix = showConfirmDialog("Niveau terminé ! Voulez-vous passer au niveau suivant ?", "Niveau terminé");
             if (choix == JOptionPane.YES_OPTION) {
                 controleur.passerAuNiveauSuivant();
             } else {
-                Object[] options = { "Quitter", "Rejouer le niveau" };
-                int choixQuitterOuRejouer = JOptionPane.showOptionDialog(this,
-                        "Que souhaitez-vous faire ?",
-                        "Niveau terminé",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,
-                        null,
-                        options,
-                        options[1]);
-            
-                if (choixQuitterOuRejouer == JOptionPane.YES_OPTION) {
-                    System.exit(0);
-                } else {
-                    controleur.reinitialiserNiveau();
-                }
+                handleRejouerOuQuitter();
             }
             monAfficheur.repaint();
         }
@@ -105,22 +77,47 @@ public class MaFenetre extends JFrame implements KeyListener {
 
     public void demarrerJeu() {
         getContentPane().removeAll();
-        
         JPanel panelCentre = new JPanel(new BorderLayout());
         panelCentre.setBackground(new Color(240, 240, 240));
-        
         this.monAfficheur = new MonAfficheur(controleur);
         panelCentre.add(monAfficheur, BorderLayout.CENTER);
-        
         getContentPane().add(panelCentre);
-        
         addKeyListener(this);
         setFocusable(true);
         requestFocusInWindow();
-        
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    private void initFrame() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(800, 600);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    private void handleRejouerOuQuitter() {
+        Object[] options = { "Quitter", "Rejouer le niveau" };
+        int choix = showOptionDialog("Que souhaitez-vous faire ?", "Niveau terminé", options);
+        if (choix == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else {
+            controleur.reinitialiserNiveau();
+        }
+    }
+
+    private void showMessage(String message, String title) {
+        JOptionPane.showMessageDialog(this, message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private int showConfirmDialog(String message, String title) {
+        return JOptionPane.showConfirmDialog(this, message, title, JOptionPane.YES_NO_OPTION);
+    }
+
+    private int showOptionDialog(String message, String title, Object[] options) {
+        return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
+                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
     }
 
 }
