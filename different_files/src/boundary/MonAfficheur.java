@@ -32,6 +32,8 @@ public class MonAfficheur extends JPanel {
 
     private BufferedImage imgGardienDroite;
 
+    private BufferedImage imgHerbe;
+
     private Controleur controleur;
 
     public MonAfficheur(Controleur controleur) {
@@ -48,14 +50,15 @@ public class MonAfficheur extends JPanel {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
+                int x = j * TAILLE_CASE;
+                int y = i * TAILLE_CASE;
+        
+                dessinerHerbe(g, x, y);
+        
                 if (pos != null) {
                     Zone zone = pos.getZone();
-                    int x = j * TAILLE_CASE;
-                    int y = i * TAILLE_CASE;
         
-                    if (imgSol != null) {
-                        g.drawImage(imgSol, x, y, null);
-                    }
+                    dessinerSol(g, x, y);
         
                     if (zone.isEstMur()) {
                         dessinerMur(g, x, y);
@@ -104,33 +107,10 @@ public class MonAfficheur extends JPanel {
     }
 
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
-        BufferedImage imageGardien = null;
-        
-        Direction direction = controleur.getGardien().getCurrentDirection();
-        
-        switch (direction) {
-            case HAUT:
-                imageGardien = imgGardienHaut;
-                break;
-            case BAS:
-                imageGardien = imgGardienBas;
-                break;
-            case GAUCHE:
-                imageGardien = imgGardienGauche;
-                break;
-            case DROITE:
-                imageGardien = imgGardienDroite;
-                break;
-        }
+        BufferedImage imageGardien = getImageGardien();
         
         if (surCible) {
-            if (imgCible != null) {
-                g.drawImage(imgCible, x, y, null);
-            } else {
-                g.setColor(Color.RED);
-                int marge = TAILLE_CASE / 4;
-                g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
-            }
+            dessinerCible(g, x, y);
         }
         
         if (imageGardien != null) {
@@ -148,6 +128,7 @@ public class MonAfficheur extends JPanel {
             imgCible = chargerEtRedimensionnerImage("images/cible.png");
             imgCaisse = chargerEtRedimensionnerImage("images/caisse.png");
             imgCaisseSurCible = chargerEtRedimensionnerImage("images/caisse_sur_cible.png");
+            imgHerbe = chargerEtRedimensionnerImage("images/herbe.png");
         
             imgGardienHaut = chargerEtRedimensionnerImage("images/gardien_haut.png");
             imgGardienBas = chargerEtRedimensionnerImage("images/gardien_bas.png");
@@ -160,10 +141,37 @@ public class MonAfficheur extends JPanel {
             imgCible = null;
             imgCaisse = null;
             imgCaisseSurCible = null;
+            imgHerbe = null;
             imgGardienHaut = null;
             imgGardienBas = null;
             imgGardienGauche = null;
             imgGardienDroite = null;
+        }
+    }
+
+    private void dessinerHerbe(Graphics g, int x, int y) {
+        if (imgHerbe != null) {
+            g.drawImage(imgHerbe, x, y, null);
+        } else {
+            g.setColor(Color.GREEN);
+            g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
+        }
+    }
+
+    private void dessinerSol(Graphics g, int x, int y) {
+        if (imgSol != null) {
+            g.drawImage(imgSol, x, y, null);
+        }
+    }
+
+    private BufferedImage getImageGardien() {
+        Direction direction = controleur.getGardien().getCurrentDirection();
+        switch (direction) {
+            case HAUT: return imgGardienHaut;
+            case BAS: return imgGardienBas;
+            case GAUCHE: return imgGardienGauche;
+            case DROITE: return imgGardienDroite;
+            default: return null;
         }
     }
 
