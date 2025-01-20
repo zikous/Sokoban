@@ -77,17 +77,13 @@ public class MaFenetre extends JFrame implements KeyListener {
 
     public void demarrerJeu() {
         getContentPane().removeAll();
-        JPanel panelCentre = new JPanel(new BorderLayout());
-        panelCentre.setBackground(new Color(240, 240, 240));
         this.monAfficheur = new MonAfficheur(controleur);
-        panelCentre.add(monAfficheur, BorderLayout.CENTER);
-        getContentPane().add(panelCentre);
+        getContentPane().add(monAfficheur, BorderLayout.CENTER);
         addKeyListener(this);
         setFocusable(true);
         requestFocusInWindow();
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
+        revalidate();
+        repaint();
     }
 
     private void initFrame() {
@@ -117,7 +113,7 @@ public class MaFenetre extends JFrame implements KeyListener {
 
     private int showOptionDialog(String message, String title, Object[] options) {
         return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
     }
 
 }

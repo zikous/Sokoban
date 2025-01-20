@@ -62,13 +62,19 @@ public class MonAfficheur extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        // Dessiner l'arrière-plan (herbe) sur tout le panneau
+        for (int x = 0; x < getWidth(); x += TAILLE_CASE) {
+            for (int y = 0; y < getHeight(); y += TAILLE_CASE) {
+                dessinerHerbe(g, x, y);
+            }
+        }
+        
         Entrepot entrepot = controleur.getEntrepot();
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 Position pos = entrepot.getPosition(i, j);
                 int x = j * TAILLE_CASE;
                 int y = i * TAILLE_CASE;
-                dessinerHerbe(g, x, y);
                 if (pos != null) {
                     Zone zone = pos.getZone();
                     dessinerSol(g, x, y);
@@ -149,8 +155,6 @@ public class MonAfficheur extends JPanel {
             imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
         } catch (IOException e) {
             System.err.println("Erreur lors du chargement des images : " + e.getMessage());
-            imgMur = imgSol = imgCible = imgCaisse = imgCaisseSurCible = imgHerbe = null;
-            imgGardienHaut = imgGardienBas = imgGardienGauche = imgGardienDroite = null;
         }
     }
 

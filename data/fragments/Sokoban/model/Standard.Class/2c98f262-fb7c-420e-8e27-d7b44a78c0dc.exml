@@ -536,17 +536,13 @@ repaint();
                 <ID name="" mc="Infrastructure.Note" uid="977d6dca-4ff6-4d2b-917b-23507bfaba5c"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[getContentPane().removeAll();
-JPanel panelCentre = new JPanel(new BorderLayout());
-panelCentre.setBackground(new Color(240, 240, 240));
 this.monAfficheur = new MonAfficheur(controleur);
-panelCentre.add(monAfficheur, BorderLayout.CENTER);
-getContentPane().add(panelCentre);
+getContentPane().add(monAfficheur, BorderLayout.CENTER);
 addKeyListener(this);
 setFocusable(true);
 requestFocusInWindow();
-pack();
-setLocationRelativeTo(null);
-setVisible(true);
+revalidate();
+repaint();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -1091,7 +1087,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 <ID name="" mc="Infrastructure.Note" uid="2640336e-55d2-4dc0-9997-7713dd46abe7"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]);]]></ATT>
+                JOptionPane.QUESTION_MESSAGE, null, options, options[1]);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1208,7 +1204,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b15726b0-3832-43ad-9eef-6c80b707dd7a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fbbaed0c-8d2b-4a15-a31c-a18fa89f3acb"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1283,7 +1279,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4c2611dc-2fd8-4180-bb0a-2193a861bcae"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9db3fba2-87b5-45e8-8425-9d4b5f66675e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

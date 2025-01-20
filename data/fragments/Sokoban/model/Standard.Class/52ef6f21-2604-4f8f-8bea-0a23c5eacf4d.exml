@@ -154,13 +154,19 @@ chargerImages();
                 <ID name="" mc="Infrastructure.Note" uid="32de219c-70e6-4ffd-98d6-29f1e8fdb5d4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[super.paintComponent(g);
+// Dessiner l'arrière-plan (herbe) sur tout le panneau
+for (int x = 0; x < getWidth(); x += TAILLE_CASE) {
+    for (int y = 0; y < getHeight(); y += TAILLE_CASE) {
+        dessinerHerbe(g, x, y);
+    }
+}
+
 Entrepot entrepot = controleur.getEntrepot();
 for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 20; j++) {
         Position pos = entrepot.getPosition(i, j);
         int x = j * TAILLE_CASE;
         int y = i * TAILLE_CASE;
-        dessinerHerbe(g, x, y);
         if (pos != null) {
             Zone zone = pos.getZone();
             dessinerSol(g, x, y);
@@ -776,8 +782,6 @@ if (imageGardien != null) {
     imgGardienDroite = chargerEtRedimensionnerImage("images/gardien_droite.png");
 } catch (IOException e) {
     System.err.println("Erreur lors du chargement des images : " + e.getMessage());
-    imgMur = imgSol = imgCible = imgCaisse = imgCaisseSurCible = imgHerbe = null;
-    imgGardienHaut = imgGardienBas = imgGardienGauche = imgGardienDroite = null;
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -1373,7 +1377,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f29b0b1e-f91b-40a3-a069-72ebc9ac312b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="313c90e1-140e-4470-8611-59962dbe567f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1430,7 +1434,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b4aa241e-3895-459c-ae2b-24713aa7697b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0376e4b6-2568-46c4-804a-571c4a263e38"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1487,7 +1491,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0ab31a6e-7622-4501-86f6-878534f25d39"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="139c86bd-8a4f-45e2-bf97-938c1bea505c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1544,7 +1548,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f7b7b737-f632-4242-a98a-f6eee9e8d27c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ea0fdbda-2471-4bd5-9e21-f2c6e78f0ef3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1601,7 +1605,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="02a02b3f-8379-4f9d-8788-d0ed06481281"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="433c9457-0325-4603-b767-3b763f7680f0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1696,7 +1700,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="78834d31-e5e3-4696-9689-dfc1f759c6c0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dc6a3379-9104-426f-9dea-10844f1788bc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1753,7 +1757,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="1fdc1765-28e8-40dd-af2e-5ac444c1c0f9"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7fbe4ff2-240a-47d0-a492-62e1fb3fb71a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1810,7 +1814,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="63584666-42b7-4881-88cb-46eaa740a0fc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e2ac713f-fccd-4849-9416-18979236eb99"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1867,7 +1871,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c7bd5422-e58a-4d93-9ab1-95e4466fc6f6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="05e00b55-e6b9-4112-a632-e89e1e9ac4f9"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1924,7 +1928,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5afd9c1c-c1c7-4a7b-8020-ed8059d5a088"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4d7a5fe2-2883-40a5-98a3-a3581b67dd75"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2001,7 +2005,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4bac674d-b8e0-4bf1-98f5-3f72a75e2982"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3f97a249-f93c-4a46-a6e4-c47db5fe8966"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

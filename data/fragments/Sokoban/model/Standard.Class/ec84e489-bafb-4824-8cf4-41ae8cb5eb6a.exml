@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="TestSokoban" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="TestSokobanText" version="4">
   <OBJECT>
-    <ID name="TestSokoban" mc="Standard.Class" uid="ec84e489-bafb-4824-8cf4-41ae8cb5eb6a"/>
+    <ID name="TestSokobanText" mc="Standard.Class" uid="ec84e489-bafb-4824-8cf4-41ae8cb5eb6a"/>
     <PID name="control" mc="Standard.Package" uid="57308277-cba6-432d-910c-3b34788341cf"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
@@ -11,7 +11,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[TestSokoban]]></ATT>
+      <ATT name="Name"><![CDATA[TestSokobanText]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
