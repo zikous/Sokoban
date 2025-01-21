@@ -644,7 +644,7 @@ for (int i = 0; i < niveau.length; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a0e3d565-31a4-4855-ba7a-0437608cf9c7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b863adcf-00f2-4d7f-94c9-0a909a63b262"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -721,7 +721,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9db50c97-0fdf-45e3-a2b4-536528a0e8b4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fae766b1-8a9f-4676-b55b-ecea5bcc9c51"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -796,7 +796,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="fa27781a-edba-477c-bbca-64741d892551"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cd60eaf0-4416-4352-9526-d8b7508d73b6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -871,7 +871,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a292d5f9-e6bb-4c9e-9e34-c71430588b94"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="09e06cbb-bacc-4da2-99de-2bf75ade1a4e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

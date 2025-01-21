@@ -245,7 +245,7 @@ if (imageDeFond != null) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="04fe09da-ac47-4cc3-bece-27077c8d7acf"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8fabe50d-0276-4019-aa27-37e6b2e8197d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
