@@ -16,6 +16,7 @@
       <COMP relation="OwnedBehavior">
         <COMPID name="Interaction" mc="Standard.Interaction" uid="991fd049-a5c2-4b75-a64a-dea6a9ed4efe"/>
         <COMPID name="Interaction1" mc="Standard.Interaction" uid="3ffd53d1-f1d7-4335-b268-2df2fcf8f60b"/>
+        <COMPID name="Interaction2" mc="Standard.Interaction" uid="7d76e6ef-31a6-48d5-86ff-56c4b73dc6ed"/>
       </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="entity" mc="Standard.Package" uid="ff319cd5-b5e2-4db4-8d27-f3da1bcfaf11"/>
