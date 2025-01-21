@@ -1,4 +1,4 @@
-#Tue Jan 21 12:37:49 CET 2025
+#Tue Jan 21 12:39:59 CET 2025
 org.modelio.app.diagram.editor.OpenedDiagrams0='entity Class diagram' {3058e818-d532-4a20-9cb9-55ed80433f33} Standard.ClassDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
