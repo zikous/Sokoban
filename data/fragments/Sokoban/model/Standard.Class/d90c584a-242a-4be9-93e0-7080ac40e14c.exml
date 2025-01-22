@@ -714,7 +714,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="eb617f7c-1e47-48d6-9731-3221ee06d3e0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7fceb15d-8091-4e4f-a325-a8ef93160ed3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

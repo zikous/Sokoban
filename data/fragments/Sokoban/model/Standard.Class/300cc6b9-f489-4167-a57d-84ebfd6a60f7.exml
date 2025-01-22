@@ -246,7 +246,7 @@ if (imageDeFond != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c2570ec9-196a-4ac4-aa42-f1713261fa23"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0966417a-0e53-4990-a96d-e00548571e89"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -303,19 +303,6 @@ if (imageDeFond != null) {
           <DEPENDENCIES>
             <LINK relation="ImportedPackage">
               <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="6e0f878e-a4f2-4b1f-acf9-dd211a479ca8"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

@@ -1003,7 +1003,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a46596c6-9e88-4bcc-98d7-4d4a76e2844e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bf34395c-7ed0-4ac0-aba9-12429eecc766"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1094,7 +1094,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9d5b2121-97db-490b-865d-4cfa158d466a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="047e4d58-1676-4c4e-a39a-6d864ea7c058"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1151,19 +1151,6 @@ if (choix == JOptionPane.YES_OPTION) {
           <DEPENDENCIES>
             <LINK relation="ImportedPackage">
               <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="ad161dbb-a5f2-409e-9b62-8cf5a9fe9169"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="event" mc="Standard.Package" uid="81bf9b25-1188-4608-865f-743955ad67fa"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

@@ -1233,7 +1233,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e8dbc5de-ef6d-45d5-87e6-cae5c252152b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e48e0c78-d31b-4e58-8a35-59a207aed5ff"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1324,7 +1324,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5cfe453d-3391-4e5f-b108-fb352d8cca0b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="84813a92-deed-4b4e-bcce-7344d32a8aa9"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1415,7 +1415,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="85c4e5d1-2817-4585-9aa6-a620cc1eb1a7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8d17191b-ee07-4359-a590-b57dd0c9180d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1506,7 +1506,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f6faafd8-cdb6-4a03-bf61-a786e3e4c48e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="053bbe79-5685-47f4-83ff-a63c6b5b268d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1597,7 +1597,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="620d2a03-4831-43f4-821e-d09ba6752da4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4faa9420-a6ba-4055-89ed-f6ccf6dcfc44"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1688,7 +1688,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="399c8011-a04e-4f90-914c-7bc4807d476c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1e9294c1-0c37-4215-bdf0-fb979ac9fa55"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1779,7 +1779,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2aebde68-9d40-4249-96f9-15ab29c76495"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="627611ee-a8fd-4eb7-8305-076177c76d5b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1870,7 +1870,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7f11933b-eed4-482e-bed7-0f96c545b9fd"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="adab2489-ce88-4b08-862c-1d5d6673316b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1961,7 +1961,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="eefb9b22-521d-4179-8864-2d4beb7cdf2b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6d8fecf5-9f7f-4d1c-8513-e733652c2d0f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2052,7 +2052,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8b904b50-e3bb-40b5-af4c-f15342f26644"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c3dc5a7a-7e3d-4fa7-bf14-f5fbcc31d5d5"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2143,7 +2143,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="72271a9e-aeb8-4aee-b210-9805132b5076"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5a2a1233-1604-4dde-b5d8-21bf8e713dad"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2213,19 +2213,6 @@ g.dispose();
           <DEPENDENCIES>
             <LINK relation="ImportedPackage">
               <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="24c58339-3200-4fba-8340-12cc2e73b01d"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
