@@ -17,6 +17,8 @@
         <COMPID name="Interaction" mc="Standard.Interaction" uid="991fd049-a5c2-4b75-a64a-dea6a9ed4efe"/>
         <COMPID name="Interaction1" mc="Standard.Interaction" uid="3ffd53d1-f1d7-4335-b268-2df2fcf8f60b"/>
         <COMPID name="Interaction2" mc="Standard.Interaction" uid="7d76e6ef-31a6-48d5-86ff-56c4b73dc6ed"/>
+        <COMPID name="Interaction3" mc="Standard.Interaction" uid="1879990b-2632-4f68-a58b-337efb9f5253"/>
+        <COMPID name="Interaction4" mc="Standard.Interaction" uid="c4d5c142-a254-4eff-81d6-b0158c2ce3c9"/>
       </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="entity" mc="Standard.Package" uid="ff319cd5-b5e2-4db4-8d27-f3da1bcfaf11"/>
