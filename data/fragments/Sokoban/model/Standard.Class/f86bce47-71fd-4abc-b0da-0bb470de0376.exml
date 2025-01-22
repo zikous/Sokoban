@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="main" mc="Standard.Operation" uid="b7713044-c424-4a2b-ada3-7b45ade957ae"/>
+          <ID name="main" mc="Standard.Operation" uid="64c2c73a-a72e-46c2-9f40-dc89854b09fb"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="args" mc="Standard.Parameter" uid="6b612f84-5bf1-4e19-8a8f-d8815cef1974"/>
+                <ID name="args" mc="Standard.Parameter" uid="a4dca27e-376a-4de5-82aa-0c5acb1ccf9b"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -52,7 +52,7 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="a5146f50-eb47-443d-8855-48a06dfeb453"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="60b34495-e99e-40e4-aa3a-37d72c1138c3"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -60,7 +60,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="7c7eb27e-5c40-4340-86ba-7b89fa02da7b"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="a456ced9-f531-423b-9c7f-f128615b188e"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -79,7 +79,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="362040a6-5dde-4c8b-80cf-a4c0de49b703"/>
+                <ID name="" mc="Infrastructure.Note" uid="5e2ec433-d763-4764-8134-ca50e0ba39f7"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Controleur controleur = new Controleur(); // Crée le contrôleur du jeu
 MaFenetre fenetre = new MaFenetre(controleur); // Crée la fenêtre principale

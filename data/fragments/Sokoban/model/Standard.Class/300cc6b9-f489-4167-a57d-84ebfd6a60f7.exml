@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="PanneauAvecFond" mc="Standard.Operation" uid="12618bb8-9473-4fb4-b8b9-b7bf9a135249"/>
+          <ID name="PanneauAvecFond" mc="Standard.Operation" uid="987d4085-9376-4c9b-b969-06a47113ad0c"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -34,7 +34,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="f24a6320-856a-4e79-8a10-3673a15c16af"/>
+                <ID name="" mc="Infrastructure.Note" uid="32b7fa88-64a5-4e26-929e-ab4907f5cc3f"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try {
     imageDeFond = ImageIO.read(new File("images/herbe.png")); // Charge l'image de fond
@@ -57,7 +57,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="paintComponent" mc="Standard.Operation" uid="2bdbd24b-15b4-4c5d-aaaa-f0d8da443f9f"/>
+          <ID name="paintComponent" mc="Standard.Operation" uid="7db52dd6-944b-405d-8238-2f76f5d349a8"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -71,7 +71,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="g" mc="Standard.Parameter" uid="d7cbaf89-07c1-40f2-9ba0-a7f81ac4c5f9"/>
+                <ID name="g" mc="Standard.Parameter" uid="1e93636a-1087-4aff-9afc-c6210276f303"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -95,7 +95,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="27806ba9-acaa-4087-bb89-8de9f428330c"/>
+                <ID name="" mc="Infrastructure.Note" uid="210058bc-c3d0-4771-91eb-5efb82f585c0"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -109,7 +109,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="b89849f6-f9c8-4c09-b107-93aff9883741"/>
+                <ID name="" mc="Infrastructure.Note" uid="97e41143-8e28-451b-a685-088afd559e16"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[super.paintComponent(g);
 if (imageDeFond != null) {
@@ -146,7 +146,7 @@ if (imageDeFond != null) {
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="serialVersionUID" mc="Standard.Attribute" uid="74d5a686-1203-4001-ab06-8af6a92a43b9"/>
+          <ID name="serialVersionUID" mc="Standard.Attribute" uid="798f898d-3e05-43ec-801f-6c5876546537"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[1L]]></ATT>
@@ -169,7 +169,7 @@ if (imageDeFond != null) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0e321f31-9310-4ae5-8d99-f9380255d378"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cb37fdd5-307d-46ab-8890-c71976b90c02"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -246,7 +246,7 @@ if (imageDeFond != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="80561b05-1b82-4129-b7ce-22058f3046b6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c2570ec9-196a-4ac4-aa42-f1713261fa23"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="deplacer" mc="Standard.Operation" uid="e5a6eff8-29c5-4e6d-ab8b-0c127e57d5df"/>
+          <ID name="deplacer" mc="Standard.Operation" uid="41894ddd-772b-44c5-b905-5ef4b5f091a3"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="direction" mc="Standard.Parameter" uid="61223933-07fa-4643-9469-ce09e4f09b72"/>
+                <ID name="direction" mc="Standard.Parameter" uid="1d9d6f81-d064-45ba-9c95-3fd37204da0c"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -57,7 +57,7 @@
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="91368783-e404-49ac-b94f-6ca85805cc7b"/>
+                <ID name="" mc="Standard.Parameter" uid="179aba9b-c15e-4a9d-82ba-d06e136d50e3"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -82,7 +82,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getZone" mc="Standard.Operation" uid="8237b83e-e9e3-4cb4-a92d-36412ee2416a"/>
+          <ID name="getZone" mc="Standard.Operation" uid="7cdf6697-9ce5-4524-9882-5f0daa4ab409"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -96,7 +96,7 @@
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="d765e391-c606-43ba-a3c5-6b0319a3a050"/>
+                <ID name="" mc="Standard.Parameter" uid="ac60f9e1-0a90-4ca9-a46d-64c6e43f08ee"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -120,7 +120,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ad8f336e-d47b-4fff-a445-09fe179db01d"/>
+                <ID name="" mc="Infrastructure.Note" uid="0d323551-a5fa-42bb-a129-a00a0e174e09"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return zone;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -137,7 +137,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setZone" mc="Standard.Operation" uid="6cc402cd-c3ea-4a16-80d7-ad7d38125c7a"/>
+          <ID name="setZone" mc="Standard.Operation" uid="6d2740bc-60bb-423e-923c-a0ef1a2ade23"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -151,7 +151,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="zone" mc="Standard.Parameter" uid="65f5a38c-8603-4dbf-84c9-a00ca0e015bc"/>
+                <ID name="zone" mc="Standard.Parameter" uid="45a9c63c-fefa-451d-955a-de9cafe3b32d"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -175,7 +175,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="e303e7b0-1999-4d9c-a8c5-76bfafea3602"/>
+                <ID name="" mc="Infrastructure.Note" uid="746d75d1-feea-4182-ad12-fa52a1655e7e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (this.zone != null) {
     this.zone.setMobile(null); // Détacher du précédent zone

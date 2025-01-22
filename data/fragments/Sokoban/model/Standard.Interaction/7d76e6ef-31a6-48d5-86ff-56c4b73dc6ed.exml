@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="44311d20-a461-484c-962b-ee0865a23f58"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -428,11 +423,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="1b7c34fc-5a2a-441f-8753-3f8cf4870ed2"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPosition" mc="Standard.Operation" uid="7468f5a2-4bbc-47ba-bc0e-54933163df92"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>

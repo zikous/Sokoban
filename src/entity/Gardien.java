@@ -4,10 +4,10 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("8ae70f11-a494-4244-886a-d50771bc499c")
 public class Gardien extends Mobile {
-    @objid ("e9983594-8e0e-4692-9917-6bfbc3579265")
+    @objid ("5dec00c4-193b-4148-82a0-7cd506abacd3")
     private Direction currentDirection = Direction.BAS;
 
-    @objid ("f401de07-e62a-4410-8901-5ffe6b7d7d61")
+    @objid ("c03ec4b7-3c71-44be-bbc9-73a4943867d3")
     @Override
     public boolean deplacer(Direction direction) {
         this.currentDirection = direction;
@@ -40,7 +40,7 @@ public class Gardien extends Mobile {
         return false; // Déplacement impossible
     }
 
-    @objid ("309a5466-4196-4512-b17e-633277cea512")
+    @objid ("cce45421-6362-4ec8-ac2e-4398fb01abbd")
     public Direction getCurrentDirection() {
         return currentDirection;
     }

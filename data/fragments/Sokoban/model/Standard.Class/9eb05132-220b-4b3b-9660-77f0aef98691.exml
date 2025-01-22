@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="deplacer" mc="Standard.Operation" uid="8b22ed40-c45d-4b63-8f68-aa3a2ebdc5ed"/>
+          <ID name="deplacer" mc="Standard.Operation" uid="05c2e0de-8f78-4af9-b5fe-bb3de566fa22"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="direction" mc="Standard.Parameter" uid="99f98762-a9f0-4e6f-bf25-329abbdbc0cd"/>
+                <ID name="direction" mc="Standard.Parameter" uid="87303a3b-4c85-45f7-a415-1d42624df8aa"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -57,7 +57,7 @@
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="03e84488-fb14-4c32-b223-0d2f808381ba"/>
+                <ID name="" mc="Standard.Parameter" uid="d70a6dbf-6452-4fc0-8d4d-42ab4fd7349d"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -81,7 +81,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="04a98fc0-9bd1-4cf4-9de2-3bc17f004458"/>
+                <ID name="" mc="Infrastructure.Note" uid="e719fb1d-a2e6-4b57-89b4-39fc1d6de416"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -95,7 +95,21 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ee90ff4d-1d06-4631-8db2-490445dbe460"/>
+                <ID name="" mc="Infrastructure.Note" uid="d6831ae8-2503-4aeb-a7d7-33f922a8900f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return false;]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="8923cdc3-d877-4f4f-b424-8cca549a5243"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (getZone() == null) {
     return false;
@@ -114,20 +128,6 @@ if (positionCible != null && positionCible.getZone().estLibre()) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="dfe2db8e-3f90-4926-8c3d-efb908b1c285"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

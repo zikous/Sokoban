@@ -34,7 +34,7 @@
           <DEPENDENCIES>
             <COMP relation="Value">
               <OBJECT>
-                <ID name="HAUT" mc="Standard.EnumerationLiteral" uid="cb2ead39-44e0-45fd-b409-b0dadc4ba9e6"/>
+                <ID name="HAUT" mc="Standard.EnumerationLiteral" uid="0a90fca4-175e-4b60-9101-efd69f694955"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[HAUT]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -42,7 +42,7 @@
                 <DEPENDENCIES></DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="BAS" mc="Standard.EnumerationLiteral" uid="6204679a-75c6-4251-ac22-cf8e51ef0b60"/>
+                <ID name="BAS" mc="Standard.EnumerationLiteral" uid="2ba4d800-5d9c-489b-ac6f-8709c3ecd77f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[BAS]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -50,7 +50,7 @@
                 <DEPENDENCIES></DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="29a98ad2-e6d3-44c0-b89d-e0534e37c2a9"/>
+                <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="a528b6ce-a87b-4bde-82c3-19493b0e193d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[GAUCHE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -58,7 +58,7 @@
                 <DEPENDENCIES></DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="5f1a12c6-ea37-49c2-96e1-4756f00c7f9e"/>
+                <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="9712dff7-6f27-4aaf-a1cc-6b8d32d88566"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[DROITE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -85,7 +85,7 @@
           <DEPENDENCIES>
             <COMP relation="Value">
               <OBJECT>
-                <ID name="MUR" mc="Standard.EnumerationLiteral" uid="37f9a353-e689-457d-b1f9-2cede8edf36b"/>
+                <ID name="MUR" mc="Standard.EnumerationLiteral" uid="51a7b700-d5b0-4e49-8a00-ea4622d42b44"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[MUR]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -93,7 +93,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="5c266e62-9d07-43fd-b0d0-c97e9b23858e"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="995d53f8-3549-4e89-8698-e2950474fcb0"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -101,7 +101,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="3091b4e4-d5b7-4e92-bba2-057cc6c23f41"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="9624eac6-21f0-4012-bd71-1fe8660adbce"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['#']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -117,7 +117,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="504d4203-8ef3-41eb-8191-65c429753484"/>
+                      <ID name="" mc="Infrastructure.Note" uid="50ea5385-4d84-400e-b355-1c2cc06b24f0"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Mur]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -134,7 +134,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="CIBLE" mc="Standard.EnumerationLiteral" uid="449041a5-a80f-4ce1-babf-2e11fdab586d"/>
+                <ID name="CIBLE" mc="Standard.EnumerationLiteral" uid="06d933ac-86a2-4984-8d56-b2392220e591"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[CIBLE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -142,7 +142,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="f63ee290-bec0-49a6-a3cc-fe9c4ed26e23"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="29b9f419-112b-4134-90b0-24cd585feaf4"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -150,7 +150,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="7abf1ca0-9a4d-4139-b633-9d21d2091b56"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="059df5de-8941-4026-b793-ff70b44f642e"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['.']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -166,7 +166,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="70863b79-a519-4d6a-8ae9-ed6e24bb56d4"/>
+                      <ID name="" mc="Infrastructure.Note" uid="3ce45b45-936f-4834-b92d-4f270d1fb90e"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Cible]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -183,7 +183,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="CAISSE" mc="Standard.EnumerationLiteral" uid="d8b3b326-f46f-4f1a-bc14-f2a53ccf05c7"/>
+                <ID name="CAISSE" mc="Standard.EnumerationLiteral" uid="6b46ece2-adf2-4781-8a40-1b4f57ffdd66"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[CAISSE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -191,7 +191,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="76b3dafc-8d60-4eda-848a-fd5174406cc6"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="790afe21-ecb0-439e-bfcc-867f07f295fe"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -199,7 +199,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="ef628d61-b8b1-4678-8e21-a8dba706f099"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="a28971ad-786a-4b56-8458-1895033d9088"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['$']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -215,7 +215,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="fc86f60d-7acf-4ec8-bb9d-8b612cb20910"/>
+                      <ID name="" mc="Infrastructure.Note" uid="9bbcfd30-5a65-4b2e-8d51-817eb6cfdd42"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Caisse]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -232,7 +232,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="GARDIEN" mc="Standard.EnumerationLiteral" uid="f4cb7489-5246-47bf-a17f-d489f196986f"/>
+                <ID name="GARDIEN" mc="Standard.EnumerationLiteral" uid="99202139-4efe-4a2f-8bf2-224a22415c98"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[GARDIEN]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -240,7 +240,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="3e0eb52b-2e78-45f8-b095-31425303a732"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="a0e2f369-99d7-486e-b5e9-311105d71f67"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -248,7 +248,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="bf36e1ab-34c5-4c51-b74e-9a51f6630293"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="44cc6c76-c973-4479-8eee-ac109e46e0bc"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['@']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -264,7 +264,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="a99d0659-c1cc-4c1b-8e8c-114cc493f3e8"/>
+                      <ID name="" mc="Infrastructure.Note" uid="0981c597-19a9-4f17-887b-d2c75a41b0e8"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Gardien]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -281,7 +281,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="CIBLE_CAISSE" mc="Standard.EnumerationLiteral" uid="70ec0def-a940-4def-a885-d1d8b80486df"/>
+                <ID name="CIBLE_CAISSE" mc="Standard.EnumerationLiteral" uid="a4b870fd-5e7d-43e4-9189-d12bc02c5617"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[CIBLE_CAISSE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -289,7 +289,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="0c6c398d-f779-4f20-b3e8-daedb32e8dbc"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b19526dc-0037-4796-8c38-9f96c9d4819a"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -297,7 +297,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="c029b2d8-85a1-4d08-b227-dad00d821236"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="2aca80c7-362f-49b8-847b-66d34d4ef080"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['*']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -313,7 +313,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="b004d47a-1a0f-4d36-8161-4464f1575054"/>
+                      <ID name="" mc="Infrastructure.Note" uid="fe44a972-b06f-4438-a515-7d7fe59323d4"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Caisse sur cible]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -330,7 +330,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="GARDIEN_CIBLE" mc="Standard.EnumerationLiteral" uid="829f5cda-64d6-4fcc-beef-4c70ee038982"/>
+                <ID name="GARDIEN_CIBLE" mc="Standard.EnumerationLiteral" uid="7fb309a0-88b6-4e3c-b923-47848c3720da"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[GARDIEN_CIBLE]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -338,7 +338,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="6f5ef6b0-a6f0-41f7-b4ce-784baf46c156"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="d98af389-3131-4b29-88cc-7d06d2d9b265"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -346,7 +346,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="b3333841-0c20-4427-a87e-6fbad6211f9a"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="27d96e65-55a0-4fd2-ae72-4edc4803d56a"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA['+']]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -362,7 +362,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="eca6dfb2-3449-443c-ac24-e32cc2cdf7d6"/>
+                      <ID name="" mc="Infrastructure.Note" uid="a129c5aa-4f85-41f3-b358-93c61631c3a2"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[Gardien sur cible]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -381,7 +381,7 @@
             </COMP>
             <COMP relation="OwnedOperation">
               <OBJECT>
-                <ID name="TypeElement" mc="Standard.Operation" uid="5d05f70e-cb84-4816-a8d8-847896fbbb97"/>
+                <ID name="TypeElement" mc="Standard.Operation" uid="d6b177be-bdd8-44e9-8284-be8ca8bfb0f7"/>
                 <ATTRIBUTES>
                   <ATT name="Concurrency">false</ATT>
                   <ATT name="Final">false</ATT>
@@ -395,7 +395,7 @@
                 <DEPENDENCIES>
                   <COMP relation="IO">
                     <OBJECT>
-                      <ID name="symbol" mc="Standard.Parameter" uid="2bceb1c5-c96e-49da-b0c4-d58731a3559b"/>
+                      <ID name="symbol" mc="Standard.Parameter" uid="618bc402-2f49-425b-b6c0-939f52b45cc2"/>
                       <ATTRIBUTES>
                         <ATT name="ParameterPassing">Inout</ATT>
                         <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -422,7 +422,7 @@
                   </LINK>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="f4e9bd0b-2871-49c8-bd07-916da15a1af5"/>
+                      <ID name="" mc="Infrastructure.Note" uid="260be22e-96df-4d68-9564-3666551c6488"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[this.symbol = symbol;]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -439,7 +439,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="getSymbol" mc="Standard.Operation" uid="5eae3d32-4aa9-40e2-a65f-05697a1d30fb"/>
+                <ID name="getSymbol" mc="Standard.Operation" uid="2ca78895-9424-44ce-ba33-69eb28844ab3"/>
                 <ATTRIBUTES>
                   <ATT name="Concurrency">false</ATT>
                   <ATT name="Final">false</ATT>
@@ -453,7 +453,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Return">
                     <OBJECT>
-                      <ID name="" mc="Standard.Parameter" uid="9a022615-92ab-4d0e-85ad-5cd9b5a87d35"/>
+                      <ID name="" mc="Standard.Parameter" uid="989f2dc0-d6d1-4276-a6e3-8dbfaa529a67"/>
                       <ATTRIBUTES>
                         <ATT name="ParameterPassing">In</ATT>
                         <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -477,7 +477,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="10a9cf48-9b88-4345-9fb3-7592f9c76c4c"/>
+                      <ID name="" mc="Infrastructure.Note" uid="2cce32f6-4eac-4587-9b2c-69936c10fc0f"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[return symbol;]]></ATT>
                         <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -494,7 +494,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="fromInt" mc="Standard.Operation" uid="caa70238-4db6-4d8f-bbb1-efbbfb4bbd9d"/>
+                <ID name="fromInt" mc="Standard.Operation" uid="e7f8f8b5-cbd4-43f1-9a52-6076e41800f6"/>
                 <ATTRIBUTES>
                   <ATT name="Concurrency">false</ATT>
                   <ATT name="Final">false</ATT>
@@ -508,7 +508,7 @@
                 <DEPENDENCIES>
                   <COMP relation="IO">
                     <OBJECT>
-                      <ID name="value" mc="Standard.Parameter" uid="855b8bd5-f7a9-45a2-943c-2fcea027781c"/>
+                      <ID name="value" mc="Standard.Parameter" uid="0380b07c-cb46-42a9-be0a-e8b815fd6790"/>
                       <ATTRIBUTES>
                         <ATT name="ParameterPassing">Inout</ATT>
                         <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -532,7 +532,7 @@
                   </COMP>
                   <COMP relation="Return">
                     <OBJECT>
-                      <ID name="" mc="Standard.Parameter" uid="41fdaa47-7717-431d-b77d-95fe8ebd86e2"/>
+                      <ID name="" mc="Standard.Parameter" uid="3a4ccec4-b6c3-457b-b67a-7dd427513848"/>
                       <ATTRIBUTES>
                         <ATT name="ParameterPassing">In</ATT>
                         <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -558,7 +558,7 @@
                   </COMP>
                   <COMP relation="Descriptor">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.Note" uid="cd69e1c3-3a4b-4c20-8421-79824db62a3b"/>
+                      <ID name="" mc="Infrastructure.Note" uid="6b67fdcd-2eb0-493a-8b20-d29a0e245588"/>
                       <ATTRIBUTES>
                         <ATT name="Content"><![CDATA[switch (value) {
     case 1: return MUR;
@@ -586,7 +586,7 @@
             </COMP>
             <COMP relation="OwnedAttribute">
               <OBJECT>
-                <ID name="symbol" mc="Standard.Attribute" uid="8401284f-0d99-4db8-8436-484894babb65"/>
+                <ID name="symbol" mc="Standard.Attribute" uid="dbd65b00-7438-4401-8a75-51654c1c2805"/>
                 <ATTRIBUTES>
                   <ATT name="TypeConstraint"></ATT>
                   <ATT name="Value"></ATT>
@@ -609,7 +609,7 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="5bb43b3d-4ce5-44e8-b2fc-c8d033a88326"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b5765bae-61c5-4450-990a-50a33ba039cc"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -621,7 +621,7 @@
                       </DEPENDENCIES>
                     </OBJECT>
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="bdc3cfe7-3ce7-4669-ab6e-d90e32ffa2a7"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="70cae8e9-7b2f-4138-bbb7-52ed15bbd7d2"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>

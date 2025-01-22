@@ -9,13 +9,13 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("d90c584a-242a-4be9-93e0-7080ac40e14c")
 public class EcranAccueil extends PanneauAvecFond {
-    @objid ("82cc66d1-83a6-4733-ae5f-f4405f8db157")
+    @objid ("ae655fd7-bb2c-488a-ac9e-48c845c90c86")
     private static final long serialVersionUID = 1L;
 
     @objid ("966255b0-e6f1-40db-8026-7d4d8319883f")
     private JButton boutonCommencer; // Bouton pour démarrer le jeu
 
-    @objid ("03cff891-69e0-400c-8502-593f133bceba")
+    @objid ("a3d50b56-fc7a-431c-9ae5-49f3c166a720")
     public EcranAccueil(MaFenetre fenetrePrincipale) {
         setLayout(new BorderLayout()); // Utilise un BorderLayout pour organiser les composants
         add(createTitre(), BorderLayout.NORTH); // Ajoute le titre en haut
@@ -23,7 +23,7 @@ public class EcranAccueil extends PanneauAvecFond {
         add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bouton en bas
     }
 
-    @objid ("09dd40b8-4668-44fa-8f7d-205d94d3e7b2")
+    @objid ("2fedcd73-a841-44b9-a217-cfbb9ab32699")
     private JLabel createTitre() {
         JLabel titre = new JLabel("Sokoban", SwingConstants.CENTER); // Crée le titre
         titre.setFont(new Font("Roboto", Font.BOLD, 80)); // Définit la police
@@ -32,7 +32,7 @@ public class EcranAccueil extends PanneauAvecFond {
         return titre;
     }
 
-    @objid ("fe64f8d5-b318-42ab-b49b-ccda9d74e073")
+    @objid ("22132250-b3e8-404c-985f-a2164182cff1")
     private JPanel createPanelInfos() {
         JPanel panelInfos = new JPanel();
         panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS)); // Utilise un BoxLayout vertical
@@ -46,7 +46,7 @@ public class EcranAccueil extends PanneauAvecFond {
         return panelInfos;
     }
 
-    @objid ("85b84feb-79e0-4d7c-8c7a-51e56c164e22")
+    @objid ("459afd86-cab3-4979-8f2a-5b5818c54e82")
     private JLabel createCredits() {
         JLabel credits = new JLabel("Fait par Zakaria Bheddar et Mohamed Cheikh Rouhou", SwingConstants.CENTER); // Crée les crédits
         credits.setFont(new Font("Roboto", Font.ITALIC, 20)); // Définit la police
@@ -55,7 +55,7 @@ public class EcranAccueil extends PanneauAvecFond {
         return credits;
     }
 
-    @objid ("84e42052-b96a-4ed9-beb1-2a468dcfccb5")
+    @objid ("312f1e1b-202e-437e-99aa-b88f037e5833")
     private JLabel createInstructions(String text) {
         JLabel instructions = new JLabel(text, SwingConstants.CENTER); // Crée les instructions
         instructions.setFont(new Font("Roboto", Font.PLAIN, 18)); // Définit la police
@@ -64,7 +64,7 @@ public class EcranAccueil extends PanneauAvecFond {
         return instructions;
     }
 
-    @objid ("713fb87d-8122-4280-a34c-61516bd6a0fb")
+    @objid ("d8705711-5eef-4f66-b8ee-63adbe439f13")
     private JPanel createPanelBouton(MaFenetre fenetrePrincipale) {
         JPanel panelBouton = new JPanel();
         panelBouton.setOpaque(false); // Rend le panneau transparent
@@ -73,7 +73,7 @@ public class EcranAccueil extends PanneauAvecFond {
         return panelBouton;
     }
 
-    @objid ("704b68fb-d6ce-425d-a7d9-fa1392796d92")
+    @objid ("c8a0989c-79af-484a-bf1f-566647d344e2")
     private JButton createBoutonCommencer(MaFenetre fenetrePrincipale) {
         boutonCommencer = new JButton("Commencer"); // Crée le bouton "Commencer"
         boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 24)); // Définit la police

@@ -5,18 +5,18 @@ import entity.*;
 
 @objid ("37da7c12-95ce-4751-a595-f168f3b118f9")
 public class TestSokoban {
-    @objid ("d0ba1d01-d690-49ce-8ddf-1351783cb560")
+    @objid ("d2f664db-e54b-408e-9b0a-805d445adc3f")
     private static int totalTests = 0; // Nombre total de tests exécutés
 
-    @objid ("670b73ae-846a-4c45-81da-cc2cb5d27d08")
+    @objid ("833f5e94-7efb-467a-8ea2-365a4a9889b7")
     private static int testsReussis = 0; // Nombre de tests réussis
 
-    @objid ("94196a09-4932-4e36-b884-9ef22dc26816")
+    @objid ("591a15cd-a163-4e5a-a311-d207c8599675")
     private static void afficherTest(String nomTest) {
         System.out.println("\n=== Test: " + nomTest + " ===");
     }
 
-    @objid ("f425dd6b-f425-40be-8424-0c4e56d895f2")
+    @objid ("4fa46da6-4f97-4997-a334-5f1e33964e6a")
     private static void verifierCondition(String description, boolean condition) {
         totalTests++;
         if (condition) {
@@ -25,7 +25,7 @@ public class TestSokoban {
         System.out.println(description + ": " + (condition ? "SUCCÈS ✓" : "ÉCHEC ✗"));
     }
 
-    @objid ("c0a8943e-436c-4d64-99a8-30f803b6372a")
+    @objid ("83761799-5283-42fb-84e4-23077af625b1")
     private static void testerDeplacementSimple() {
         afficherTest("Déplacement simple du gardien");
         
@@ -51,7 +51,7 @@ public class TestSokoban {
         verifierCondition("Déplacement vers le haut", deplacementHaut);
     }
 
-    @objid ("20741d04-9746-44b2-bb6d-95a20ac07639")
+    @objid ("a98f0d50-aad1-4cbc-a93d-6d1e47553b59")
     private static void testerDeplacementCaisse() {
         afficherTest("Déplacement de caisse");
         
@@ -76,7 +76,7 @@ public class TestSokoban {
         verifierCondition("Impossible de pousser une caisse bloquée", pousseeCaisseBloquee);
     }
 
-    @objid ("e505d34b-ca1c-4cd1-9052-2ffc01498d9e")
+    @objid ("4e4126fb-d7d3-43db-adb5-91a6f51d5b87")
     private static void testerCollisions() {
         afficherTest("Test des collisions");
         
@@ -99,7 +99,7 @@ public class TestSokoban {
         verifierCondition("Collision avec le bord de la carte", collisionBord);
     }
 
-    @objid ("8311137d-799d-476a-bfe3-792e72751d63")
+    @objid ("2faad882-b5b9-4253-9006-bd2b4e6e9cb7")
     private static void testerInteractionsCiblesCaisses() {
         afficherTest("Interactions cibles et caisses");
         
@@ -129,7 +129,7 @@ public class TestSokoban {
         verifierCondition("Niveau terminé avec toutes les caisses sur cibles", controleur.estTermine());
     }
 
-    @objid ("74a641b8-d3c6-4486-b781-03477deccdf8")
+    @objid ("4258920e-3f2b-4704-8f61-b3c2c8dc2696")
     private static void testerCasesCombinees() {
         afficherTest("Cases combinées");
         
@@ -152,7 +152,7 @@ public class TestSokoban {
         verifierCondition("Peut déplacer une caisse qui est sur une cible", true);
     }
 
-    @objid ("e6ba855b-061c-40a1-bce2-b7172cf6ca4b")
+    @objid ("e6d36ec0-cea8-4175-8f64-467959ff4ebb")
     private static void testerGestionNiveaux() {
         afficherTest("Gestion des niveaux");
         
@@ -178,7 +178,7 @@ public class TestSokoban {
         }
     }
 
-    @objid ("f24e0eca-3c31-475c-81f5-9d06289f511e")
+    @objid ("f17e58ea-93fb-4ff7-b77a-9bae402fb9f2")
     private static void testerEtatInvalide() {
         afficherTest("États invalides");
         
@@ -208,7 +208,7 @@ public class TestSokoban {
         }
     }
 
-    @objid ("b13f3538-d515-4d35-a635-6aad07506ebc")
+    @objid ("a94c5cba-0e03-4173-a639-e5c55d1ebdce")
     public static void main(String[] args) {
         System.out.println("=== DÉBUT DES TESTS SOKOBAN ===\n");
         

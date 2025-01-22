@@ -6,7 +6,7 @@ import entity.Direction;
 
 @objid ("ec84e489-bafb-4824-8cf4-41ae8cb5eb6a")
 public class TestSokobanText {
-    @objid ("7fadbec0-3ad7-45dc-a85e-7abaa8511f72")
+    @objid ("5390a33a-879f-4753-9702-812f7cadfa24")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Controleur controleur = new Controleur();
@@ -64,7 +64,7 @@ public class TestSokobanText {
         System.out.println("Merci d'avoir joué !");
     }
 
-    @objid ("c7506ab6-1481-4c68-9428-61f0e73d0d04")
+    @objid ("9df2cfb1-d5dc-44b4-92f5-23c1b4bdec80")
     private static void afficherInstructions() {
         System.out.println("Bienvenue dans Sokoban !");
         System.out.println("Contrôles : ");
@@ -82,7 +82,7 @@ public class TestSokobanText {
         System.out.println("* = Caisse sur cible");
     }
 
-    @objid ("dcd6d086-0dd5-4a34-9285-e45c36c9969c")
+    @objid ("f8b73a4c-c796-405c-af09-c0925795d1f1")
     private static Direction convertirEntree(String input) {
         switch (input) {
             case "z":

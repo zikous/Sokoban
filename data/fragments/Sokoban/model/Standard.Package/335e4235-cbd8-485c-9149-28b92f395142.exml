@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="control" version="4">
+  <OBJECT>
+    <ID name="control" mc="Standard.Package" uid="335e4235-cbd8-485c-9149-28b92f395142"/>
+    <PID name="sokoban" mc="Standard.Package" uid="4b03d53a-c800-4e65-8580-6778b678fb00"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[control]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="TestSokoban" mc="Standard.Class" uid="ba0b397e-0833-4995-83bf-68792f917432"/>
+        <COMPID name="NiveauManager" mc="Standard.Class" uid="d4da3f51-4c6c-4bea-97cd-aaaf450e9910"/>
+        <COMPID name="TestSokobanText" mc="Standard.Class" uid="5c40530f-3aa8-4807-bc6a-876225c48b4e"/>
+        <COMPID name="Controleur" mc="Standard.Class" uid="cdb81527-64ff-4472-95c0-1289fb97604d"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

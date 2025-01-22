@@ -12,7 +12,7 @@ import entity.Direction;
 
 @objid ("2c98f262-fb7c-420e-8e27-d7b44a78c0dc")
 public class MaFenetre extends JFrame implements KeyListener {
-    @objid ("13aca0bc-7152-4285-9171-a1d2c2c1a376")
+    @objid ("86cc6d52-afb6-4104-80f2-404d80b95580")
     private static final long serialVersionUID = 1L;
 
     @objid ("11ffa188-82b6-4d06-8a90-741d509ba440")
@@ -21,7 +21,7 @@ public class MaFenetre extends JFrame implements KeyListener {
     @objid ("874f95fe-2ef0-450d-96b6-32b60de5319b")
     private Controleur controleur; // Contrôleur du jeu
 
-    @objid ("4dc4b2fe-2142-4d76-9dd9-bda64da17297")
+    @objid ("7eed2e19-5f3d-498d-b4de-88d07056d674")
     public MaFenetre(Controleur controleur) {
         super("Sokoban"); // Titre de la fenêtre
         this.controleur = controleur;
@@ -29,7 +29,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         afficherEcranAccueil(); // Affiche l'écran d'accueil
     }
 
-    @objid ("682aa214-9b02-4dff-bdb9-8ba4997aba72")
+    @objid ("fcaed99f-0b29-4b1c-a1fe-353e78cd30a9")
     @Override
     public void keyPressed(KeyEvent e) {
         Direction direction = getDirectionFromKeyEvent(e); // Obtient la direction à partir de la touche pressée
@@ -44,19 +44,19 @@ public class MaFenetre extends JFrame implements KeyListener {
         }
     }
 
-    @objid ("6d546574-dca0-4213-8bd4-35407aead6a9")
+    @objid ("b23f72cb-f57e-43dd-8400-43e372fd62bc")
     @Override
     public void keyTyped(KeyEvent e) {
         // Non utilisé
     }
 
-    @objid ("d796e4a7-3eed-4144-9060-a4eb1e368c01")
+    @objid ("2d2cb311-b58a-4d1a-b837-2515ef8b44c2")
     @Override
     public void keyReleased(KeyEvent e) {
         // Non utilisé
     }
 
-    @objid ("576d5ee2-3ee6-4ba4-b6b1-15328f6227fb")
+    @objid ("7a4c2417-3c1f-43f0-90b8-6a038c60e1c7")
     private Direction getDirectionFromKeyEvent(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP: return Direction.HAUT; // Haut
@@ -67,7 +67,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         }
     }
 
-    @objid ("9696e72f-0a60-4834-8cf4-a095d30a5115")
+    @objid ("cdd4791d-b0c4-43e9-8049-0b90e729c97a")
     private void handleNiveauTermine() {
         if (controleur.estDernierNiveau()) {
             showMessage("Félicitations ! Vous avez terminé tous les niveaux !", "Jeu terminé"); // Message de fin de jeu
@@ -83,7 +83,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         }
     }
 
-    @objid ("86f6bddc-edb6-4480-be7c-08793c3fece8")
+    @objid ("f57679a2-33f2-442b-b1ce-d47211876a17")
     private void afficherEcranAccueil() {
         EcranAccueil ecranAccueil = new EcranAccueil(this); // Crée l'écran d'accueil
         getContentPane().removeAll(); // Vide le contenu de la fenêtre
@@ -92,7 +92,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         repaint(); // Redessine la fenêtre
     }
 
-    @objid ("79cb8945-73dc-434d-957c-f7834ff1e553")
+    @objid ("e83371b1-e5ab-48e6-b01a-baab1257d9ee")
     public void demarrerJeu() {
         getContentPane().removeAll(); // Vide le contenu de la fenêtre
         this.monAfficheur = new MonAfficheur(controleur); // Crée le panneau d'affichage du jeu
@@ -104,7 +104,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         repaint(); // Redessine la fenêtre
     }
 
-    @objid ("503a0644-dd0d-40de-82d6-5000b0e9f108")
+    @objid ("e3c723f4-54a6-40c9-ac6c-dcb28454c13b")
     private void initFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ferme l'application à la fermeture de la fenêtre
         setSize(800, 600); // Taille de la fenêtre
@@ -112,7 +112,7 @@ public class MaFenetre extends JFrame implements KeyListener {
         setVisible(true); // Rend la fenêtre visible
     }
 
-    @objid ("13e70de3-1c43-4016-b544-0a21f99d3c67")
+    @objid ("9210a491-070c-4381-ae03-2c64f0312008")
     private void handleRejouerOuQuitter() {
         Object[] options = { "Quitter", "Rejouer le niveau" }; // Options pour l'utilisateur
         int choix = showOptionDialog("Que souhaitez-vous faire ?", "Niveau terminé", options);
@@ -123,20 +123,20 @@ public class MaFenetre extends JFrame implements KeyListener {
         }
     }
 
-    @objid ("43f357ee-5594-478b-81d0-280dbd75e4e6")
+    @objid ("07dcc793-b0dd-40bf-88ca-fdf3773b13c0")
     private void showMessage(String message, String title) {
         JOptionPane.showMessageDialog(this, message, title, JOptionPane.INFORMATION_MESSAGE); // Affiche un message
     }
 
-    @objid ("3230e794-9524-430a-8177-2ee64fbd9ae0")
+    @objid ("298c30bb-c1b7-41e4-95fd-bdb2624cafc8")
     private int showConfirmDialog(String message, String title) {
         return JOptionPane.showConfirmDialog(this, message, title, JOptionPane.YES_NO_OPTION); // Affiche une boîte de dialogue de confirmation
     }
 
-    @objid ("d1883b27-b3cc-4eb7-ba31-42a244d6da0e")
+    @objid ("029c6009-96e7-47a4-b255-284107694170")
     private int showOptionDialog(String message, String title, Object[] options) {
         return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                                                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
+                                                                                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
     }
 
 }

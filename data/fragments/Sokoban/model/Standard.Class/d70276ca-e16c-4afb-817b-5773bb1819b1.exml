@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="Position" mc="Standard.Operation" uid="3094f582-2e5d-4ee8-b03c-6827900792b7"/>
+          <ID name="Position" mc="Standard.Operation" uid="ad6ed497-d0e7-4fa3-b872-05a1eb1beb13"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="ligne" mc="Standard.Parameter" uid="c6a4977e-4f5f-43e8-bbe1-b385b1136015"/>
+                <ID name="ligne" mc="Standard.Parameter" uid="e8f4e82d-7fd0-4c18-a46f-45f57c5a3bda"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -53,7 +53,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="colonne" mc="Standard.Parameter" uid="00636fff-bb92-4ab5-85e3-57d346c5f782"/>
+                <ID name="colonne" mc="Standard.Parameter" uid="48116620-8ef2-4ac7-bf14-4718abf6549a"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -75,7 +75,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="entrepot" mc="Standard.Parameter" uid="89c4465c-11fe-45a1-9c33-96f14b9421b1"/>
+                <ID name="entrepot" mc="Standard.Parameter" uid="f88fe8bc-6e91-42be-9988-dcab0041814d"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -102,7 +102,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="51d4e37b-510e-407d-88ee-4ee3da38e3dc"/>
+                <ID name="" mc="Infrastructure.Note" uid="2168719b-f5cc-484b-9d04-e7b4062823a4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.ligne = ligne;
 this.colonne = colonne;
@@ -122,7 +122,7 @@ this.entrepot = entrepot;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getLigne" mc="Standard.Operation" uid="ccd05f42-0e49-42b5-b0fa-088bc2e0a29f"/>
+          <ID name="getLigne" mc="Standard.Operation" uid="58034ea6-90ce-492b-aad8-7d2c903e8451"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -136,7 +136,7 @@ this.entrepot = entrepot;
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="993e2787-210d-4322-8cf3-920171a212f7"/>
+                <ID name="" mc="Standard.Parameter" uid="6e7399f9-e623-4c3a-8afc-681f88775660"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -160,7 +160,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="c641906c-87c8-48e6-a707-75a0123518d3"/>
+                <ID name="" mc="Infrastructure.Note" uid="a60d2943-df67-481a-a01c-89f009045b72"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return ligne;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -177,7 +177,7 @@ this.entrepot = entrepot;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getColonne" mc="Standard.Operation" uid="75515198-f92b-4647-b2a3-ea88f7ccb4c9"/>
+          <ID name="getColonne" mc="Standard.Operation" uid="70dfd794-950f-4f6a-b1b7-cea865ea08d0"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -191,7 +191,7 @@ this.entrepot = entrepot;
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="f46e257d-10cb-4c28-945b-ae88d044ad24"/>
+                <ID name="" mc="Standard.Parameter" uid="adff213a-cdbd-4821-ad63-ad647972e281"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -215,7 +215,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="123193a1-b434-4024-9173-1eb3d5cf92ec"/>
+                <ID name="" mc="Infrastructure.Note" uid="9034326d-cbc3-4867-805f-50270fdda585"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return colonne;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -232,7 +232,7 @@ this.entrepot = entrepot;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getZone" mc="Standard.Operation" uid="7145ac7a-c1e4-442c-8d8f-303e78b16215"/>
+          <ID name="getZone" mc="Standard.Operation" uid="591e493a-a22b-4528-a864-7f936c039651"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -246,7 +246,7 @@ this.entrepot = entrepot;
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="b5b20799-c07a-47f1-9bb3-c0fce3604876"/>
+                <ID name="" mc="Standard.Parameter" uid="0fb74a94-203a-4efd-83a2-1cdd3cbff9a9"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -270,7 +270,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="b6e8f7d7-d5a7-48ae-bbf4-11d038dfa606"/>
+                <ID name="" mc="Infrastructure.Note" uid="c7541460-45f7-4e34-9506-1496c7a85b53"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return zone;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -287,7 +287,7 @@ this.entrepot = entrepot;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setZone" mc="Standard.Operation" uid="ca9fc007-2578-4a0f-89f8-b6182175b83b"/>
+          <ID name="setZone" mc="Standard.Operation" uid="dfe1ecb8-75c1-4cde-a842-c283f23ed75d"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -301,7 +301,7 @@ this.entrepot = entrepot;
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="zone" mc="Standard.Parameter" uid="6b2d55be-107e-40a3-afa6-a52edcc81389"/>
+                <ID name="zone" mc="Standard.Parameter" uid="f7e8fbec-fc03-419f-8b20-905d3efbc679"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -325,7 +325,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="5224e601-8eea-4083-9a8c-a9059a196ad6"/>
+                <ID name="" mc="Infrastructure.Note" uid="46e0d6d9-75c1-4bfe-98d7-e715ff075717"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.zone = zone;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -342,7 +342,7 @@ this.entrepot = entrepot;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
+          <ID name="getPositionAdjacente" mc="Standard.Operation" uid="840608b3-080f-42ca-ad7b-5aa75ebbd69e"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -356,7 +356,7 @@ this.entrepot = entrepot;
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="direction" mc="Standard.Parameter" uid="4d89beab-b208-4278-9f65-0e032216a310"/>
+                <ID name="direction" mc="Standard.Parameter" uid="a3c82236-8fe3-437a-9b0f-7887e73635f4"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -382,7 +382,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="f4075b37-56e8-44b7-a74f-7988692a0c42"/>
+                <ID name="" mc="Standard.Parameter" uid="29412fa0-e599-40d1-acd0-2ab95a8a55cf"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -406,7 +406,7 @@ this.entrepot = entrepot;
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="a21d5b20-89a7-43f7-b3d5-0bacc6ea1bbd"/>
+                <ID name="" mc="Infrastructure.Note" uid="6cdb277d-e2bb-4ba0-b701-b778c6c74fe6"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return entrepot.getPosition(nouvelleLigne, nouvelleColonne);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -420,7 +420,7 @@ this.entrepot = entrepot;
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="c5d08c03-6f32-42a7-97f7-9e35add1f156"/>
+                <ID name="" mc="Infrastructure.Note" uid="a83c2b95-3e7d-4b72-bd56-72f6338cbdb3"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[int nouvelleLigne = ligne;
 int nouvelleColonne = colonne;
@@ -456,7 +456,7 @@ switch (direction) {
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="ligne" mc="Standard.Attribute" uid="a8bd8893-b28b-40d8-9b87-d2302dffe5a8"/>
+          <ID name="ligne" mc="Standard.Attribute" uid="f3bb811f-cfaa-43c5-b082-91920119117d"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -479,7 +479,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0929f213-630e-4219-8304-71972ed81798"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d777b27d-9351-43ee-8d0d-782e8f3dbc34"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -494,7 +494,7 @@ switch (direction) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="colonne" mc="Standard.Attribute" uid="623c58ec-74bf-4af7-861c-699fe5a44719"/>
+          <ID name="colonne" mc="Standard.Attribute" uid="0b673a01-2902-4342-ab15-037a7ac1229d"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -517,7 +517,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ade93134-0d2c-4333-9bc4-128344a6be42"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2fafd6b2-4d89-46e1-9b2c-359d94dc4d28"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -668,7 +668,7 @@ switch (direction) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5c2eaf17-5a2e-45fc-af2c-eff4b303c7b7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="419d4c24-e8c6-4cec-97be-f401cd253012"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

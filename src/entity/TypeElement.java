@@ -11,20 +11,20 @@ public enum TypeElement {
     CIBLE_CAISSE ('*'), // Caisse sur cible
     GARDIEN_CIBLE ('+'); // Gardien sur cible
 
-    @objid ("8401284f-0d99-4db8-8436-484894babb65")
+    @objid ("dbd65b00-7438-4401-8a75-51654c1c2805")
     private final char symbol;
 
-    @objid ("5d05f70e-cb84-4816-a8d8-847896fbbb97")
+    @objid ("d6b177be-bdd8-44e9-8284-be8ca8bfb0f7")
     TypeElement(char symbol) {
         this.symbol = symbol;
     }
 
-    @objid ("5eae3d32-4aa9-40e2-a65f-05697a1d30fb")
+    @objid ("2ca78895-9424-44ce-ba33-69eb28844ab3")
     public char getSymbol() {
         return symbol;
     }
 
-    @objid ("caa70238-4db6-4d8f-bbb1-efbbfb4bbd9d")
+    @objid ("e7f8f8b5-cbd4-43f1-9a52-6076e41800f6")
     public static TypeElement fromInt(int value) {
         switch (value) {
             case 1: return MUR;

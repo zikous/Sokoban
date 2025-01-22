@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="MaFenetre" mc="Standard.Operation" uid="4dc4b2fe-2142-4d76-9dd9-bda64da17297"/>
+          <ID name="MaFenetre" mc="Standard.Operation" uid="7eed2e19-5f3d-498d-b4de-88d07056d674"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="controleur" mc="Standard.Parameter" uid="b13bb9dc-0f40-4038-b842-2d7d718cbae3"/>
+                <ID name="controleur" mc="Standard.Parameter" uid="67dd98f0-995a-42d1-ac52-11a5cf1cce0f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -58,7 +58,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="17da003a-5ad0-4431-80e8-11c87e1ae630"/>
+                <ID name="" mc="Infrastructure.Note" uid="a3b65ee3-9815-43cf-a6c8-66d0fbea578d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[super("Sokoban"); // Titre de la fenêtre
 this.controleur = controleur;
@@ -79,7 +79,7 @@ afficherEcranAccueil(); // Affiche l'écran d'accueil
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="keyPressed" mc="Standard.Operation" uid="682aa214-9b02-4dff-bdb9-8ba4997aba72"/>
+          <ID name="keyPressed" mc="Standard.Operation" uid="fcaed99f-0b29-4b1c-a1fe-353e78cd30a9"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -93,7 +93,7 @@ afficherEcranAccueil(); // Affiche l'écran d'accueil
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="e" mc="Standard.Parameter" uid="c6f3294c-43f6-443b-9813-7672c41a7159"/>
+                <ID name="e" mc="Standard.Parameter" uid="7ad149b1-0ba8-4e14-bd50-93e881a6d945"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -117,7 +117,7 @@ afficherEcranAccueil(); // Affiche l'écran d'accueil
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="11f30cc9-4f00-4963-a6ae-6c9ba8b6dc35"/>
+                <ID name="" mc="Infrastructure.Note" uid="623662c2-a550-491d-913b-1531f66a2561"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -131,7 +131,7 @@ afficherEcranAccueil(); // Affiche l'écran d'accueil
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="beeac888-bbb2-4174-9fe7-c01bb1960a47"/>
+                <ID name="" mc="Infrastructure.Note" uid="06e8f8bc-436d-4cce-977a-c75c9f3430c2"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Direction direction = getDirectionFromKeyEvent(e); // Obtient la direction à partir de la touche pressée
 if (direction != null) {
@@ -158,7 +158,7 @@ if (controleur.estTermine()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="keyTyped" mc="Standard.Operation" uid="6d546574-dca0-4213-8bd4-35407aead6a9"/>
+          <ID name="keyTyped" mc="Standard.Operation" uid="b23f72cb-f57e-43dd-8400-43e372fd62bc"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -172,7 +172,7 @@ if (controleur.estTermine()) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="e" mc="Standard.Parameter" uid="7da579a7-ab11-417b-8f76-5d7d7b1b4b8e"/>
+                <ID name="e" mc="Standard.Parameter" uid="d8911a7f-a040-42d3-b327-94a11dd653ba"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -196,7 +196,7 @@ if (controleur.estTermine()) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="cb366222-3772-4dba-be20-678c39b10d8f"/>
+                <ID name="" mc="Infrastructure.Note" uid="785398b2-c20a-4804-ab83-17f7c1f7ef56"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -210,7 +210,7 @@ if (controleur.estTermine()) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="16538ab9-6287-4e14-8d8b-e9334123c897"/>
+                <ID name="" mc="Infrastructure.Note" uid="87f8526c-ba79-4741-ae1f-fc2bca9625a1"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[// Non utilisé]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -227,7 +227,7 @@ if (controleur.estTermine()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="keyReleased" mc="Standard.Operation" uid="d796e4a7-3eed-4144-9060-a4eb1e368c01"/>
+          <ID name="keyReleased" mc="Standard.Operation" uid="2d2cb311-b58a-4d1a-b837-2515ef8b44c2"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -241,7 +241,7 @@ if (controleur.estTermine()) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="e" mc="Standard.Parameter" uid="394dc88f-e50a-4633-b105-42d2daedc4ca"/>
+                <ID name="e" mc="Standard.Parameter" uid="a5813720-82fe-4600-898d-8a0c0be5ee6b"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -265,7 +265,7 @@ if (controleur.estTermine()) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="b402f96f-9839-4ea7-94cc-feb67ea00fbf"/>
+                <ID name="" mc="Infrastructure.Note" uid="bcd54885-19bc-45a9-8cc9-217b7cf71776"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -279,7 +279,7 @@ if (controleur.estTermine()) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="3e940b9d-c2b1-46ea-9636-6785b91838eb"/>
+                <ID name="" mc="Infrastructure.Note" uid="ef64a7da-2b74-45d8-a34b-a59bdee5ec39"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[// Non utilisé]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -296,7 +296,7 @@ if (controleur.estTermine()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getDirectionFromKeyEvent" mc="Standard.Operation" uid="576d5ee2-3ee6-4ba4-b6b1-15328f6227fb"/>
+          <ID name="getDirectionFromKeyEvent" mc="Standard.Operation" uid="7a4c2417-3c1f-43f0-90b8-6a038c60e1c7"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -310,7 +310,7 @@ if (controleur.estTermine()) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="e" mc="Standard.Parameter" uid="e6e2240f-ecc8-46cd-9ccf-138c9b44a43e"/>
+                <ID name="e" mc="Standard.Parameter" uid="9a51f8e3-738f-4a57-9437-fe780187762d"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -334,7 +334,7 @@ if (controleur.estTermine()) {
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="d31e968b-48e5-4df1-bc36-5d9784cd01a7"/>
+                <ID name="" mc="Standard.Parameter" uid="2d9a8a86-9382-4068-86fe-af55177b3f35"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -360,7 +360,7 @@ if (controleur.estTermine()) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="01377752-ff5a-456b-b870-aa9814662403"/>
+                <ID name="" mc="Infrastructure.Note" uid="cb12375d-d036-4ca7-a0c5-ba1b6773adf3"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[switch (e.getKeyCode()) {
     case KeyEvent.VK_UP: return Direction.HAUT; // Haut
@@ -384,7 +384,7 @@ if (controleur.estTermine()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="handleNiveauTermine" mc="Standard.Operation" uid="9696e72f-0a60-4834-8cf4-a095d30a5115"/>
+          <ID name="handleNiveauTermine" mc="Standard.Operation" uid="cdd4791d-b0c4-43e9-8049-0b90e729c97a"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -398,7 +398,7 @@ if (controleur.estTermine()) {
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7c70d57e-79e1-4162-8ff3-1c22ae219982"/>
+                <ID name="" mc="Infrastructure.Note" uid="847ad44f-d760-4be7-b8e7-a119a48d99fa"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (controleur.estDernierNiveau()) {
     showMessage("Félicitations ! Vous avez terminé tous les niveaux !", "Jeu terminé"); // Message de fin de jeu
@@ -427,7 +427,7 @@ if (controleur.estTermine()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="afficherEcranAccueil" mc="Standard.Operation" uid="86f6bddc-edb6-4480-be7c-08793c3fece8"/>
+          <ID name="afficherEcranAccueil" mc="Standard.Operation" uid="f57679a2-33f2-442b-b1ce-d47211876a17"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -441,7 +441,7 @@ if (controleur.estTermine()) {
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="a0ffb5aa-3a92-420a-9817-4a08b28d6ae0"/>
+                <ID name="" mc="Infrastructure.Note" uid="bdff9533-c305-4f31-b73b-11de4d96626d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[EcranAccueil ecranAccueil = new EcranAccueil(this); // Crée l'écran d'accueil
 getContentPane().removeAll(); // Vide le contenu de la fenêtre
@@ -463,7 +463,7 @@ repaint(); // Redessine la fenêtre
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="demarrerJeu" mc="Standard.Operation" uid="79cb8945-73dc-434d-957c-f7834ff1e553"/>
+          <ID name="demarrerJeu" mc="Standard.Operation" uid="e83371b1-e5ab-48e6-b01a-baab1257d9ee"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -477,7 +477,7 @@ repaint(); // Redessine la fenêtre
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="977d6dca-4ff6-4d2b-917b-23507bfaba5c"/>
+                <ID name="" mc="Infrastructure.Note" uid="68bcc865-4723-49b1-99fa-cd1d7f6e2ec8"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[getContentPane().removeAll(); // Vide le contenu de la fenêtre
 this.monAfficheur = new MonAfficheur(controleur); // Crée le panneau d'affichage du jeu
@@ -502,7 +502,7 @@ repaint(); // Redessine la fenêtre
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="initFrame" mc="Standard.Operation" uid="503a0644-dd0d-40de-82d6-5000b0e9f108"/>
+          <ID name="initFrame" mc="Standard.Operation" uid="e3c723f4-54a6-40c9-ac6c-dcb28454c13b"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -516,7 +516,7 @@ repaint(); // Redessine la fenêtre
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="378c949c-5a42-444d-9c5b-f1653e2f0d1e"/>
+                <ID name="" mc="Infrastructure.Note" uid="34ad2938-0227-480c-8ed8-fc148a703dd1"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ferme l'application à la fermeture de la fenêtre
 setSize(800, 600); // Taille de la fenêtre
@@ -537,7 +537,7 @@ setVisible(true); // Rend la fenêtre visible
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="handleRejouerOuQuitter" mc="Standard.Operation" uid="13e70de3-1c43-4016-b544-0a21f99d3c67"/>
+          <ID name="handleRejouerOuQuitter" mc="Standard.Operation" uid="9210a491-070c-4381-ae03-2c64f0312008"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -551,7 +551,7 @@ setVisible(true); // Rend la fenêtre visible
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="61554853-a4fd-4786-ab1a-254519ed7e79"/>
+                <ID name="" mc="Infrastructure.Note" uid="ecdad60f-72a7-4931-a307-220a3695c056"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Object[] options = { "Quitter", "Rejouer le niveau" }; // Options pour l'utilisateur
 int choix = showOptionDialog("Que souhaitez-vous faire ?", "Niveau terminé", options);
@@ -575,7 +575,7 @@ if (choix == JOptionPane.YES_OPTION) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="showMessage" mc="Standard.Operation" uid="43f357ee-5594-478b-81d0-280dbd75e4e6"/>
+          <ID name="showMessage" mc="Standard.Operation" uid="07dcc793-b0dd-40bf-88ca-fdf3773b13c0"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -589,7 +589,7 @@ if (choix == JOptionPane.YES_OPTION) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="message" mc="Standard.Parameter" uid="8a3381bb-89bc-4774-afed-dfa89d492a17"/>
+                <ID name="message" mc="Standard.Parameter" uid="b69c177a-5c57-4a8f-be6d-29e276be65ed"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -611,7 +611,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="title" mc="Standard.Parameter" uid="4f3c71a2-9fdd-4475-a6e6-9291a9522ae1"/>
+                <ID name="title" mc="Standard.Parameter" uid="fd15df11-6845-4aba-9ba4-85ea52399ff8"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -635,7 +635,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="2c70c1cf-2460-48c2-a335-4b50ab3312b4"/>
+                <ID name="" mc="Infrastructure.Note" uid="76c2bce5-5474-419e-a96a-f0d7401db944"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JOptionPane.showMessageDialog(this, message, title, JOptionPane.INFORMATION_MESSAGE); // Affiche un message]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -652,7 +652,7 @@ if (choix == JOptionPane.YES_OPTION) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="showConfirmDialog" mc="Standard.Operation" uid="3230e794-9524-430a-8177-2ee64fbd9ae0"/>
+          <ID name="showConfirmDialog" mc="Standard.Operation" uid="298c30bb-c1b7-41e4-95fd-bdb2624cafc8"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -666,7 +666,7 @@ if (choix == JOptionPane.YES_OPTION) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="message" mc="Standard.Parameter" uid="a9e21e06-f5bc-43fc-8df1-031df15c280b"/>
+                <ID name="message" mc="Standard.Parameter" uid="502800ce-f806-4769-b731-533423382f82"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -688,7 +688,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="title" mc="Standard.Parameter" uid="3e9b6a55-1b0f-4d47-aa5b-c5d18e329c47"/>
+                <ID name="title" mc="Standard.Parameter" uid="89246f87-3d9b-40b5-819a-bdfd9a405c9b"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -712,7 +712,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="1c4d9842-ba1a-40ae-a580-3136b8f95a7a"/>
+                <ID name="" mc="Standard.Parameter" uid="2b09dbd5-5618-42f5-939a-2cb13dddde71"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -736,7 +736,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d2c3f913-ba8c-435b-b8cc-1cd1e25baea8"/>
+                <ID name="" mc="Infrastructure.Note" uid="8631c6a1-5c74-48d1-9621-013897168fa9"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return JOptionPane.showConfirmDialog(this, message, title, JOptionPane.YES_NO_OPTION); // Affiche une boîte de dialogue de confirmation]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -753,7 +753,7 @@ if (choix == JOptionPane.YES_OPTION) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="showOptionDialog" mc="Standard.Operation" uid="d1883b27-b3cc-4eb7-ba31-42a244d6da0e"/>
+          <ID name="showOptionDialog" mc="Standard.Operation" uid="029c6009-96e7-47a4-b255-284107694170"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -767,7 +767,7 @@ if (choix == JOptionPane.YES_OPTION) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="message" mc="Standard.Parameter" uid="22797d7f-b641-4806-a9ff-013c88e5f463"/>
+                <ID name="message" mc="Standard.Parameter" uid="0adedaa2-8491-46ae-9143-3fd147f1f837"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -789,7 +789,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="title" mc="Standard.Parameter" uid="5553dc1d-11ba-478a-bb8b-9e2ec47da347"/>
+                <ID name="title" mc="Standard.Parameter" uid="36eb1926-a3a4-472c-96f5-bbacd8fc3979"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -811,7 +811,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="options" mc="Standard.Parameter" uid="05428630-0109-461e-982d-1a968cea5d63"/>
+                <ID name="options" mc="Standard.Parameter" uid="8db22855-60a7-47e5-bd0c-8c3ef33d44b7"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -832,7 +832,7 @@ if (choix == JOptionPane.YES_OPTION) {
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="e23640e8-d7ff-4f91-b1a5-172210637751"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b09c0c4b-26f1-4dff-aaa6-1790e92ef97c"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -840,7 +840,7 @@ if (choix == JOptionPane.YES_OPTION) {
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="7bdaea6c-4df0-4010-851e-1acdc77e5684"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="23e884a0-e635-47ed-b491-fce151cfeb7b"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -859,7 +859,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="f7f009ad-18bb-4359-90c8-14a13e4aaa4a"/>
+                <ID name="" mc="Standard.Parameter" uid="85e47f47-9345-470b-9391-fb124ee93843"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -883,10 +883,10 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="2640336e-55d2-4dc0-9997-7713dd46abe7"/>
+                <ID name="" mc="Infrastructure.Note" uid="7a24b309-8f22-433e-973d-0389845306f6"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options]]></ATT>
+                                                                                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -903,7 +903,7 @@ if (choix == JOptionPane.YES_OPTION) {
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="serialVersionUID" mc="Standard.Attribute" uid="13aca0bc-7152-4285-9171-a1d2c2c1a376"/>
+          <ID name="serialVersionUID" mc="Standard.Attribute" uid="86cc6d52-afb6-4104-80f2-404d80b95580"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[1L]]></ATT>
@@ -926,7 +926,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5644d6be-7021-4d66-82a3-86e9eb8c5d11"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9f1b6e1c-7343-4bab-84c6-3a31d3daac72"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1003,7 +1003,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="77a32891-172d-4438-8e0b-b71759af7e5b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a46596c6-9e88-4bcc-98d7-4d4a76e2844e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1094,7 +1094,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e01c0ae9-7842-4dc5-b4bf-55f59f4df413"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9d5b2121-97db-490b-865d-4cfa158d466a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

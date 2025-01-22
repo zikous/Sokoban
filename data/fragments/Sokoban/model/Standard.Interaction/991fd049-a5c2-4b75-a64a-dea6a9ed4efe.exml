@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="ed1d76a2-cc9c-4496-bca0-be9a151b156d"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="action" mc="Standard.Operation" uid="b4eb871f-b7e0-471c-a89a-31c91670ec60"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -165,11 +160,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="c870092c-8fff-4dc6-b0bb-92946ce2541e"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="estTermine" mc="Standard.Operation" uid="7a0cd4ae-1ffa-470d-aae2-e6ebba6ace44"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -293,11 +283,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="dbb73f26-c766-475b-89a8-b88199bec122"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getZone" mc="Standard.Operation" uid="8237b83e-e9e3-4cb4-a92d-36412ee2416a"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -469,11 +454,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="9da2448f-27c5-4534-bd19-f00f54b4697a"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="deplacer" mc="Standard.Operation" uid="e5a6eff8-29c5-4e6d-ab8b-0c127e57d5df"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -599,11 +579,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="a22aac29-d200-4cf5-8781-3e10324263df"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPosition" mc="Standard.Operation" uid="acfde1a3-8ca4-4432-b5cb-6e1ffadf9003"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -727,11 +702,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="1ce5142d-f6e6-4739-b00e-a6b82c9eb1fb"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -908,11 +878,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="7d13fa94-47a8-40eb-bf6e-db70de33e2ee"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setZone" mc="Standard.Operation" uid="ca9fc007-2578-4a0f-89f8-b6182175b83b"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -1037,11 +1002,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="fff44723-d85b-496d-b707-611560dc1412"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -1207,11 +1167,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="bdf6756c-21f0-46d8-9b8b-26cfa6f69778"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setZone" mc="Standard.Operation" uid="ca9fc007-2578-4a0f-89f8-b6182175b83b"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -1335,11 +1290,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="ef069427-5816-41ab-bf35-c39de1119703"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setZone" mc="Standard.Operation" uid="ca9fc007-2578-4a0f-89f8-b6182175b83b"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -1659,7 +1609,7 @@
         </OBJECT>
       </COMP>
       <COMP relation="Product">
-        <COMPID name="Sequence diagram of mouvement" mc="Standard.SequenceDiagram" uid="7d541798-be31-465d-9ba6-e88c8bf0909b"/>
+        <COMPID name="Diagramme de séquence du mouvement du gardien" mc="Standard.SequenceDiagram" uid="7d541798-be31-465d-9ba6-e88c8bf0909b"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

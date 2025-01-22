@@ -16,6 +16,8 @@
       <COMP relation="OwnedElement">
         <COMPID name="IOException" mc="Standard.Class" uid="bfa7d437-6f12-4dcc-ab75-2514f50a54f8"/>
         <COMPID name="File" mc="Standard.Class" uid="dad90249-6fda-4450-b688-048540422a3c"/>
+        <COMPID name="BufferedReader" mc="Standard.Class" uid="b7518100-1a2b-41c3-aee9-4060aecb129f"/>
+        <COMPID name="FileReader" mc="Standard.Class" uid="e0adbfa4-ff05-440e-825c-7aeb84bc2a69"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

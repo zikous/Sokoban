@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="f8bdc026-c572-4f19-a1d0-8a2dbd2b4fc0"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -163,11 +158,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="b7a2b814-2dce-4d38-92a0-893bb109b2e0"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getMobile" mc="Standard.Operation" uid="79062302-75c0-4a0a-91d8-f06414d72b1f"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
@@ -333,11 +323,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="6ee2f331-45fa-4a88-9a9f-654c878ba004"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="getPositionAdjacente" mc="Standard.Operation" uid="b8b01d3a-a2b4-4f93-ab54-f3a2544e13a4"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -498,11 +483,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="62d24dff-a749-47b9-aa81-dbee1e587c48"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setZone" mc="Standard.Operation" uid="6cc402cd-c3ea-4a16-80d7-ad7d38125c7a"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -628,11 +608,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="273a1d18-8f61-418a-ac27-610e2a4a6cc0"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setMobile" mc="Standard.Operation" uid="cb555592-9bf4-4ef5-83a5-259f98c91d9e"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -683,11 +658,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="3fe98238-6e0c-4448-bc64-97ba0e07fdff"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setMobile" mc="Standard.Operation" uid="cb555592-9bf4-4ef5-83a5-259f98c91d9e"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -736,11 +706,6 @@
                   <LINK relation="ReceiveEvent">
                     <REFOBJ>
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="24733a98-d2bb-48b6-8cd3-51a6448fa336"/>
-                    </REFOBJ>
-                  </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="setZone" mc="Standard.Operation" uid="ca9fc007-2578-4a0f-89f8-b6182175b83b"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>

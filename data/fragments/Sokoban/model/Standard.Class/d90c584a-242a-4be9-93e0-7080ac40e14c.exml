@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="EcranAccueil" mc="Standard.Operation" uid="03cff891-69e0-400c-8502-593f133bceba"/>
+          <ID name="EcranAccueil" mc="Standard.Operation" uid="a3d50b56-fc7a-431c-9ae5-49f3c166a720"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="b3102aec-f4f4-485d-8e14-cdcf81b148ae"/>
+                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="d735acca-0c3f-48c1-9f7a-53c1a0dc7a53"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -58,7 +58,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9419aef5-4a38-4c28-ac71-b5fb90cdfca6"/>
+                <ID name="" mc="Infrastructure.Note" uid="b0fb301e-c95b-4860-9ddd-2a088903889b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[setLayout(new BorderLayout()); // Utilise un BorderLayout pour organiser les composants
 add(createTitre(), BorderLayout.NORTH); // Ajoute le titre en haut
@@ -79,7 +79,7 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bout
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createTitre" mc="Standard.Operation" uid="09dd40b8-4668-44fa-8f7d-205d94d3e7b2"/>
+          <ID name="createTitre" mc="Standard.Operation" uid="2fedcd73-a841-44b9-a217-cfbb9ab32699"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -93,7 +93,7 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bout
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="6d591321-a844-45cf-88cb-5604d01e1ba0"/>
+                <ID name="" mc="Standard.Parameter" uid="39b537ce-e085-41e3-a528-de549f338a40"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -117,7 +117,7 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bout
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="a484a115-4ec9-4417-b92c-3ba842a0b27f"/>
+                <ID name="" mc="Infrastructure.Note" uid="cf5b1455-dd19-4e3c-b093-075f78e4e39b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return titre;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -131,7 +131,7 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bout
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d33fddb1-9e2c-49ae-b579-988c6e13ec51"/>
+                <ID name="" mc="Infrastructure.Note" uid="48ce4153-3f21-4752-a862-bcee4db8dea4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JLabel titre = new JLabel("Sokoban", SwingConstants.CENTER); // Crée le titre
 titre.setFont(new Font("Roboto", Font.BOLD, 80)); // Définit la police
@@ -152,7 +152,7 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une ma
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createPanelInfos" mc="Standard.Operation" uid="fe64f8d5-b318-42ab-b49b-ccda9d74e073"/>
+          <ID name="createPanelInfos" mc="Standard.Operation" uid="22132250-b3e8-404c-985f-a2164182cff1"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -166,7 +166,7 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une ma
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="ae5ed221-9af7-48e0-ab07-088eb297fa9a"/>
+                <ID name="" mc="Standard.Parameter" uid="6a6d6b21-cbc1-4acb-997f-6b1d33629feb"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -190,7 +190,7 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une ma
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d49316d1-2710-4a8b-ae32-2792c859a501"/>
+                <ID name="" mc="Infrastructure.Note" uid="f0f39f08-4cc4-4de2-a76c-21b7614e8a66"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return panelInfos;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -204,7 +204,7 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une ma
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="2bdce7c5-83fb-4a62-8e73-f0c15923a190"/>
+                <ID name="" mc="Infrastructure.Note" uid="a62d81f5-51e1-4459-9333-e86a88f771d5"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JPanel panelInfos = new JPanel();
 panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS)); // Utilise un BoxLayout vertical
@@ -230,7 +230,7 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createCredits" mc="Standard.Operation" uid="85b84feb-79e0-4d7c-8c7a-51e56c164e22"/>
+          <ID name="createCredits" mc="Standard.Operation" uid="459afd86-cab3-4979-8f2a-5b5818c54e82"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -244,7 +244,7 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="cfb3f1b1-e005-4e7b-8b70-20ce958f2942"/>
+                <ID name="" mc="Standard.Parameter" uid="c97a0f74-a27e-460f-95f5-28ee49533498"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -268,7 +268,7 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="25630c06-fa84-4bbb-9442-c0e7df30377a"/>
+                <ID name="" mc="Infrastructure.Note" uid="16998927-911e-4b7a-9081-91d76d72f4f6"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return credits;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -282,7 +282,7 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="b3b714b8-1eaf-4bf6-bbe3-dcb502190eb1"/>
+                <ID name="" mc="Infrastructure.Note" uid="93e3932e-36d5-464c-92a5-2a95538664ad"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JLabel credits = new JLabel("Fait par Zakaria Bheddar et Mohamed Cheikh Rouhou", SwingConstants.CENTER); // Crée les crédits
 credits.setFont(new Font("Roboto", Font.ITALIC, 20)); // Définit la police
@@ -303,7 +303,7 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createInstructions" mc="Standard.Operation" uid="84e42052-b96a-4ed9-beb1-2a468dcfccb5"/>
+          <ID name="createInstructions" mc="Standard.Operation" uid="312f1e1b-202e-437e-99aa-b88f037e5833"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -317,7 +317,7 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="text" mc="Standard.Parameter" uid="8cde6053-d22b-4547-bd83-6abaac9259a7"/>
+                <ID name="text" mc="Standard.Parameter" uid="2f1c424a-7d25-4d3d-ba72-814a8be5ff99"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -341,7 +341,7 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="b56e57e9-170c-4a79-b22e-966e5ba6971f"/>
+                <ID name="" mc="Standard.Parameter" uid="189839a3-bca2-4a6c-bf6c-513650dd08e4"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -365,7 +365,7 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="77eeb49e-43d4-47d3-aef4-666d379c46d5"/>
+                <ID name="" mc="Infrastructure.Note" uid="2fd749cc-9b1e-4609-a67e-822b0dbc6def"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return instructions;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -379,7 +379,7 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="507b79a4-7a58-490d-a640-419eb3eeff29"/>
+                <ID name="" mc="Infrastructure.Note" uid="25878053-eafa-42f7-8616-b03ebaacda45"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JLabel instructions = new JLabel(text, SwingConstants.CENTER); // Crée les instructions
 instructions.setFont(new Font("Roboto", Font.PLAIN, 18)); // Définit la police
@@ -400,7 +400,7 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createPanelBouton" mc="Standard.Operation" uid="713fb87d-8122-4280-a34c-61516bd6a0fb"/>
+          <ID name="createPanelBouton" mc="Standard.Operation" uid="d8705711-5eef-4f66-b8ee-63adbe439f13"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -414,7 +414,7 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="fa289755-20b5-4aae-b927-5a0d44de25b3"/>
+                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="f23147d2-879f-44ed-a890-d47ff8138cbd"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -438,7 +438,7 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="943d3694-c91d-493b-9d11-e7bc1f420386"/>
+                <ID name="" mc="Standard.Parameter" uid="1faddcae-6f27-484c-83ae-e603495542c6"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -462,7 +462,7 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7ec09c8d-1614-4cec-86c1-9a07c857bbd4"/>
+                <ID name="" mc="Infrastructure.Note" uid="8340b2b6-2941-4830-8f11-ca94877391f7"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return panelBouton;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -476,7 +476,7 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7ce93839-e070-46ae-b081-b845f23a549d"/>
+                <ID name="" mc="Infrastructure.Note" uid="e3ba4bb5-b8ac-4c0a-a2bb-f2a02e703e33"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JPanel panelBouton = new JPanel();
 panelBouton.setOpaque(false); // Rend le panneau transparent
@@ -497,7 +497,7 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="createBoutonCommencer" mc="Standard.Operation" uid="704b68fb-d6ce-425d-a7d9-fa1392796d92"/>
+          <ID name="createBoutonCommencer" mc="Standard.Operation" uid="c8a0989c-79af-484a-bf1f-566647d344e2"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -511,7 +511,7 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="8c6505d0-fddd-41cd-86c4-1dc2c12afeec"/>
+                <ID name="fenetrePrincipale" mc="Standard.Parameter" uid="a2adb7a6-8e07-4aea-a534-6d73968ae04e"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -535,7 +535,7 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="225c8946-be7a-4aca-8c68-29ac3797b85e"/>
+                <ID name="" mc="Standard.Parameter" uid="98918341-b172-400d-9a01-a71e1476ba0f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -559,7 +559,7 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ed30e6e8-8ef7-4d90-814c-8f3f9751cc94"/>
+                <ID name="" mc="Infrastructure.Note" uid="430b0104-a337-45c3-ab7f-7a7bbbd2cfee"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return boutonCommencer;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -573,7 +573,7 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="682a9cb5-089c-43fc-8adb-eca18786c9ca"/>
+                <ID name="" mc="Infrastructure.Note" uid="ce14465a-839c-4ec8-9548-4a79ef87a210"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[boutonCommencer = new JButton("Commencer"); // Crée le bouton "Commencer"
 boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 24)); // Définit la police
@@ -614,7 +614,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="serialVersionUID" mc="Standard.Attribute" uid="82cc66d1-83a6-4733-ae5f-f4405f8db157"/>
+          <ID name="serialVersionUID" mc="Standard.Attribute" uid="ae655fd7-bb2c-488a-ac9e-48c845c90c86"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[1L]]></ATT>
@@ -637,7 +637,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b3f13e22-c10d-46a2-9363-d34580f13afb"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e3badfee-c4aa-457e-b64b-96bf575e6aa2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -714,7 +714,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="288e781e-2e77-46b6-beda-b1d80481b1dc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="eb617f7c-1e47-48d6-9731-3221ee06d3e0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

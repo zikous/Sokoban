@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="main" mc="Standard.Operation" uid="7fadbec0-3ad7-45dc-a85e-7abaa8511f72"/>
+          <ID name="main" mc="Standard.Operation" uid="5390a33a-879f-4753-9702-812f7cadfa24"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="args" mc="Standard.Parameter" uid="1194d29c-e8a7-4199-99a6-7eb48809a925"/>
+                <ID name="args" mc="Standard.Parameter" uid="f8406775-e524-40a7-8f69-f32e0fcca066"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -52,7 +52,7 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="ef6f8dcf-8553-4c35-9d5a-20272741de1e"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b3c34687-64c6-431d-aa21-0ee2899982b0"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -60,7 +60,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="dbac3aa9-5419-4eaa-a18d-0e6d76a71265"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="d06580da-78c0-45d2-9021-39e2ae64ea89"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -79,7 +79,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="f58774f4-c237-47c6-adff-a54b735cb00a"/>
+                <ID name="" mc="Infrastructure.Note" uid="58653e95-55bf-4510-adf4-b9b89860bada"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Scanner scanner = new Scanner(System.in);
 Controleur controleur = new Controleur();
@@ -150,7 +150,7 @@ System.out.println("Merci d'avoir joué !");
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="afficherInstructions" mc="Standard.Operation" uid="c7506ab6-1481-4c68-9428-61f0e73d0d04"/>
+          <ID name="afficherInstructions" mc="Standard.Operation" uid="9df2cfb1-d5dc-44b4-92f5-23c1b4bdec80"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -164,7 +164,7 @@ System.out.println("Merci d'avoir joué !");
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="088c1f33-82e7-4e27-be59-6452a066c3bd"/>
+                <ID name="" mc="Infrastructure.Note" uid="e5588780-7e61-4b25-8a46-803aae56c9b8"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[System.out.println("Bienvenue dans Sokoban !");
 System.out.println("Contrôles : ");
@@ -195,7 +195,7 @@ System.out.println("* = Caisse sur cible");
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="convertirEntree" mc="Standard.Operation" uid="dcd6d086-0dd5-4a34-9285-e45c36c9969c"/>
+          <ID name="convertirEntree" mc="Standard.Operation" uid="f8b73a4c-c796-405c-af09-c0925795d1f1"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -209,7 +209,7 @@ System.out.println("* = Caisse sur cible");
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="input" mc="Standard.Parameter" uid="49fcd1c0-c1a2-46f1-ab9a-e4838d474f6a"/>
+                <ID name="input" mc="Standard.Parameter" uid="436335bf-ee46-4840-9d7e-4a50b4578193"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -233,7 +233,7 @@ System.out.println("* = Caisse sur cible");
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="246c2c9f-f72a-4d68-9ba4-672aca6128e2"/>
+                <ID name="" mc="Standard.Parameter" uid="eabab06c-41c2-4daa-8040-2cc9a1c488ec"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -259,7 +259,7 @@ System.out.println("* = Caisse sur cible");
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="cb8395b5-40a0-4a01-b8f7-bbbbebfe4f48"/>
+                <ID name="" mc="Infrastructure.Note" uid="10e2c65e-3f06-47c4-8941-c00faad3a6e0"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[switch (input) {
     case "z":

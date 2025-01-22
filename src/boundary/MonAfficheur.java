@@ -14,10 +14,10 @@ import entity.*;
 
 @objid ("52ef6f21-2604-4f8f-8bea-0a23c5eacf4d")
 public class MonAfficheur extends JPanel {
-    @objid ("293286de-b362-41ac-8cd0-db3df6ac97a8")
+    @objid ("38bc53e9-4b95-4faf-bd63-eb4fc812c634")
     private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
 
-    @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
+    @objid ("5e368795-46ac-40db-9aad-6a34e2347231")
     private static final long serialVersionUID = 1L;
 
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
@@ -53,14 +53,14 @@ public class MonAfficheur extends JPanel {
     @objid ("e1c46379-b7df-4c0b-a08d-da11c0f1ef84")
     private BufferedImage imgHerbe; // Image de fond (herbe)
 
-    @objid ("9cd1286c-7544-4211-9571-c1649b59ea41")
+    @objid ("89f440a6-bece-453a-b1f2-5ffb2df8a6db")
     public MonAfficheur(Controleur controleur) {
         this.controleur = controleur;
         setPreferredSize(new Dimension(800, 600)); // Taille du panneau
         chargerImages(); // Charge les images
     }
 
-    @objid ("82d6f3f2-c611-4fb2-8a5c-59cabe8b5bb3")
+    @objid ("3b5fe7e9-de23-451f-808d-dcb0b101f51d")
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -96,7 +96,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("a8838635-eaae-4f5f-ac9c-7278ec19b826")
+    @objid ("cfa09f0c-c77a-4a5c-9a13-c1809eaee0dc")
     private void dessinerMur(Graphics g, int x, int y) {
         if (imgMur != null) {
             g.drawImage(imgMur, x, y, null); // Dessine l'image du mur
@@ -106,7 +106,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("76580f48-4b01-4fba-9429-8fcb98b6af51")
+    @objid ("f925c588-7012-459a-99fe-6b4625ee7e25")
     private void dessinerCible(Graphics g, int x, int y) {
         if (imgCible != null) {
             g.drawImage(imgCible, x, y, null); // Dessine l'image de la cible
@@ -117,7 +117,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("4d159fe8-d959-4a1c-a822-ab44c536c032")
+    @objid ("7e43c476-494b-4eac-b448-cb2b7d175b87")
     private void dessinerCaisse(Graphics g, int x, int y, boolean surCible) {
         if (surCible && imgCaisseSurCible != null) {
             g.drawImage(imgCaisseSurCible, x, y, null); // Dessine une caisse sur cible
@@ -129,7 +129,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("90fb6c94-200c-47f9-a903-2a458665d1fb")
+    @objid ("e6b9bb09-e857-4dea-9a97-639b3f150802")
     private void dessinerGardien(Graphics g, int x, int y, boolean surCible) {
         BufferedImage imageGardien = getImageGardien(); // Obtient l'image du gardien selon sa direction
         if (surCible) {
@@ -143,7 +143,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("ad14a453-8817-4442-b2fa-728e2f122a6a")
+    @objid ("2d6f226a-0507-48ed-ba77-3d748481f9ff")
     private void chargerImages() {
         try {
             // Charge et redimensionne toutes les images
@@ -162,7 +162,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("d52c1df9-0179-4ea0-aa26-21a1386c22ce")
+    @objid ("f5f870fb-986d-4495-afba-aa2367809921")
     private void dessinerHerbe(Graphics g, int x, int y) {
         if (imgHerbe != null) {
             g.drawImage(imgHerbe, x, y, null); // Dessine l'herbe
@@ -172,14 +172,14 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("6950601e-9b59-4138-9a85-71f00a3152e9")
+    @objid ("2fa76d9b-f392-4163-bd2c-6bdb8aae3074")
     private void dessinerSol(Graphics g, int x, int y) {
         if (imgSol != null) {
             g.drawImage(imgSol, x, y, null); // Dessine le sol
         }
     }
 
-    @objid ("0671d5b5-d53c-4f67-9444-2c9be6acbb44")
+    @objid ("88b4a0ba-6f0e-4753-85b3-137224e9e1cd")
     private BufferedImage getImageGardien() {
         Direction direction = controleur.getGardien().getCurrentDirection();
         switch (direction) {
@@ -191,7 +191,7 @@ public class MonAfficheur extends JPanel {
         }
     }
 
-    @objid ("6ff5f19d-704d-4f79-9853-b73ea670f89c")
+    @objid ("e22e7d5e-9720-4a3e-b1f7-6e60d16a3517")
     private BufferedImage chargerEtRedimensionnerImage(String chemin) throws IOException {
         BufferedImage imageOriginale = ImageIO.read(new File(chemin)); // Charge l'image
         BufferedImage imageRedimensionnee = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);

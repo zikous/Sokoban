@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="Zone" mc="Standard.Operation" uid="6b55e4b9-e2d9-4ebd-8e98-28205ef2d219"/>
+          <ID name="Zone" mc="Standard.Operation" uid="38f6ed02-91a7-409d-bf4c-d8081b4fa007"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="position" mc="Standard.Parameter" uid="fc11d993-c229-4b8d-9d0b-e90dda430c69"/>
+                <ID name="position" mc="Standard.Parameter" uid="88596547-ed9c-4713-84a9-3b791df7dcf8"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -58,7 +58,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9a654a4b-2870-4069-ab31-589e5ccb4a6e"/>
+                <ID name="" mc="Infrastructure.Note" uid="2daa912b-2168-4d5c-b7ea-3ff3c719ed51"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.position = position;
 position.setZone(this);
@@ -77,7 +77,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="estLibre" mc="Standard.Operation" uid="9652648f-1b97-42b8-afba-7f722fef967a"/>
+          <ID name="estLibre" mc="Standard.Operation" uid="24ff9970-aaa1-4d1a-be88-79694789e364"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -91,7 +91,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="b78823ed-e356-4e60-b0c0-6130f0412b0e"/>
+                <ID name="" mc="Standard.Parameter" uid="525e43f6-9047-4834-b43c-5787cf1cc6ed"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -115,7 +115,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d6856163-48e0-4cd2-b24f-dd3c65609d6f"/>
+                <ID name="" mc="Infrastructure.Note" uid="d22aae6b-b462-4939-906d-21b13a418b4c"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return !estMur && mobile == null;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -132,7 +132,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="isEstCible" mc="Standard.Operation" uid="b6feeb6b-24b3-4d86-83e1-419a1a89330d"/>
+          <ID name="isEstCible" mc="Standard.Operation" uid="7b147fa4-d337-42e4-ab15-ab5d5312dabf"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -146,7 +146,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="29e86508-b26c-494a-8498-8dc827d7df18"/>
+                <ID name="" mc="Standard.Parameter" uid="4e775ca7-69f4-439a-81c8-382ac4267423"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -170,7 +170,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9ef79450-2ddc-4fb7-b2a5-1cd66d333277"/>
+                <ID name="" mc="Infrastructure.Note" uid="1e9727ad-7b33-43d7-83ad-0843404d89f1"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return estCible;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -187,7 +187,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setEstCible" mc="Standard.Operation" uid="484181e2-ca21-47e5-9708-dfc2eda2ce24"/>
+          <ID name="setEstCible" mc="Standard.Operation" uid="36691930-369b-4cb6-b237-fea6d3c04035"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -201,7 +201,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="estCible" mc="Standard.Parameter" uid="bcb56ba2-8ec4-437e-8911-a26b41cffa71"/>
+                <ID name="estCible" mc="Standard.Parameter" uid="a9b650d2-8041-4d8a-a44c-267744232e03"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -225,7 +225,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="6147c978-9d6e-4791-9517-30763c9b156a"/>
+                <ID name="" mc="Infrastructure.Note" uid="a96576ec-0fb7-4756-8c4d-1a760cd0c0d7"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.estCible = estCible;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -242,7 +242,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="isEstMur" mc="Standard.Operation" uid="8f1745b8-4dc2-4936-aa7a-ded6df14a7ab"/>
+          <ID name="isEstMur" mc="Standard.Operation" uid="ed3c1992-05ee-4854-8986-b6e0ffe04446"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -256,7 +256,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="5364b836-5ee4-4bd9-8694-18c66f7b6867"/>
+                <ID name="" mc="Standard.Parameter" uid="42440bdf-5c8f-40fa-9743-37997fd6d807"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -280,7 +280,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="0fc34106-e54e-4e18-bc24-bbca7e69a793"/>
+                <ID name="" mc="Infrastructure.Note" uid="7078a431-8567-470f-91ab-ad97b901d129"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return estMur;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -297,7 +297,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setEstMur" mc="Standard.Operation" uid="61dd0d3c-2535-49f3-8dfb-05f1d127d1a7"/>
+          <ID name="setEstMur" mc="Standard.Operation" uid="d4075419-bf5b-4b29-a169-751322f217b3"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -311,7 +311,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="estMur" mc="Standard.Parameter" uid="64421989-05ec-4067-9164-b487531f3961"/>
+                <ID name="estMur" mc="Standard.Parameter" uid="d9f35f8b-27e6-4b33-b64c-02ddf7767c88"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -335,7 +335,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d860ce06-34d8-4694-a833-8ec0da3f55dd"/>
+                <ID name="" mc="Infrastructure.Note" uid="1d873afd-9a5d-42a0-937c-3aefead19b85"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.estMur = estMur;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -352,7 +352,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getMobile" mc="Standard.Operation" uid="79062302-75c0-4a0a-91d8-f06414d72b1f"/>
+          <ID name="getMobile" mc="Standard.Operation" uid="43235556-9ec2-44ad-8410-6db1bb6544e0"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -366,7 +366,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="88ec032c-a99d-4e96-8dbb-fe1d8f445110"/>
+                <ID name="" mc="Standard.Parameter" uid="a65e0989-b537-4504-ac8c-b27054379c6f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -390,7 +390,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="23c4b0e5-072a-4595-8eb2-f412c2c06ac4"/>
+                <ID name="" mc="Infrastructure.Note" uid="ec1b5e57-2253-40ee-b714-d70ddd60cb9b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return mobile;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -407,7 +407,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setMobile" mc="Standard.Operation" uid="cb555592-9bf4-4ef5-83a5-259f98c91d9e"/>
+          <ID name="setMobile" mc="Standard.Operation" uid="b3e19607-8fb2-41b6-902d-285c37a93adb"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -421,7 +421,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="mobile" mc="Standard.Parameter" uid="efd7a1c1-0eb2-4837-9c79-634580c11277"/>
+                <ID name="mobile" mc="Standard.Parameter" uid="bccfe490-6577-42db-a0ce-165f33ddf15c"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -445,7 +445,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="dd22e576-6417-4c71-a96d-b524c1409090"/>
+                <ID name="" mc="Infrastructure.Note" uid="6119c949-9254-4526-a623-06807cedd09e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.mobile = mobile;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -462,7 +462,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getPosition" mc="Standard.Operation" uid="acfde1a3-8ca4-4432-b5cb-6e1ffadf9003"/>
+          <ID name="getPosition" mc="Standard.Operation" uid="b82730a7-b373-45b4-a115-38dc594eca41"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -476,7 +476,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="5e8845dd-ad7f-4c02-98bb-c16fb147abe0"/>
+                <ID name="" mc="Standard.Parameter" uid="7ef40a1b-34ad-4eaa-abd6-f77db208bc0b"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -500,7 +500,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ad52a6cc-30e0-4eb7-84fe-399ed14e5ce0"/>
+                <ID name="" mc="Infrastructure.Note" uid="26e1d6b5-21f8-4da4-ba84-ce05299127ff"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return position;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -517,7 +517,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="contientCaisse" mc="Standard.Operation" uid="2fb09d7d-aa46-47b2-b8f1-db8041196e6f"/>
+          <ID name="contientCaisse" mc="Standard.Operation" uid="686f7b7d-0dc7-43b7-9c7a-847923cb0aa3"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -531,7 +531,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="14c6c9b2-07eb-4258-b4db-06fc8f8c41f1"/>
+                <ID name="" mc="Standard.Parameter" uid="d286676e-3bfe-47fc-bd7d-f9ca87b91374"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -555,7 +555,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="fdc11d22-5514-42b9-b6ba-3137c8b37ee4"/>
+                <ID name="" mc="Infrastructure.Note" uid="c3d56233-5982-4d9c-82cf-3ab07c7d14ef"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return mobile instanceof Caisse;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -572,7 +572,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="estComplete" mc="Standard.Operation" uid="4a501c0b-f57d-468b-a386-fa5ad067f129"/>
+          <ID name="estComplete" mc="Standard.Operation" uid="dce72272-eb3c-4266-889c-049420664f2b"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -586,7 +586,7 @@ position.setZone(this);
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="cf5c0fd2-9a6d-4498-91c2-2633d108d766"/>
+                <ID name="" mc="Standard.Parameter" uid="116a88f6-a0d5-4e41-a2d8-29038e3591b4"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -610,7 +610,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d36b665f-b0ab-4a73-8822-0437e2d59f6f"/>
+                <ID name="" mc="Infrastructure.Note" uid="141ab0b8-e871-45d9-8221-99b5714dbc3e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return estCible && contientCaisse();]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -629,7 +629,7 @@ position.setZone(this);
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="estCible" mc="Standard.Attribute" uid="1eedd413-1371-4096-bb6e-50aa43d17c45"/>
+          <ID name="estCible" mc="Standard.Attribute" uid="021efbba-f89c-4109-a70d-d034de44f682"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -652,7 +652,7 @@ position.setZone(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="09b0ab77-1849-480c-bc52-0b60dcff5b59"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0b2dd967-516c-411a-abb5-5d4ed245717f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -667,7 +667,7 @@ position.setZone(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="estMur" mc="Standard.Attribute" uid="2d6d7c3a-6de1-43d9-81de-fc28d0a9f7a3"/>
+          <ID name="estMur" mc="Standard.Attribute" uid="a84ef458-cf71-4300-9701-3557313c5da1"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -690,7 +690,7 @@ position.setZone(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a0a1eb07-2342-457a-92ee-9b83e6ec969d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="54955d8e-9f97-4cc7-be4d-575ed0765e91"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -764,7 +764,7 @@ position.setZone(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="340bd81f-88e4-4e5d-9db7-53c0c7ef5481"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="7296b1be-8263-4fcb-a6c8-6e7d1fb59253"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -784,7 +784,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3603c632-c408-4a07-8737-aeeeabe2b84d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9b38b073-eb06-43ca-8ace-ff72e1592510"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -856,7 +856,7 @@ position.setZone(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="fff6e548-5041-44c7-9e62-e43114f555f8"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="c3cc0d26-2839-40c9-b13c-063241bf029f"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -876,7 +876,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3ec8c050-8e85-4590-ae36-8f1233039728"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8898ec89-12f7-4904-a862-b3f53c50975e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

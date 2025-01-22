@@ -7,15 +7,15 @@ public abstract class Mobile {
     @objid ("3f8e34fd-dc65-4f6e-a39d-a3a056776d1a")
     private Zone zone;
 
-    @objid ("e5a6eff8-29c5-4e6d-ab8b-0c127e57d5df")
+    @objid ("41894ddd-772b-44c5-b905-5ef4b5f091a3")
     public abstract boolean deplacer(Direction direction);
 
-    @objid ("8237b83e-e9e3-4cb4-a92d-36412ee2416a")
+    @objid ("7cdf6697-9ce5-4524-9882-5f0daa4ab409")
     public Zone getZone() {
         return zone;
     }
 
-    @objid ("6cc402cd-c3ea-4a16-80d7-ad7d38125c7a")
+    @objid ("6d2740bc-60bb-423e-923c-a0ef1a2ade23")
     public void setZone(Zone zone) {
         if (this.zone != null) {
             this.zone.setMobile(null); // Détacher du précédent zone

@@ -17,7 +17,107 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="getNiveauCourant" mc="Standard.Operation" uid="5f507c65-bb08-48db-97d3-283fdf031c42"/>
+          <ID name="NiveauManager" mc="Standard.Operation" uid="7b72e7cb-5371-4ee3-8bec-bd83cee6b37d"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[NiveauManager]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Infrastructure.Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="bb7256a6-c263-45ca-bd41-03e4217162ca"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[chargerNiveauxDepuisFichier(); // Charge les niveaux au démarrage]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="chargerNiveauxDepuisFichier" mc="Standard.Operation" uid="2e663efd-5067-4e4d-b07f-9ca831df889f"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[chargerNiveauxDepuisFichier]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="dfaac959-5f78-4a10-8618-c90b6fb51e41"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[File file = new File(cheminFichierNiveaux);
+if (!file.exists()) {
+    NIVEAUX = new int[0][0][0]; // Initialise un tableau vide si le fichier n'existe pas
+    return;
+}
+
+List<int[][]> niveauxList = new ArrayList<>();
+try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+    String line;
+    List<int[]> currentLevel = new ArrayList<>();
+
+    while ((line = reader.readLine()) != null) {
+        if (line.trim().isEmpty() || line.startsWith("#")) {
+            if (!currentLevel.isEmpty()) {
+                niveauxList.add(currentLevel.toArray(new int[0][])); // Ajoute le niveau complet
+                currentLevel.clear(); // Réinitialise pour le prochain niveau
+            }
+        } else {
+            String[] parts = line.trim().split(" ");
+            int[] row = new int[parts.length];
+            for (int i = 0; i < parts.length; i++) {
+                row[i] = Integer.parseInt(parts[i]); // Convertit la ligne en tableau d'entiers
+            }
+            currentLevel.add(row); // Ajoute la ligne au niveau actuel
+        }
+    }
+
+    if (!currentLevel.isEmpty()) {
+        niveauxList.add(currentLevel.toArray(new int[0][])); // Ajoute le dernier niveau
+    }
+
+    NIVEAUX = niveauxList.toArray(new int[0][0][0]); // Convertit la liste en tableau 3D
+} catch (IOException e) {
+    NIVEAUX = new int[0][0][0]; // Initialise un tableau vide en cas d'erreur
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getNiveauCourant" mc="Standard.Operation" uid="5a7b63d6-eabb-462e-93b1-dd83e0578adf"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +131,7 @@
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="515cfed0-2183-4acc-ae79-2d46c354f469"/>
+                <ID name="" mc="Standard.Parameter" uid="3b3c6234-e842-45d7-a5aa-1d2f1d5687f4"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -52,7 +152,7 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="b47bc2bb-bab4-41f3-9f09-50b59b05a21f"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="facb6146-0fd9-42aa-8ae6-0fdd7a5f61c0"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -60,7 +160,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="d9a788fe-adcd-4176-97f3-881b41e2f3e1"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="da63eb84-8908-44e2-99d2-9f713c6d6e0c"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -74,7 +174,7 @@
                       </DEPENDENCIES>
                     </OBJECT>
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="6065114d-31f9-46ea-a178-d40c45cc0af2"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="1d1ce7d7-5c54-4609-ac38-d92e361e5ef3"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -82,7 +182,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="d5663f4e-85b4-4673-987a-b5b1683893a6"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="9a60894c-cab2-4921-ad60-7b8dc230a8d2"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[2]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -101,7 +201,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="8b848f8f-5d91-42bc-951e-0cdf6d3c1d18"/>
+                <ID name="" mc="Infrastructure.Note" uid="52c915f0-9c84-4fd4-86c5-037a748f065c"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return NIVEAUX[niveauCourant]; // Retourne le niveau actuel]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -114,67 +214,11 @@
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="passerAuNiveauSuivant" mc="Standard.Operation" uid="c9f7c36e-c579-4660-886f-e79c3173045c"/>
-          <ATTRIBUTES>
-            <ATT name="Concurrency">false</ATT>
-            <ATT name="Final">false</ATT>
-            <ATT name="Passing">MethodOut</ATT>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[passerAuNiveauSuivant]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="8c0b6115-a278-44c5-8180-1fb614c4523e"/>
+                <ID name="" mc="Infrastructure.Note" uid="95d86aa1-b26a-45d3-83b2-1f8aaf1426ee"/>
                 <ATTRIBUTES>
-                  <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="46b76538-8cb8-42a4-9398-2251e7722bff"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false; // Dernier niveau atteint]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="22930537-1c73-488d-86ed-0450279cdc3d"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[if (niveauCourant < NIVEAUX.length - 1) {
-    niveauCourant++; // Passe au niveau suivant
-    return true;
+                  <ATT name="Content"><![CDATA[if (NIVEAUX == null || niveauCourant >= NIVEAUX.length) {
+    return new int[0][0]; // Retourne un tableau vide si aucun niveau n'est chargé
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -191,7 +235,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="estDernierNiveau" mc="Standard.Operation" uid="15d9655b-6e6d-4383-ae44-d6f30d0b7775"/>
+          <ID name="passerAuNiveauSuivant" mc="Standard.Operation" uid="8b14bc36-4b52-4e71-95d3-e26245015b9d"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -199,13 +243,13 @@
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[estDernierNiveau]]></ATT>
+            <ATT name="Name"><![CDATA[passerAuNiveauSuivant]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="b8be404a-96b8-45af-8b38-bd852f75551e"/>
+                <ID name="" mc="Standard.Parameter" uid="a9228f51-ed1f-4f21-9fe6-0e7dbcb54830"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -229,9 +273,82 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="4d0e7e70-61da-470a-bd53-c1b412e37135"/>
+                <ID name="" mc="Infrastructure.Note" uid="6926a771-19d0-4e09-a8bf-502a41448c01"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return niveauCourant == NIVEAUX.length - 1; // Vérifie si c'est le dernier niveau]]></ATT>
+                  <ATT name="Content"><![CDATA[return true;]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="02e192d6-3c23-4e56-87fd-d3abefb993d8"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (NIVEAUX == null || niveauCourant >= NIVEAUX.length - 1) {
+    return false; // Dernier niveau atteint ou aucun niveau chargé
+}
+niveauCourant++; // Passe au niveau suivant
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="estDernierNiveau" mc="Standard.Operation" uid="134617f2-67d5-4d24-9ce6-1f4fa8a9735a"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[estDernierNiveau]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="e50ffdf0-8f00-4444-aae7-71e138fec7aa"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="1d48c737-f2a3-4533-896d-a305aa1fcde7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return NIVEAUX == null || niveauCourant == NIVEAUX.length - 1; // Vérifie si c'est le dernier niveau]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -245,96 +362,68 @@
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="setCheminFichierNiveaux" mc="Standard.Operation" uid="4f44cc26-7b77-4e18-9781-94309366c734"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setCheminFichierNiveaux]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="chemin" mc="Standard.Parameter" uid="4af1ff5b-0d90-466d-89d5-1bd3c0afd82c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[chemin]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="edb55da9-e11a-4c5a-a36c-15191e7fdb6e"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[cheminFichierNiveaux = chemin; // Permet de changer le chemin du fichier]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="NIVEAUX" mc="Standard.Attribute" uid="558f7496-3377-4a8e-ab51-48386b6fa107"/>
+          <ID name="NIVEAUX" mc="Standard.Attribute" uid="a9c9098b-d8cb-4edd-8247-b7d3d57e8d11"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"><![CDATA[{
-        // Niveau 1
-        {
-            {1, 1, 1, 1, 1},
-            {1, 0, 3, 2, 1},
-            {1, 0, 4, 0, 1},
-            {1, 1, 1, 1, 1}
-        },
-        // Niveau 2
-        {
-            {1, 1, 1, 1, 1, 1, 1},
-            {1, 4, 0, 0, 3, 2, 1},
-            {1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 3
-        {
-            {1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 0, 0, 1},
-            {1, 0, 3, 0, 3, 0, 1},
-            {1, 0, 0, 4, 0, 0, 1},
-            {1, 0, 2, 0, 2, 0, 1},
-            {1, 0, 0, 0, 0, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 4
-        {
-            {1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 0, 0, 1},
-            {1, 0, 1, 1, 1, 0, 1},
-            {1, 0, 1, 2, 1, 0, 1},
-            {1, 0, 1, 3, 1, 0, 1},
-            {1, 0, 0, 4, 0, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 5
-        {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-            {1, 0, 3, 0, 1, 0, 3, 0, 2, 1},
-            {1, 0, 0, 2, 0, 3, 0, 0, 2, 1},
-            {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
-            {1, 0, 0, 0, 0, 0, 0, 0, 2, 1},
-            {1, 0, 0, 0, 1, 0, 3, 0, 0, 1},
-            {1, 0, 0, 4, 0, 0, 0, 0, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 6
-        {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 1, 0, 2, 2, 1},
-            {1, 0, 3, 0, 0, 0, 0, 0, 1},
-            {1, 0, 0, 3, 1, 0, 2, 2, 1},
-            {1, 1, 3, 4, 0, 0, 0, 0, 1},
-            {1, 0, 0, 3, 1, 0, 0, 0, 1},
-            {1, 0, 1, 0, 1, 1, 0, 0, 1},
-            {1, 0, 0, 0, 0, 0, 0, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 7
-        {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-            {1, 0, 3, 0, 1, 0, 3, 0, 0, 1},
-            {1, 0, 0, 0, 0, 3, 0, 0, 2, 1},
-            {1, 0, 3, 0, 1, 0, 0, 0, 0, 1},
-            {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
-            {1, 2, 0, 0, 0, 0, 0, 0, 2, 1},
-            {1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-            {1, 0, 4, 0, 0, 0, 0, 2, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        },
-        // Niveau 8
-        {
-            {1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 0, 1},
-            {1, 0, 3, 0, 4, 1},
-            {1, 1, 5, 0, 0, 1},
-            {1, 0, 5, 0, 1, 1},
-            {1, 0, 5, 0, 1, 1},
-            {1, 0, 5, 0, 1, 1},
-            {1, 0, 2, 0, 1, 1},
-            {1, 1, 1, 1, 1, 1}
-        }
-    }]]></ATT>
+            <ATT name="Value"></ATT>
             <ATT name="TargetIsClass">false</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
@@ -354,19 +443,7 @@
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bfa2c9c9-5acf-49ef-9d51-e823fd372ab4"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="003800a8-0000-0161-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5b3be32c-58ea-4c60-9966-4a92a1ee0c35"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6171e410-9cd0-4cb4-a4fd-0e1214de2e9b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -374,7 +451,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Actual">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="eefa640b-27fc-4364-9056-1a7a070e8b69"/>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="dfd85b4f-3cd1-4701-9351-2a4afab4e123"/>
                       <ATTRIBUTES>
                         <ATT name="Value"><![CDATA[Array]]></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -388,7 +465,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6c5065b3-35ef-4e12-ae5f-16817cfd358f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6c9b85e8-b59a-43c7-9146-debd7b63595b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -396,7 +473,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Actual">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="247341e3-bab0-44ec-8667-711e9f7bb709"/>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="66078da8-89de-4e30-8539-f6f48ed401ef"/>
                       <ATTRIBUTES>
                         <ATT name="Value"><![CDATA[3]]></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -409,11 +486,39 @@
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e1130689-9c97-4a88-a3df-7e2aab1cfe23"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="89eb8f33-f1fc-4a90-96f0-c9c9f8a03391"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Stocke les niveaux chargés]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="niveauCourant" mc="Standard.Attribute" uid="3418c9de-8e94-439a-8db4-923d5d4946b2"/>
+          <ID name="niveauCourant" mc="Standard.Attribute" uid="6cc2f1f9-ccb3-4d8e-8d14-2be1745924d3"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[0]]></ATT>
@@ -436,7 +541,7 @@
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="bd854662-21f2-4408-9ff4-12c198e03552"/>
+                <ID name="" mc="Infrastructure.Note" uid="110784e8-9b1a-4d14-b928-5303f424b09b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Niveau actuel]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -450,6 +555,126 @@
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="cheminFichierNiveaux" mc="Standard.Attribute" uid="d29ad692-a43b-4c1f-b8c7-1caad01c2c3e"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA["niveaux/niveaux.txt"]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[cheminFichierNiveaux]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="03d984a9-f8a8-45a0-873b-33e8c1e6594a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Chemin du fichier des niveaux]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedImport">
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="1c6c8621-88c8-4c1c-921e-f2745b1b1b51"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="BufferedReader" mc="Standard.Class" uid="b7518100-1a2b-41c3-aee9-4060aecb129f"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="11758c60-9dbe-4777-a135-e749ece7f5ba"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="File" mc="Standard.Class" uid="dad90249-6fda-4450-b688-048540422a3c"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="6f850356-85ff-4fa2-8162-062757d16f40"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="FileReader" mc="Standard.Class" uid="e0adbfa4-ff05-440e-825c-7aeb84bc2a69"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="a6fe3178-b9c2-4704-84a4-e2bee7c67f5d"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="IOException" mc="Standard.Class" uid="bfa7d437-6f12-4dcc-ab75-2514f50a54f8"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="27fca2b9-7638-43f9-b846-3d0d2f625227"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="ArrayList" mc="Standard.Class" uid="5f6b9237-6f82-4936-8b62-b85d9ca47cbb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="7291e163-eb0f-4d39-9143-27e4909f8fe6"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="List" mc="Standard.Interface" uid="5b90adb3-808f-4081-a5b5-9d3ee0a65068"/>
+            </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

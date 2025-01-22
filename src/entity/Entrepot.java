@@ -12,7 +12,7 @@ public class Entrepot {
     @objid ("de67d322-7095-427b-a023-70a20df7efd9")
     private List<Zone> zones = new ArrayList<>(); // Zones associées
 
-    @objid ("9ddd3eb1-b3cc-42e3-a42d-b67786b0044c")
+    @objid ("f61e1b54-c2fa-4667-80af-7585fe22abed")
     public void initialiser(int lignes, int colonnes) {
         positions.clear();
         zones.clear();
@@ -26,7 +26,7 @@ public class Entrepot {
         }
     }
 
-    @objid ("7468f5a2-4bbc-47ba-bc0e-54933163df92")
+    @objid ("0a73f4c1-bf9e-437d-a920-aaa2eb5f423d")
     public Position getPosition(int ligne, int colonne) {
         for (Position position : positions) {
             if (position.getLigne() == ligne && position.getColonne() == colonne) {
@@ -36,12 +36,12 @@ public class Entrepot {
         return null; // Position non trouvée
     }
 
-    @objid ("7a0cd4ae-1ffa-470d-aae2-e6ebba6ace44")
+    @objid ("f13a0e36-f7c2-4c4b-a599-1805ba2a754d")
     public boolean estTermine() {
         return zones.stream().filter(Zone::isEstCible).allMatch(Zone::estComplete);
     }
 
-    @objid ("fdb8a6de-2e02-4763-8477-c3626f258a52")
+    @objid ("c845fdf8-b9ad-41cd-ad0f-a6ab9832ce3f")
     public void clear() {
         for (Zone zone : zones) {
             zone.setMobile(null);
@@ -50,7 +50,7 @@ public class Entrepot {
         }
     }
 
-    @objid ("263b23fd-11b0-4738-bbbd-17ade85eb29a")
+    @objid ("5b957880-a0b6-4a13-8f9c-ce11d7cb8309")
     public void placerElement(int ligne, int colonne, TypeElement type) {
         Position position = getPosition(ligne, colonne);
         if (position == null) return;
@@ -73,7 +73,7 @@ public class Entrepot {
         }
     }
 
-    @objid ("b8f732dd-8ce8-49ff-84c9-d0e4459da509")
+    @objid ("8b75d7bc-3993-4852-b63e-998a78017c93")
     @Override
     public String toString() {
         int maxLigne = -1;

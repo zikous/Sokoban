@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="initialiser" mc="Standard.Operation" uid="9ddd3eb1-b3cc-42e3-a42d-b67786b0044c"/>
+          <ID name="initialiser" mc="Standard.Operation" uid="f61e1b54-c2fa-4667-80af-7585fe22abed"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="lignes" mc="Standard.Parameter" uid="21979f77-36cb-48b0-b52d-b9d585c160a2"/>
+                <ID name="lignes" mc="Standard.Parameter" uid="f41a2a1d-de7e-462c-8837-3ffbcc027cfe"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -53,7 +53,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="colonnes" mc="Standard.Parameter" uid="67c85358-0a12-4dc3-891e-9bfbf9452eaa"/>
+                <ID name="colonnes" mc="Standard.Parameter" uid="d177fafe-b7f1-4059-91d7-0c7a52086b01"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -77,7 +77,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="12073be2-0976-498b-b72e-4e89f6c40f14"/>
+                <ID name="" mc="Infrastructure.Note" uid="6195e80e-bdc0-42ab-8177-c0f931d04d76"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[positions.clear();
 zones.clear();
@@ -104,7 +104,7 @@ for (int i = 0; i < lignes; i++) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getPosition" mc="Standard.Operation" uid="7468f5a2-4bbc-47ba-bc0e-54933163df92"/>
+          <ID name="getPosition" mc="Standard.Operation" uid="0a73f4c1-bf9e-437d-a920-aaa2eb5f423d"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -118,7 +118,7 @@ for (int i = 0; i < lignes; i++) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="ligne" mc="Standard.Parameter" uid="652d66f8-7d2b-476a-973f-f9e8c04f064f"/>
+                <ID name="ligne" mc="Standard.Parameter" uid="40447835-c412-48a0-91fb-d8d908485a95"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -140,7 +140,7 @@ for (int i = 0; i < lignes; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="colonne" mc="Standard.Parameter" uid="7315bfbd-4c4e-4aff-b204-69aa487aa61a"/>
+                <ID name="colonne" mc="Standard.Parameter" uid="78ad67c6-07e8-4f72-8b82-8c5b9bb52dc3"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -164,7 +164,7 @@ for (int i = 0; i < lignes; i++) {
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="43b1480b-4eb1-4a93-b816-ac1adfb8e2ed"/>
+                <ID name="" mc="Standard.Parameter" uid="db5e55c0-8188-409b-a42d-e253f9eacebf"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -188,7 +188,7 @@ for (int i = 0; i < lignes; i++) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="e361a871-2b75-474a-9d2d-3e49d7d47fb0"/>
+                <ID name="" mc="Infrastructure.Note" uid="7315f3d6-21b6-4908-b667-dd3539a7cdb4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return null; // Position non trouvée]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -202,7 +202,7 @@ for (int i = 0; i < lignes; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="5c6f5ccb-aca9-482d-8d60-a539ab61738c"/>
+                <ID name="" mc="Infrastructure.Note" uid="91156ab5-dc7a-45ba-9229-52f952a0436c"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[for (Position position : positions) {
     if (position.getLigne() == ligne && position.getColonne() == colonne) {
@@ -224,7 +224,7 @@ for (int i = 0; i < lignes; i++) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="estTermine" mc="Standard.Operation" uid="7a0cd4ae-1ffa-470d-aae2-e6ebba6ace44"/>
+          <ID name="estTermine" mc="Standard.Operation" uid="f13a0e36-f7c2-4c4b-a599-1805ba2a754d"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -238,7 +238,7 @@ for (int i = 0; i < lignes; i++) {
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="9543d73e-41bf-4e64-8300-1d4988de35bb"/>
+                <ID name="" mc="Standard.Parameter" uid="94c3b762-3f99-4144-91d9-9f35f911c0b1"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -262,7 +262,7 @@ for (int i = 0; i < lignes; i++) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7927cca3-7d1b-4751-bd11-75dc820228c3"/>
+                <ID name="" mc="Infrastructure.Note" uid="5e036357-2a27-4647-9890-f718bfd8ea2e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return zones.stream().filter(Zone::isEstCible).allMatch(Zone::estComplete);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -279,7 +279,7 @@ for (int i = 0; i < lignes; i++) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="clear" mc="Standard.Operation" uid="fdb8a6de-2e02-4763-8477-c3626f258a52"/>
+          <ID name="clear" mc="Standard.Operation" uid="c845fdf8-b9ad-41cd-ad0f-a6ab9832ce3f"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -293,7 +293,7 @@ for (int i = 0; i < lignes; i++) {
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ae119305-28f4-463b-afbc-4801ff9f2429"/>
+                <ID name="" mc="Infrastructure.Note" uid="089bf38a-3ea0-47da-b82f-d084f6a5e052"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[for (Zone zone : zones) {
     zone.setMobile(null);
@@ -315,7 +315,7 @@ for (int i = 0; i < lignes; i++) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="placerElement" mc="Standard.Operation" uid="263b23fd-11b0-4738-bbbd-17ade85eb29a"/>
+          <ID name="placerElement" mc="Standard.Operation" uid="5b957880-a0b6-4a13-8f9c-ce11d7cb8309"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -329,7 +329,7 @@ for (int i = 0; i < lignes; i++) {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="ligne" mc="Standard.Parameter" uid="7379830e-b65f-4ff7-b7ac-8836ef1018a4"/>
+                <ID name="ligne" mc="Standard.Parameter" uid="b1406e1a-ed3d-4bf2-ad6d-d0c74ea78b89"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -351,7 +351,7 @@ for (int i = 0; i < lignes; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="colonne" mc="Standard.Parameter" uid="6366aabb-8935-42e3-aa06-ff0284c6a551"/>
+                <ID name="colonne" mc="Standard.Parameter" uid="b589ccc9-aed4-4511-a2af-1ce1f441b8bf"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -373,7 +373,7 @@ for (int i = 0; i < lignes; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="type" mc="Standard.Parameter" uid="83db3b70-03a7-4dd7-a4c3-2b1eadb078cd"/>
+                <ID name="type" mc="Standard.Parameter" uid="102997cb-47ad-4ba3-9f23-99493b99b449"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -399,7 +399,7 @@ for (int i = 0; i < lignes; i++) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="961b6820-296d-43e1-a692-f1c1b374aa69"/>
+                <ID name="" mc="Infrastructure.Note" uid="63934b8d-e5ed-457d-a976-13a58c56bec0"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Position position = getPosition(ligne, colonne);
 if (position == null) return;
@@ -435,7 +435,7 @@ switch (type) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="toString" mc="Standard.Operation" uid="b8f732dd-8ce8-49ff-84c9-d0e4459da509"/>
+          <ID name="toString" mc="Standard.Operation" uid="8b75d7bc-3993-4852-b63e-998a78017c93"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -449,7 +449,7 @@ switch (type) {
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="c3288576-4cbd-40f8-9295-d1fc9845578b"/>
+                <ID name="" mc="Standard.Parameter" uid="dea9ef0f-412f-4349-a137-ae4e939fe5b8"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -473,7 +473,7 @@ switch (type) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="6a0a4b3e-0210-4559-91ff-68100f9ef257"/>
+                <ID name="" mc="Infrastructure.Note" uid="f527a04a-3895-4411-8faf-061f58545814"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -487,7 +487,7 @@ switch (type) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="33c0edd4-2fc1-4280-ae54-cd9fbd48bc62"/>
+                <ID name="" mc="Infrastructure.Note" uid="7ce78d84-112c-4a3e-a618-912803575955"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return result;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -501,7 +501,7 @@ switch (type) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="53918982-8e28-4843-aad3-a4d73e67814b"/>
+                <ID name="" mc="Infrastructure.Note" uid="ca715fa0-c300-4b0f-b0e4-f2d6f2bfd0c2"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[int maxLigne = -1;
 int maxColonne = -1;

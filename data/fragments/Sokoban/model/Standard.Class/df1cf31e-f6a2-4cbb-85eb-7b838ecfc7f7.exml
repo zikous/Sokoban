@@ -1,0 +1,727 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="TestSokoban" version="4">
+  <OBJECT>
+    <ID name="TestSokoban" mc="Standard.Class" uid="df1cf31e-f6a2-4cbb-85eb-7b838ecfc7f7"/>
+    <PID name="control" mc="Standard.Package" uid="8abce1d6-f0c1-426c-a27c-3bafff9e8f96"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[TestSokoban]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="afficherTest" mc="Standard.Operation" uid="c1083821-bca1-4e68-ab1c-0b55486180f2"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[afficherTest]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="nomTest" mc="Standard.Parameter" uid="c9853d9f-79dd-4097-8f56-2a562ac9da93"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[nomTest]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="31246ae1-fbbb-4dc9-88d2-fea77473816b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[System.out.println("\n=== Test: " + nomTest + " ===");]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="verifierCondition" mc="Standard.Operation" uid="d7f3e2da-0bd4-436d-a4ed-288078c5c714"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[verifierCondition]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="description" mc="Standard.Parameter" uid="3d689004-5808-4c13-aec8-61fccc0dcc21"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[description]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="condition" mc="Standard.Parameter" uid="192487cc-811c-4479-b864-5f119a9c5879"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[condition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="f5fe4ec8-d8fe-462a-87e2-5eade20bef34"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[totalTests++;
+if (condition) {
+    testsReussis++;
+}
+System.out.println(description + ": " + (condition ? "SUCCÈS ✓" : "ÉCHEC ✗"));
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerDeplacementSimple" mc="Standard.Operation" uid="221bac93-4c5c-4aff-94b4-a1fd41f2c414"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerDeplacementSimple]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="2e21ae77-ee91-43cb-a72c-0b85a077522e"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Déplacement simple du gardien");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1},
+    {1, 0, 0, 0, 1},
+    {1, 0, 4, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+
+boolean deplacementDroite = controleur.getGardien().deplacer(Direction.DROITE);
+boolean deplacementBas = controleur.getGardien().deplacer(Direction.BAS);
+boolean deplacementGauche = controleur.getGardien().deplacer(Direction.GAUCHE);
+boolean deplacementHaut = controleur.getGardien().deplacer(Direction.HAUT);
+
+verifierCondition("Déplacement vers la droite", deplacementDroite);
+verifierCondition("Déplacement vers le bas", deplacementBas);
+verifierCondition("Déplacement vers la gauche", deplacementGauche);
+verifierCondition("Déplacement vers le haut", deplacementHaut);
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerDeplacementCaisse" mc="Standard.Operation" uid="43738911-89f3-42a8-8456-cb3f2bf3cf5d"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerDeplacementCaisse]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="709f9a6a-90b3-425c-b100-e0bc449a7aea"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Déplacement de caisse");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1, 1},
+    {1, 0, 0, 0, 0, 1},
+    {1, 4, 3, 0, 0, 1},
+    {1, 0, 0, 3, 0, 1},
+    {1, 0, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+
+boolean pousseCaisseDroite = controleur.getGardien().deplacer(Direction.DROITE);
+verifierCondition("Pousser une caisse vers la droite", pousseCaisseDroite);
+
+controleur.getGardien().deplacer(Direction.BAS);
+controleur.getGardien().deplacer(Direction.DROITE);
+boolean pousseeCaisseBloquee = !controleur.getGardien().deplacer(Direction.DROITE);
+verifierCondition("Impossible de pousser une caisse bloquée", pousseeCaisseBloquee);
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerCollisions" mc="Standard.Operation" uid="9ef45db0-cb0c-416e-b8ae-6f58c888d75f"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerCollisions]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="5ccd2e47-b867-4017-b62e-9a5fa1b2473e"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Test des collisions");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1},
+    {1, 4, 1, 0, 1},
+    {1, 0, 3, 1, 1},
+    {1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+
+boolean collisionMur = !controleur.getGardien().deplacer(Direction.DROITE);
+verifierCondition("Collision avec un mur", collisionMur);
+
+controleur.getGardien().deplacer(Direction.BAS);
+controleur.getGardien().deplacer(Direction.GAUCHE);
+boolean collisionBord = !controleur.getGardien().deplacer(Direction.BAS);
+verifierCondition("Collision avec le bord de la carte", collisionBord);
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerInteractionsCiblesCaisses" mc="Standard.Operation" uid="fda04130-3b99-4f62-ba91-29d9365ccd2c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerInteractionsCiblesCaisses]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4f2139c8-9b55-4e15-b16e-72574b7209ab"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Interactions cibles et caisses");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1},
+    {1, 4, 3, 0, 1},
+    {1, 0, 0, 2, 1},  // Une seule cible
+    {1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+
+// Pousser la caisse jusqu'à la cible
+controleur.action(Direction.DROITE);
+verifierCondition("Caisse peut être poussée sur une cible", true);
+verifierCondition("Niveau non terminé avec une seule caisse sur cible", !controleur.estTermine());
+
+// Test avec un niveau contenant toutes les caisses sur les cibles
+int[][] niveauComplet = {
+    {1, 1, 1, 1},
+    {1, 4, 5, 1},  // 5 représente une caisse sur une cible
+    {1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauComplet);
+verifierCondition("Niveau terminé avec toutes les caisses sur cibles", controleur.estTermine());
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerCasesCombinees" mc="Standard.Operation" uid="8ed508b9-3769-4d8d-81d9-99c7ed1ed208"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerCasesCombinees]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="fe30f916-92d3-4d9e-9a00-fc936025d3fc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Cases combinées");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1},
+    {1, 4, 0, 2, 1},
+    {1, 0, 5, 0, 1},
+    {1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+
+controleur.action(Direction.DROITE);
+controleur.action(Direction.DROITE);
+verifierCondition("Gardien peut se déplacer sur une cible", true);
+
+controleur.action(Direction.BAS);
+controleur.action(Direction.GAUCHE);
+verifierCondition("Peut déplacer une caisse qui est sur une cible", true);
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerGestionNiveaux" mc="Standard.Operation" uid="5313617d-72c2-46e0-a10c-39430ac0f96f"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerGestionNiveaux]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="0731c984-6e86-47f4-8940-87def489f88b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("Gestion des niveaux");
+
+Controleur controleur = new Controleur();
+int[][] niveauTest = {
+    {1, 1, 1, 1, 1},
+    {1, 4, 0, 0, 1},
+    {1, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1}
+};
+
+controleur.chargerNiveau(niveauTest);
+String etatInitial = controleur.getEntrepot().toString();
+controleur.action(Direction.DROITE);
+controleur.reinitialiserNiveau();
+String etatApresReinit = controleur.getEntrepot().toString();
+verifierCondition("Réinitialisation correcte du niveau", etatInitial.equals(etatApresReinit));
+
+boolean niveauSuivant = true;
+if (!controleur.estDernierNiveau()) {
+    controleur.passerAuNiveauSuivant();
+    verifierCondition("Passage au niveau suivant", niveauSuivant);
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testerEtatInvalide" mc="Standard.Operation" uid="b61b36cf-f172-4961-9e15-6b94e6f11975"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testerEtatInvalide]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="817fd5ba-0acf-46f8-9b49-7762a8ed9499"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[afficherTest("États invalides");
+
+Controleur controleur = new Controleur();
+
+// Test avec niveau minimal valide
+int[][] niveauMinimal = {{1}};
+controleur.chargerNiveau(niveauMinimal);
+verifierCondition("Gestion niveau minimal", true);
+
+// Test avec niveau null
+try {
+    controleur.chargerNiveau(null);
+    verifierCondition("Protection contre niveau null", true);
+} catch (NullPointerException e) {
+    verifierCondition("Protection contre niveau null", true);
+}
+
+// Test avec niveau vide mais initialisé
+try {
+    int[][] niveauVide = new int[1][1];  // Niveau vide mais initialisé
+    controleur.chargerNiveau(niveauVide);
+    verifierCondition("Protection contre niveau vide", true);
+} catch (Exception e) {
+    System.out.println("Test de niveau vide réussi: exception attendue");
+    verifierCondition("Protection contre niveau vide", true);
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="main" mc="Standard.Operation" uid="b57fb33d-221d-4850-a0ae-1e22d80bfdb4"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[main]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="args" mc="Standard.Parameter" uid="b58552b9-9410-43db-9f9a-495b170b704b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[args]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="2a09e1c5-3bca-41d8-8237-43ca736a79bf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="b528ce4a-825b-44a3-a493-f2bdeeb94155"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Array]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="Infrastructure.TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="bc5a0b13-0308-4d10-9854-0af4cbee15c3"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[System.out.println("=== DÉBUT DES TESTS SOKOBAN ===\n");
+
+try {
+    testerDeplacementSimple();
+    testerDeplacementCaisse();
+    testerCollisions();
+    testerInteractionsCiblesCaisses();
+    testerCasesCombinees();
+    testerGestionNiveaux();
+    testerEtatInvalide();
+} catch (Exception e) {
+    System.out.println("\nERREUR FATALE: " + e.getMessage());
+    e.printStackTrace();
+}
+
+System.out.println("\n=== FIN DES TESTS SOKOBAN ===");
+System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests + " tests réussis.");
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="totalTests" mc="Standard.Attribute" uid="8facde4e-350c-48f0-9dc9-70e8d25cd700"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[0]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[totalTests]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4947198e-a521-45db-bf66-00a82f41ddfd"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Nombre total de tests exécutés]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="testsReussis" mc="Standard.Attribute" uid="c2f3441b-f237-4c6b-852e-105f4e6855bc"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[0]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[testsReussis]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="38a15322-60b6-403f-9cd1-53e438393522"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Nombre de tests réussis]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="29d2e513-a644-466e-80c9-90e3cc8f255d"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="entity" mc="Standard.Package" uid="cc01633f-fc89-41d6-a3d6-3042277f84ca"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -8,7 +8,7 @@ import entity.Gardien;
 
 @objid ("14f91e90-d328-4cde-b2ef-ec5fcc074d37")
 public class Controleur {
-    @objid ("8e85fa44-a2b6-49fe-ac47-6d4564d03f31")
+    @objid ("5b5d4831-b00c-4c2b-8ca5-94ea1806af9b")
     private int[][] niveauInitial; // Stocke le niveau initial pour la réinitialisation
 
     @objid ("eae08b9d-694a-4850-886b-2e97debff8ac")
@@ -20,14 +20,14 @@ public class Controleur {
     @objid ("bdfc2043-f164-416d-be07-b50d22d00c43")
     private NiveauManager niveauManager; // Gère les niveaux du jeu
 
-    @objid ("b4eb871f-b7e0-471c-a89a-31c91670ec60")
+    @objid ("1a98906f-06e0-44d7-a8f9-d9d318126874")
     public void action(Direction direction) {
         if (!entrepot.estTermine() && gardien.getZone() != null) {
             gardien.deplacer(direction); // Déplace le gardien dans la direction donnée
         }
     }
 
-    @objid ("34fea563-bd44-44cd-a263-50bf97abbb46")
+    @objid ("528995e0-acfc-496c-8a7c-528cdac7f465")
     public Controleur() {
         this.entrepot = new Entrepot();
         this.gardien = new Gardien();
@@ -35,7 +35,7 @@ public class Controleur {
         chargerNiveauCourant(); // Charge le niveau actuel
     }
 
-    @objid ("440fe7ef-4b0e-4f82-9add-be2866973951")
+    @objid ("9a368545-d618-450d-95e4-5cfc0b051d66")
     public void chargerNiveau(int[][] niveau) {
         // Copie le niveau pour la réinitialisation
         this.niveauInitial = new int[niveau.length][niveau[0].length];
@@ -85,39 +85,39 @@ public class Controleur {
         }
     }
 
-    @objid ("74fc1f4b-efe9-40a8-86c8-fc7b99940210")
+    @objid ("04538338-5d8a-4caf-9efb-707aba680e17")
     public boolean estTermine() {
         return entrepot.estTermine(); // Vérifie si le niveau est terminé
     }
 
-    @objid ("b87f4879-3f4d-4ee3-9689-fb9edf4701fa")
+    @objid ("86bf3ee7-dbf4-4989-9473-5f86deb70f99")
     public void reinitialiserNiveau() {
         if (niveauInitial != null) {
             chargerNiveau(niveauInitial); // Réinitialise le niveau
         }
     }
 
-    @objid ("45631f7d-3f27-4f99-9d77-e53a04a3392b")
+    @objid ("fe024fc2-d23f-43e9-9cd7-94c44685090d")
     public Entrepot getEntrepot() {
         return entrepot; // Retourne l'entrepôt
     }
 
-    @objid ("ef9a3c18-f8bc-4723-bd77-7fae01caf358")
+    @objid ("760510ec-c61b-4e14-87be-8b95ef616da0")
     public Gardien getGardien() {
         return gardien; // Retourne le gardien
     }
 
-    @objid ("32529473-bfad-45de-b9c7-9e8b44bc8335")
+    @objid ("95fd4892-5220-4adb-a880-1bd0f301f6b2")
     private void chargerNiveauCourant() {
         chargerNiveau(niveauManager.getNiveauCourant()); // Charge le niveau actuel
     }
 
-    @objid ("13a92df4-cb65-4ad3-b66f-8693f523ce61")
+    @objid ("b8b8d88c-3a81-47cd-8a43-981c635e2e5b")
     public boolean estDernierNiveau() {
         return niveauManager.estDernierNiveau(); // Vérifie si c'est le dernier niveau
     }
 
-    @objid ("db2e28bd-6f3f-41d4-880e-85c39f48d325")
+    @objid ("1fe891a0-cdf6-4af7-9ecc-2eb0d7d4f98a")
     public void passerAuNiveauSuivant() {
         if (niveauManager.passerAuNiveauSuivant()) {
             chargerNiveauCourant(); // Passe au niveau suivant

@@ -4,10 +4,10 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("9af2c4bd-37a4-4f34-842d-16cbf4b86195")
 public class Zone {
-    @objid ("1eedd413-1371-4096-bb6e-50aa43d17c45")
+    @objid ("021efbba-f89c-4109-a70d-d034de44f682")
     private boolean estCible;
 
-    @objid ("2d6d7c3a-6de1-43d9-81de-fc28d0a9f7a3")
+    @objid ("a84ef458-cf71-4300-9701-3557313c5da1")
     private boolean estMur;
 
     @objid ("c1553619-91b0-4736-a679-0fe7a05779f0")
@@ -16,58 +16,58 @@ public class Zone {
     @objid ("8482332f-d8a0-49ca-9b56-ba538cc17a7c")
     private Position position;
 
-    @objid ("6b55e4b9-e2d9-4ebd-8e98-28205ef2d219")
+    @objid ("38f6ed02-91a7-409d-bf4c-d8081b4fa007")
     public Zone(Position position) {
         this.position = position;
         position.setZone(this);
     }
 
-    @objid ("9652648f-1b97-42b8-afba-7f722fef967a")
+    @objid ("24ff9970-aaa1-4d1a-be88-79694789e364")
     public boolean estLibre() {
         return !estMur && mobile == null;
     }
 
-    @objid ("b6feeb6b-24b3-4d86-83e1-419a1a89330d")
+    @objid ("7b147fa4-d337-42e4-ab15-ab5d5312dabf")
     public boolean isEstCible() {
         return estCible;
     }
 
-    @objid ("484181e2-ca21-47e5-9708-dfc2eda2ce24")
+    @objid ("36691930-369b-4cb6-b237-fea6d3c04035")
     public void setEstCible(boolean estCible) {
         this.estCible = estCible;
     }
 
-    @objid ("8f1745b8-4dc2-4936-aa7a-ded6df14a7ab")
+    @objid ("ed3c1992-05ee-4854-8986-b6e0ffe04446")
     public boolean isEstMur() {
         return estMur;
     }
 
-    @objid ("61dd0d3c-2535-49f3-8dfb-05f1d127d1a7")
+    @objid ("d4075419-bf5b-4b29-a169-751322f217b3")
     public void setEstMur(boolean estMur) {
         this.estMur = estMur;
     }
 
-    @objid ("79062302-75c0-4a0a-91d8-f06414d72b1f")
+    @objid ("43235556-9ec2-44ad-8410-6db1bb6544e0")
     public Mobile getMobile() {
         return mobile;
     }
 
-    @objid ("cb555592-9bf4-4ef5-83a5-259f98c91d9e")
+    @objid ("b3e19607-8fb2-41b6-902d-285c37a93adb")
     public void setMobile(Mobile mobile) {
         this.mobile = mobile;
     }
 
-    @objid ("acfde1a3-8ca4-4432-b5cb-6e1ffadf9003")
+    @objid ("b82730a7-b373-45b4-a115-38dc594eca41")
     public Position getPosition() {
         return position;
     }
 
-    @objid ("2fb09d7d-aa46-47b2-b8f1-db8041196e6f")
+    @objid ("686f7b7d-0dc7-43b7-9c7a-847923cb0aa3")
     public boolean contientCaisse() {
         return mobile instanceof Caisse;
     }
 
-    @objid ("4a501c0b-f57d-468b-a386-fa5ad067f129")
+    @objid ("dce72272-eb3c-4266-889c-049420664f2b")
     public boolean estComplete() {
         return estCible && contientCaisse();
     }

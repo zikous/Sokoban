@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="afficherTest" mc="Standard.Operation" uid="94196a09-4932-4e36-b884-9ef22dc26816"/>
+          <ID name="afficherTest" mc="Standard.Operation" uid="591a15cd-a163-4e5a-a311-d207c8599675"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="nomTest" mc="Standard.Parameter" uid="e469478f-d7de-42c9-8456-2b683c564d5f"/>
+                <ID name="nomTest" mc="Standard.Parameter" uid="9b4bca82-3b10-4c16-8811-fae47fc3168f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -55,7 +55,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7ddaef25-281c-4909-affc-458673e1ce71"/>
+                <ID name="" mc="Infrastructure.Note" uid="95242ed9-d337-4f90-9ae7-39013bbf4199"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[System.out.println("\n=== Test: " + nomTest + " ===");]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -72,7 +72,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="verifierCondition" mc="Standard.Operation" uid="f425dd6b-f425-40be-8424-0c4e56d895f2"/>
+          <ID name="verifierCondition" mc="Standard.Operation" uid="4fa46da6-4f97-4997-a334-5f1e33964e6a"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -86,7 +86,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="description" mc="Standard.Parameter" uid="0af9a20e-45cd-40f3-9bdc-a3896878fa5b"/>
+                <ID name="description" mc="Standard.Parameter" uid="212ce9d3-9a42-4f5e-81dd-80337a90f13f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -108,7 +108,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="condition" mc="Standard.Parameter" uid="b15bc8c0-1124-443f-8b74-f627b3216b1e"/>
+                <ID name="condition" mc="Standard.Parameter" uid="f69aca81-b59c-4d0c-8be5-4df661e25fa4"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -132,7 +132,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="a2eb97b5-5be1-4c84-956f-bd252943f8b2"/>
+                <ID name="" mc="Infrastructure.Note" uid="be6f3114-2ce5-4f06-adfc-27a351736953"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[totalTests++;
 if (condition) {
@@ -154,7 +154,7 @@ System.out.println(description + ": " + (condition ? "SUCCÈS ✓" : "ÉCHEC ✗
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerDeplacementSimple" mc="Standard.Operation" uid="c0a8943e-436c-4d64-99a8-30f803b6372a"/>
+          <ID name="testerDeplacementSimple" mc="Standard.Operation" uid="83761799-5283-42fb-84e4-23077af625b1"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -168,7 +168,7 @@ System.out.println(description + ": " + (condition ? "SUCCÈS ✓" : "ÉCHEC ✗
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="280ad7f9-609a-43d7-a909-2bdf9b5e9747"/>
+                <ID name="" mc="Infrastructure.Note" uid="9b314115-3eee-472e-b79d-3d62e0d222a2"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Déplacement simple du gardien");
 
@@ -207,7 +207,7 @@ verifierCondition("Déplacement vers le haut", deplacementHaut);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerDeplacementCaisse" mc="Standard.Operation" uid="20741d04-9746-44b2-bb6d-95a20ac07639"/>
+          <ID name="testerDeplacementCaisse" mc="Standard.Operation" uid="a98f0d50-aad1-4cbc-a93d-6d1e47553b59"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -221,7 +221,7 @@ verifierCondition("Déplacement vers le haut", deplacementHaut);
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="d680447e-7eea-41b6-81bb-63bbf5c6de59"/>
+                <ID name="" mc="Infrastructure.Note" uid="216292f1-ef2c-4b06-87d0-77335276008d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Déplacement de caisse");
 
@@ -259,7 +259,7 @@ verifierCondition("Impossible de pousser une caisse bloquée", pousseeCaisseBloq
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerCollisions" mc="Standard.Operation" uid="e505d34b-ca1c-4cd1-9052-2ffc01498d9e"/>
+          <ID name="testerCollisions" mc="Standard.Operation" uid="4e4126fb-d7d3-43db-adb5-91a6f51d5b87"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -273,7 +273,7 @@ verifierCondition("Impossible de pousser une caisse bloquée", pousseeCaisseBloq
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="794772e4-1fea-4f27-8c1f-237239e945a0"/>
+                <ID name="" mc="Infrastructure.Note" uid="2d95fb8d-df57-431f-9989-f376a9c02d40"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Test des collisions");
 
@@ -309,7 +309,7 @@ verifierCondition("Collision avec le bord de la carte", collisionBord);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerInteractionsCiblesCaisses" mc="Standard.Operation" uid="8311137d-799d-476a-bfe3-792e72751d63"/>
+          <ID name="testerInteractionsCiblesCaisses" mc="Standard.Operation" uid="2faad882-b5b9-4253-9006-bd2b4e6e9cb7"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -323,7 +323,7 @@ verifierCondition("Collision avec le bord de la carte", collisionBord);
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="854579ce-45af-4f40-8070-7ebc64756bd4"/>
+                <ID name="" mc="Infrastructure.Note" uid="8abf17be-5b50-44be-9a30-056e9848cf2f"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Interactions cibles et caisses");
 
@@ -366,7 +366,7 @@ verifierCondition("Niveau terminé avec toutes les caisses sur cibles", controle
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerCasesCombinees" mc="Standard.Operation" uid="74a641b8-d3c6-4486-b781-03477deccdf8"/>
+          <ID name="testerCasesCombinees" mc="Standard.Operation" uid="4258920e-3f2b-4704-8f61-b3c2c8dc2696"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -380,7 +380,7 @@ verifierCondition("Niveau terminé avec toutes les caisses sur cibles", controle
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="50daf04c-dada-45d9-87f6-76f82bb54737"/>
+                <ID name="" mc="Infrastructure.Note" uid="7a81d0c0-8184-4354-b21d-7b304c2c0823"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Cases combinées");
 
@@ -416,7 +416,7 @@ verifierCondition("Peut déplacer une caisse qui est sur une cible", true);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerGestionNiveaux" mc="Standard.Operation" uid="e6ba855b-061c-40a1-bce2-b7172cf6ca4b"/>
+          <ID name="testerGestionNiveaux" mc="Standard.Operation" uid="e6d36ec0-cea8-4175-8f64-467959ff4ebb"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -430,7 +430,7 @@ verifierCondition("Peut déplacer une caisse qui est sur une cible", true);
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="97215ac9-a37e-4c5a-8399-f5b1a980365a"/>
+                <ID name="" mc="Infrastructure.Note" uid="619e0521-76a1-4817-aab6-fea6ae5fe833"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("Gestion des niveaux");
 
@@ -469,7 +469,7 @@ if (!controleur.estDernierNiveau()) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testerEtatInvalide" mc="Standard.Operation" uid="f24e0eca-3c31-475c-81f5-9d06289f511e"/>
+          <ID name="testerEtatInvalide" mc="Standard.Operation" uid="f17e58ea-93fb-4ff7-b77a-9bae402fb9f2"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -483,7 +483,7 @@ if (!controleur.estDernierNiveau()) {
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="5398c5b4-3a5d-4a30-a40e-31519eaccfc5"/>
+                <ID name="" mc="Infrastructure.Note" uid="a62f01be-1894-4368-a142-722223a33c3d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[afficherTest("États invalides");
 
@@ -526,7 +526,7 @@ try {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="main" mc="Standard.Operation" uid="b13f3538-d515-4d35-a635-6aad07506ebc"/>
+          <ID name="main" mc="Standard.Operation" uid="a94c5cba-0e03-4173-a639-e5c55d1ebdce"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -540,7 +540,7 @@ try {
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="args" mc="Standard.Parameter" uid="50382624-cfbc-41c2-bfcb-55935efbbc4e"/>
+                <ID name="args" mc="Standard.Parameter" uid="a28d3175-67e1-4e0f-9a4f-0f66ec37e90c"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -561,7 +561,7 @@ try {
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="50367810-efc5-4aad-848d-e522adcc2b6b"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="489e3fc4-d293-4d36-9df5-f7cfa302c10f"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -569,7 +569,7 @@ try {
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="7a81f764-6cb5-4d84-9a00-47ef76210f81"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="52e1ff10-738c-4bf5-aef4-0a01a3245356"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -588,7 +588,7 @@ try {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9008340b-dde2-495e-92b8-ab43df9d6e28"/>
+                <ID name="" mc="Infrastructure.Note" uid="7ac93bb9-8350-469e-b578-cec11b978c80"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[System.out.println("=== DÉBUT DES TESTS SOKOBAN ===\n");
 
@@ -624,7 +624,7 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="totalTests" mc="Standard.Attribute" uid="d0ba1d01-d690-49ce-8ddf-1351783cb560"/>
+          <ID name="totalTests" mc="Standard.Attribute" uid="d2f664db-e54b-408e-9b0a-805d445adc3f"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[0]]></ATT>
@@ -647,7 +647,7 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="e38718bb-ecc7-4822-98dc-47a8b0fdb766"/>
+                <ID name="" mc="Infrastructure.Note" uid="f601b1d9-84f6-4bae-88e4-e6f18cbbe66a"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Nombre total de tests exécutés]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -664,7 +664,7 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testsReussis" mc="Standard.Attribute" uid="670b73ae-846a-4c45-81da-cc2cb5d27d08"/>
+          <ID name="testsReussis" mc="Standard.Attribute" uid="833f5e94-7efb-467a-8ea2-365a4a9889b7"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[0]]></ATT>
@@ -687,7 +687,7 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9a38e653-e7e3-41bd-b51a-c2ada377f11a"/>
+                <ID name="" mc="Infrastructure.Note" uid="fe7dd536-34df-4a9d-8e20-ccf306035d8f"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Nombre de tests réussis]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>

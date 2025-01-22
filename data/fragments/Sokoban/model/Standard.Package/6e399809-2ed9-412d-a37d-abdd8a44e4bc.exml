@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="boundary" version="4">
+  <OBJECT>
+    <ID name="boundary" mc="Standard.Package" uid="6e399809-2ed9-412d-a37d-abdd8a44e4bc"/>
+    <PID name="sokoban" mc="Standard.Package" uid="4b03d53a-c800-4e65-8580-6778b678fb00"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[boundary]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="EcranAccueil" mc="Standard.Class" uid="777562df-80de-49b0-a80b-4e2efc291bfb"/>
+        <COMPID name="MonAfficheur" mc="Standard.Class" uid="893d93b5-838e-4f52-bdd9-3891d8b07c0c"/>
+        <COMPID name="PanneauAvecFond" mc="Standard.Class" uid="54448f84-d24f-4950-80be-b49b201d8704"/>
+        <COMPID name="MaFenetre" mc="Standard.Class" uid="0d5c963f-39c0-4b37-a00d-1ef81aae1180"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

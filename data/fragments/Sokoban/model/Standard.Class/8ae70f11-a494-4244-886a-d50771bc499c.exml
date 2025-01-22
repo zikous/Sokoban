@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="deplacer" mc="Standard.Operation" uid="f401de07-e62a-4410-8901-5ffe6b7d7d61"/>
+          <ID name="deplacer" mc="Standard.Operation" uid="c03ec4b7-3c71-44be-bbc9-73a4943867d3"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="direction" mc="Standard.Parameter" uid="c873f10a-37ed-431d-9d69-045f9d59551b"/>
+                <ID name="direction" mc="Standard.Parameter" uid="6bf1d40c-5a8f-476f-97b6-a2a74a55cb29"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -57,7 +57,7 @@
             </COMP>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="3432b0b2-c360-4622-a064-e44b624c9a79"/>
+                <ID name="" mc="Standard.Parameter" uid="66266391-2983-44d2-8aa0-b126d9cceca8"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -81,7 +81,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="a5f90e95-8827-4cdb-a7d1-446eaf9f313c"/>
+                <ID name="" mc="Infrastructure.Note" uid="ec038eda-eecf-4450-99e9-d73154099884"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@Override]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -95,7 +95,21 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="2bef0d99-5dd7-453f-a7eb-3bce0e20526a"/>
+                <ID name="" mc="Infrastructure.Note" uid="ec67fdfc-33b3-4fab-977b-646b1ba1eea8"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return false; // Déplacement impossible]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="d200bc91-5565-4e90-bfc7-b80521e86d3d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.currentDirection = direction;
 
@@ -135,25 +149,11 @@ if (zoneCible.getMobile() instanceof Caisse) {
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="298d0b21-11f3-41e6-a893-ff20b5b26830"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false; // Déplacement impossible]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getCurrentDirection" mc="Standard.Operation" uid="309a5466-4196-4512-b17e-633277cea512"/>
+          <ID name="getCurrentDirection" mc="Standard.Operation" uid="cce45421-6362-4ec8-ac2e-4398fb01abbd"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -167,7 +167,7 @@ if (zoneCible.getMobile() instanceof Caisse) {
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="8002b277-3966-4311-bcdc-d99ef24dfb8f"/>
+                <ID name="" mc="Standard.Parameter" uid="5017ab81-3393-4764-a39a-c2a5e45dbc79"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -193,7 +193,7 @@ if (zoneCible.getMobile() instanceof Caisse) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9fac0e82-f88a-4a5b-8481-22d21010ed16"/>
+                <ID name="" mc="Infrastructure.Note" uid="9a870655-c1a5-46ce-b1e1-b244e79ed55f"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return currentDirection;]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -212,7 +212,7 @@ if (zoneCible.getMobile() instanceof Caisse) {
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
-          <ID name="currentDirection" mc="Standard.Attribute" uid="e9983594-8e0e-4692-9917-6bfbc3579265"/>
+          <ID name="currentDirection" mc="Standard.Attribute" uid="5dec00c4-193b-4148-82a0-7cd506abacd3"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[Direction.BAS]]></ATT>
