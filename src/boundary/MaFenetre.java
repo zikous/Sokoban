@@ -2,7 +2,10 @@ package boundary;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.*;
+import javax.swing.JFrame;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import control.Controleur;
 import entity.Direction;
@@ -133,7 +136,7 @@ public class MaFenetre extends JFrame implements KeyListener {
     @objid ("d1883b27-b3cc-4eb7-ba31-42a244d6da0e")
     private int showOptionDialog(String message, String title, Object[] options) {
         return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
+                                                                                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
     }
 
 }

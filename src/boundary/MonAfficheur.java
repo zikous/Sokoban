@@ -1,11 +1,13 @@
 package boundary;
 
 import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.JPanel;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import control.Controleur;
 import entity.*;
@@ -15,41 +17,41 @@ public class MonAfficheur extends JPanel {
     @objid ("293286de-b362-41ac-8cd0-db3df6ac97a8")
     private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
 
-    @objid ("d5748cd7-4b72-4efd-87ac-f66365b10328")
-    private BufferedImage imgMur; // Image pour les murs
-
-    @objid ("40a6ed25-a179-403e-bcec-d656e3795f2a")
-    private BufferedImage imgSol; // Image pour le sol
-
-    @objid ("ba740fbe-18fe-4906-9fa6-8b78fc32df57")
-    private BufferedImage imgCible; // Image pour les cibles
-
-    @objid ("caa900ed-39e3-43ef-b2fc-bee5f304cf53")
-    private BufferedImage imgCaisse; // Image pour les caisses
-
-    @objid ("3491388b-0cf3-42fc-9227-a4534f529808")
-    private BufferedImage imgCaisseSurCible; // Image pour les caisses sur cibles
-
     @objid ("9bcf29e4-4ca9-415e-bf56-c3a896935fbd")
     private static final long serialVersionUID = 1L;
 
-    @objid ("16ac0ead-f9f7-4dfb-8b00-bbe2d717d666")
-    private BufferedImage imgGardienHaut; // Image du gardien vers le haut
-
-    @objid ("4391e953-fa6e-416a-84b0-a4727b08d446")
-    private BufferedImage imgGardienBas; // Image du gardien vers le bas
-
-    @objid ("bf27c7f3-0c97-434a-bff9-b3e9a53a9795")
-    private BufferedImage imgGardienGauche; // Image du gardien vers la gauche
-
-    @objid ("04873657-e3a5-47d0-a54c-1b2ee82bc70d")
-    private BufferedImage imgGardienDroite; // Image du gardien vers la droite
-
-    @objid ("809a9762-1041-4dbd-ab92-b6af10559807")
-    private BufferedImage imgHerbe; // Image de fond (herbe)
-
     @objid ("d3750484-a764-49cd-9761-503992d7bd57")
     private Controleur controleur; // Contrôleur du jeu
+
+    @objid ("a2c1e745-60d1-41b0-a7f2-4465150a02d1")
+    private BufferedImage imgMur; // Image pour les murs
+
+    @objid ("1f7d09b5-397d-4b02-825c-d48965bff7a0")
+    private BufferedImage imgSol; // Image pour le sol
+
+    @objid ("95094994-707b-4b01-83c5-e69f315b502b")
+    private BufferedImage imgCible; // Image pour les cibles
+
+    @objid ("3adeb3d2-511a-41ce-8362-16c642cb0485")
+    private BufferedImage imgCaisse; // Image pour les caisses
+
+    @objid ("39b91b0d-3279-4a6b-840d-47224f092751")
+    private BufferedImage imgCaisseSurCible; // Image pour les caisses sur cibles
+
+    @objid ("aa242227-a831-4017-8851-7f421b46b1ae")
+    private BufferedImage imgGardienHaut; // Image du gardien vers le haut
+
+    @objid ("da31aae2-5daf-403c-8132-c97b694258bd")
+    private BufferedImage imgGardienBas; // Image du gardien vers le bas
+
+    @objid ("d341557a-7e8f-40d4-af64-649f13910176")
+    private BufferedImage imgGardienGauche; // Image du gardien vers la gauche
+
+    @objid ("fdcc7455-24b9-453f-b903-58ab15bed005")
+    private BufferedImage imgGardienDroite; // Image du gardien vers la droite
+
+    @objid ("e1c46379-b7df-4c0b-a08d-da11c0f1ef84")
+    private BufferedImage imgHerbe; // Image de fond (herbe)
 
     @objid ("9cd1286c-7544-4211-9571-c1649b59ea41")
     public MonAfficheur(Controleur controleur) {

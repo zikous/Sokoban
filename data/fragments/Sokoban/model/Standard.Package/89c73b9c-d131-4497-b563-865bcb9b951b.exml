@@ -15,6 +15,9 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="util" mc="Standard.Package" uid="7b1d970a-028d-4448-9503-330b9cc2243a"/>
+        <COMPID name="io" mc="Standard.Package" uid="5efc8551-0b17-4add-9ff2-8da99bc404d7"/>
+        <COMPID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
+        <COMPID name="lang" mc="Standard.Package" uid="9f536b83-acdd-4390-83cb-4033151a9fe9"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

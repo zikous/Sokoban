@@ -479,7 +479,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a6161525-5522-414d-af85-b294b704b8b6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0929f213-630e-4219-8304-71972ed81798"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -517,7 +517,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d078d6d5-57d7-49bb-97a4-2b2811d9da45"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ade93134-0d2c-4333-9bc4-128344a6be42"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -668,7 +668,7 @@ switch (direction) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="19969a28-cd73-4e77-abbf-57e397815e46"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5c2eaf17-5a2e-45fc-af2c-eff4b303c7b7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

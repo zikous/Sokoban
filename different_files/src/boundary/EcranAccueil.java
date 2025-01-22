@@ -2,6 +2,9 @@ package boundary;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class EcranAccueil extends PanneauAvecFond {
     private static final long serialVersionUID = 1L;

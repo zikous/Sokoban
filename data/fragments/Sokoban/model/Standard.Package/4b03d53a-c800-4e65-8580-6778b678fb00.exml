@@ -24,6 +24,7 @@
         <COMPID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
         <COMPID name="main" mc="Standard.Package" uid="0b30e454-a8a5-4921-a0cc-b7afe7de6a4f"/>
         <COMPID name="boundary" mc="Standard.Package" uid="ba14b2ff-c5b9-47ec-8676-4805ffe4d6ed"/>
+        <COMPID name="javax" mc="Standard.Package" uid="c2fa53f8-b643-4260-8586-1ccfebfd353e"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

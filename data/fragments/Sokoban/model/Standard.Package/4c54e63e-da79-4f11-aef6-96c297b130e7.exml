@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="util" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="awt" version="4">
   <OBJECT>
-    <ID name="util" mc="Standard.Package" uid="7b1d970a-028d-4448-9503-330b9cc2243a"/>
+    <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
     <PID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
@@ -9,21 +9,21 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[util]]></ATT>
+      <ATT name="Name"><![CDATA[awt]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
-        <COMPID name="ArrayList" mc="Standard.Class" uid="5f6b9237-6f82-4936-8b62-b85d9ca47cbb"/>
-        <COMPID name="List" mc="Standard.Interface" uid="5b90adb3-808f-4081-a5b5-9d3ee0a65068"/>
-        <COMPID name="Scanner" mc="Standard.Class" uid="458b0e43-72cf-4af6-902d-4be8227ea889"/>
+        <COMPID name="event" mc="Standard.Package" uid="81bf9b25-1188-4608-865f-743955ad67fa"/>
+        <COMPID name="Graphics" mc="Standard.Class" uid="72e4e67e-3308-42fb-85c4-d48b039533df"/>
+        <COMPID name="image" mc="Standard.Package" uid="1ecfc7cc-6fc9-48fd-9e9d-7b1cd4e18fc6"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="a4a87ad2-e393-4563-9c9b-d53546f1eb7d"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="609a5f77-2dbc-4517-83b8-cd1b6ee89bea"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>

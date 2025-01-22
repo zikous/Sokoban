@@ -1,29 +1,30 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="util" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="swing" version="4">
   <OBJECT>
-    <ID name="util" mc="Standard.Package" uid="7b1d970a-028d-4448-9503-330b9cc2243a"/>
-    <PID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
+    <ID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
+    <PID name="javax" mc="Standard.Package" uid="c2fa53f8-b643-4260-8586-1ccfebfd353e"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[util]]></ATT>
+      <ATT name="Name"><![CDATA[swing]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
-        <COMPID name="ArrayList" mc="Standard.Class" uid="5f6b9237-6f82-4936-8b62-b85d9ca47cbb"/>
-        <COMPID name="List" mc="Standard.Interface" uid="5b90adb3-808f-4081-a5b5-9d3ee0a65068"/>
-        <COMPID name="Scanner" mc="Standard.Class" uid="458b0e43-72cf-4af6-902d-4be8227ea889"/>
+        <COMPID name="JFrame" mc="Standard.Class" uid="6341a445-a697-440b-a874-8b57c45220e9"/>
+        <COMPID name="JLabel" mc="Standard.Class" uid="7d667ea7-6af0-44ed-b4db-3700dc7ae31d"/>
+        <COMPID name="JPanel" mc="Standard.Class" uid="1e39ca4d-29ce-4880-b81d-1389469fd964"/>
+        <COMPID name="JButton" mc="Standard.Class" uid="5842b0a3-ed77-41ad-97e2-4a6c2af0a4e5"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="a4a87ad2-e393-4563-9c9b-d53546f1eb7d"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="da6de9b8-2a2f-4e31-8ec4-58aa70e2b162"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>

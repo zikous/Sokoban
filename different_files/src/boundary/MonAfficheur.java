@@ -1,16 +1,22 @@
 package boundary;
 
 import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.JPanel;
 import control.Controleur;
 import entity.*;
 
 public class MonAfficheur extends JPanel {
     private static final int TAILLE_CASE = 40; // Taille d'une case en pixels
+
+    private static final long serialVersionUID = 1L;
+
+    private Controleur controleur; // Contrôleur du jeu
 
     private BufferedImage imgMur; // Image pour les murs
 
@@ -22,8 +28,6 @@ public class MonAfficheur extends JPanel {
 
     private BufferedImage imgCaisseSurCible; // Image pour les caisses sur cibles
 
-    private static final long serialVersionUID = 1L;
-
     private BufferedImage imgGardienHaut; // Image du gardien vers le haut
 
     private BufferedImage imgGardienBas; // Image du gardien vers le bas
@@ -33,8 +37,6 @@ public class MonAfficheur extends JPanel {
     private BufferedImage imgGardienDroite; // Image du gardien vers la droite
 
     private BufferedImage imgHerbe; // Image de fond (herbe)
-
-    private Controleur controleur; // Contrôleur du jeu
 
     public MonAfficheur(Controleur controleur) {
         this.controleur = controleur;

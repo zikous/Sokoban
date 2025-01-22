@@ -2,6 +2,9 @@ package boundary;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("d90c584a-242a-4be9-93e0-7080ac40e14c")
@@ -9,7 +12,7 @@ public class EcranAccueil extends PanneauAvecFond {
     @objid ("82cc66d1-83a6-4733-ae5f-f4405f8db157")
     private static final long serialVersionUID = 1L;
 
-    @objid ("c8d13d18-9c13-4111-b045-e7e2fd9957fd")
+    @objid ("966255b0-e6f1-40db-8026-7d4d8319883f")
     private JButton boutonCommencer; // Bouton pour démarrer le jeu
 
     @objid ("03cff891-69e0-400c-8502-593f133bceba")

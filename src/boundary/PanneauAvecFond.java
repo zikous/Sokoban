@@ -1,11 +1,13 @@
 package boundary;
 
 import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.JPanel;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("300cc6b9-f489-4167-a57d-84ebfd6a60f7")
@@ -13,7 +15,7 @@ public class PanneauAvecFond extends JPanel {
     @objid ("74d5a686-1203-4001-ab06-8af6a92a43b9")
     private static final long serialVersionUID = 1L;
 
-    @objid ("f3b20858-f1b9-4d77-aec2-a74382cc72c8")
+    @objid ("42eacbf9-19da-4d8a-b96c-70850872738c")
     private BufferedImage imageDeFond; // Image de fond pour le panneau
 
     @objid ("12618bb8-9473-4fb4-b8b9-b7bf9a135249")

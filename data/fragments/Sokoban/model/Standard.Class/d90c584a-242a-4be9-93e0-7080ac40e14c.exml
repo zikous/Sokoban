@@ -109,30 +109,9 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bout
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="7c7967c3-39e1-4419-b826-f8d240b9c708"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="954960e1-d2a9-423d-855d-e60122abc720"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JLabel]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JLabel" mc="Standard.Class" uid="7d667ea7-6af0-44ed-b4db-3700dc7ae31d"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -203,30 +182,9 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une ma
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="925e62d3-4941-4038-9da8-dd01855c34ac"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="99d4da1f-ab37-4570-b7a7-5fa854836249"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JPanel]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JPanel" mc="Standard.Class" uid="1e39ca4d-29ce-4880-b81d-1389469fd964"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -302,30 +260,9 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="d8fc920a-cf5f-49bd-9ef7-9e88d785b357"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="724c07c0-1827-40c8-8600-e4f07e2f40ff"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JLabel]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JLabel" mc="Standard.Class" uid="7d667ea7-6af0-44ed-b4db-3700dc7ae31d"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -396,30 +333,9 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="0e710a95-a2cf-42c1-82da-21c06fb7b914"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="03241a9e-a727-46f8-bcee-1134373a880a"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[String]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -441,30 +357,9 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="20ac4fe8-f32c-493f-bb9d-526d839b3473"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="1f0b8f9e-c2f2-4d1a-b0d9-deb2b876e85d"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JLabel]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JLabel" mc="Standard.Class" uid="7d667ea7-6af0-44ed-b4db-3700dc7ae31d"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -559,30 +454,9 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="e3d17092-0c4f-41a9-b86d-360ca922ed71"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="068309d1-9eb7-41d1-835c-c9d68ef628cf"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JPanel]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JPanel" mc="Standard.Class" uid="1e39ca4d-29ce-4880-b81d-1389469fd964"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -677,30 +551,9 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="4a04b608-aa5f-41b8-b840-d7865e050e06"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="7bde7955-2899-4733-a27d-61307afd2693"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[JButton]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="JButton" mc="Standard.Class" uid="5842b0a3-ed77-41ad-97e2-4a6c2af0a4e5"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -798,12 +651,13 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="boutonCommencer" mc="Standard.Attribute" uid="c8d13d18-9c13-4111-b045-e7e2fd9957fd"/>
+          <ID name="boutonCommencer" mc="Standard.AssociationEnd" uid="966255b0-e6f1-40db-8026-7d4d8319883f"/>
           <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Aggregation">KindIsComposition</ATT>
+            <ATT name="IsChangeable">true</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
             <ATT name="IsOrdered">false</ATT>
@@ -817,31 +671,50 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="Tag">
+            <LINK relation="Target">
+              <ID name="JButton" mc="Standard.Class" uid="5842b0a3-ed77-41ad-97e2-4a6c2af0a4e5"/>
+            </LINK>
+            <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="47a7ddba-2ca7-4061-8cf1-e396370ddcb0"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="64372746-ed00-425d-8ffd-908f001ca421"/>
                 <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">AccesNone</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Actual">
+                  <COMP relation="Opposite">
+                    <COMPID name="boutonCommencer" mc="Standard.AssociationEnd" uid="966255b0-e6f1-40db-8026-7d4d8319883f"/>
+                  </COMP>
+                  <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="ee31dc09-c704-4485-81fa-fce3400b56c0"/>
+                      <ID name="" mc="Standard.Association" uid="a1c06ae5-b664-4f90-a197-0fb97406622b"/>
                       <ATTRIBUTES>
-                        <ATT name="Value"><![CDATA[JButton]]></ATT>
+                        <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
                       </ATTRIBUTES>
                       <DEPENDENCIES></DEPENDENCIES>
                     </OBJECT>
                   </COMP>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="a1c06ae5-b664-4f90-a197-0fb97406622b"/>
+            </COMP>
+            <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c76ffe74-43ba-4414-bb86-27d59521f393"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="288e781e-2e77-46b6-beda-b1d80481b1dc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -855,7 +728,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7a4964ef-052a-467e-8c99-984b5b01c2b3"/>
+                <ID name="" mc="Infrastructure.Note" uid="66ad03b0-3cf0-4b1b-8fb8-81ace647a88b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Bouton pour démarrer le jeu]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -864,7 +737,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Model">
-                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -887,41 +760,37 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <LINK relation="Extension">
-        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
-      </LINK>
-      <COMP relation="Tag">
+      <COMP relation="OwnedPackageImport">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="0bfaac55-6789-4917-8c23-d21743c4c78c"/>
+          <ID name="" mc="Standard.PackageImport" uid="ae04f284-fc5b-4ce2-ab50-4a0a06049abc"/>
           <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="Actual">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="3350c6a6-4e63-4230-b1e0-2c95bb908b99"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="22aa01ad-ec16-4118-bbc2-58725d889f72"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <LINK relation="Definition">
-              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            <LINK relation="ImportedPackage">
+              <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="bb95d33d-0d39-4acf-bc2a-05505594ce30"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

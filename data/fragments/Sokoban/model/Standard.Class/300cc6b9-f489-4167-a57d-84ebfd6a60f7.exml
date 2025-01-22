@@ -87,30 +87,9 @@
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="0895239e-f2c4-4748-ab1b-33584494c3ae"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="12df80a7-306f-4c32-bbd5-87680e73ae5b"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[Graphics]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
+                  <LINK relation="Type">
+                    <ID name="Graphics" mc="Standard.Class" uid="72e4e67e-3308-42fb-85c4-d48b039533df"/>
+                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -204,12 +183,13 @@ if (imageDeFond != null) {
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="imageDeFond" mc="Standard.Attribute" uid="f3b20858-f1b9-4d77-aec2-a74382cc72c8"/>
+          <ID name="imageDeFond" mc="Standard.AssociationEnd" uid="42eacbf9-19da-4d8a-b96c-70850872738c"/>
           <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Aggregation">KindIsComposition</ATT>
+            <ATT name="IsChangeable">true</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
             <ATT name="IsOrdered">false</ATT>
@@ -223,31 +203,50 @@ if (imageDeFond != null) {
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="Tag">
+            <LINK relation="Target">
+              <ID name="BufferedImage" mc="Standard.Class" uid="c465c5b4-9dab-4170-991c-cb71dd2aaa93"/>
+            </LINK>
+            <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9a8b74d9-45b0-4853-9514-8f4eecbef490"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="66e91631-a17b-4af4-91be-bd3636cbad05"/>
                 <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">AccesNone</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <COMP relation="Actual">
+                  <COMP relation="Opposite">
+                    <COMPID name="imageDeFond" mc="Standard.AssociationEnd" uid="42eacbf9-19da-4d8a-b96c-70850872738c"/>
+                  </COMP>
+                  <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TagParameter" uid="53dfa3e7-03f3-4b48-bca2-1d6a9914358b"/>
+                      <ID name="" mc="Standard.Association" uid="cacf5ad1-a348-4664-a7d0-ea099578d1a8"/>
                       <ATTRIBUTES>
-                        <ATT name="Value"><![CDATA[BufferedImage]]></ATT>
+                        <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
                       </ATTRIBUTES>
                       <DEPENDENCIES></DEPENDENCIES>
                     </OBJECT>
                   </COMP>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="003800a8-0000-0165-0000-000000000000"/>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="cacf5ad1-a348-4664-a7d0-ea099578d1a8"/>
+            </COMP>
+            <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="886cf96a-52dc-4bf5-bb8f-843cd92dca60"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="80561b05-1b82-4129-b7ce-22058f3046b6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -261,7 +260,7 @@ if (imageDeFond != null) {
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7bb2005c-46fa-4163-9dea-e487a4b401e8"/>
+                <ID name="" mc="Infrastructure.Note" uid="d4463cd0-49a1-4324-842c-e325e6926010"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Image de fond pour le panneau]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -270,7 +269,7 @@ if (imageDeFond != null) {
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Model">
-                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -278,95 +277,93 @@ if (imageDeFond != null) {
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <LINK relation="Extension">
-        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
-      </LINK>
-      <COMP relation="Tag">
+      <COMP relation="Parent">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="7b0701be-cbd0-4d87-97f6-b23b18b90bbb"/>
+          <ID name="" mc="Standard.Generalization" uid="c5de4df8-ab52-487f-bed7-68b425b96688"/>
           <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="Actual">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="0ffdfc4d-d703-417d-9b38-a5992867377d"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[JPanel]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <LINK relation="Definition">
-              <FOREIGNID name="JavaExtends" mc="Infrastructure.TagType" uid="003800a8-0000-0154-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="fcc1cd53-8cf7-44ea-9729-4ac24e122a80"/>
-          <ATTRIBUTES>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="Actual">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="6b5be6ab-427e-4df4-b797-e6ce0e9680ab"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="cc049a98-c274-4c47-b080-de67a3154209"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.image.BufferedImage]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="bb0f7a78-96cd-4bc0-8029-11c822805d22"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.io.File]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="b9b28106-3260-4a5f-8e26-b4591afc2c75"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.io.IOException]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="b16e7c0f-be11-42bc-b147-c3be75aeb650"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.imageio.ImageIO]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="e82ed14d-d437-438d-ab16-a7b7c530b439"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <LINK relation="Definition">
-              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            <LINK relation="SuperType">
+              <ID name="JPanel" mc="Standard.Class" uid="1e39ca4d-29ce-4880-b81d-1389469fd964"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="a2dd5dab-0ecb-48be-82c2-bbcf2150a6c0"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="awt" mc="Standard.Package" uid="4c54e63e-da79-4f11-aef6-96c297b130e7"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="6e0f878e-a4f2-4b1f-acf9-dd211a479ca8"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedImport">
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="73edef96-c54b-4cf8-a47c-271ae63e59bf"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="File" mc="Standard.Class" uid="dad90249-6fda-4450-b688-048540422a3c"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="663cd923-84dd-4058-92d9-e122beb4f951"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="IOException" mc="Standard.Class" uid="bfa7d437-6f12-4dcc-ab75-2514f50a54f8"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="e04fceac-0878-4736-9126-52050a56507e"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="ImageIO" mc="Standard.Class" uid="731551ac-d3bf-438f-85d4-8b66d74d476e"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

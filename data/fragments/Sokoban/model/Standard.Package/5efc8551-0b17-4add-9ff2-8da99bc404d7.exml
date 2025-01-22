@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="util" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="io" version="4">
   <OBJECT>
-    <ID name="util" mc="Standard.Package" uid="7b1d970a-028d-4448-9503-330b9cc2243a"/>
+    <ID name="io" mc="Standard.Package" uid="5efc8551-0b17-4add-9ff2-8da99bc404d7"/>
     <PID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
@@ -9,21 +9,20 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[util]]></ATT>
+      <ATT name="Name"><![CDATA[io]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
-        <COMPID name="ArrayList" mc="Standard.Class" uid="5f6b9237-6f82-4936-8b62-b85d9ca47cbb"/>
-        <COMPID name="List" mc="Standard.Interface" uid="5b90adb3-808f-4081-a5b5-9d3ee0a65068"/>
-        <COMPID name="Scanner" mc="Standard.Class" uid="458b0e43-72cf-4af6-902d-4be8227ea889"/>
+        <COMPID name="IOException" mc="Standard.Class" uid="bfa7d437-6f12-4dcc-ab75-2514f50a54f8"/>
+        <COMPID name="File" mc="Standard.Class" uid="dad90249-6fda-4450-b688-048540422a3c"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="a4a87ad2-e393-4563-9c9b-d53546f1eb7d"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="2367ecf5-ddfa-4613-a097-85200b217d70"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>

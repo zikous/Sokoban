@@ -1,29 +1,28 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="util" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="javax" version="4">
   <OBJECT>
-    <ID name="util" mc="Standard.Package" uid="7b1d970a-028d-4448-9503-330b9cc2243a"/>
-    <PID name="java" mc="Standard.Package" uid="89c73b9c-d131-4497-b563-865bcb9b951b"/>
+    <ID name="javax" mc="Standard.Package" uid="c2fa53f8-b643-4260-8586-1ccfebfd353e"/>
+    <PID name="sokoban" mc="Standard.Package" uid="4b03d53a-c800-4e65-8580-6778b678fb00"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[util]]></ATT>
+      <ATT name="Name"><![CDATA[javax]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
-        <COMPID name="ArrayList" mc="Standard.Class" uid="5f6b9237-6f82-4936-8b62-b85d9ca47cbb"/>
-        <COMPID name="List" mc="Standard.Interface" uid="5b90adb3-808f-4081-a5b5-9d3ee0a65068"/>
-        <COMPID name="Scanner" mc="Standard.Class" uid="458b0e43-72cf-4af6-902d-4be8227ea889"/>
+        <COMPID name="swing" mc="Standard.Package" uid="9d06d82a-cd13-413a-979e-3aa688067bcc"/>
+        <COMPID name="imageio" mc="Standard.Package" uid="4c78b428-fae0-4325-abee-17bf6031968b"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="a4a87ad2-e393-4563-9c9b-d53546f1eb7d"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="c072fe6e-b0e0-45e0-b799-43d46c32fae5"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
