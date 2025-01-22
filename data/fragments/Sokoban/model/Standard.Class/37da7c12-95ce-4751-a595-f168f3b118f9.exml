@@ -380,7 +380,7 @@ int[][] niveauTest = {
 controleur.chargerNiveau(niveauTest);
 
 // Pousser la caisse jusqu'à la cible
-controleur.action(Direction.DROITE);  // Pousser la caisse vers la droite
+controleur.action(Direction.DROITE);
 verifierCondition("Caisse peut être poussée sur une cible", true);
 verifierCondition("Niveau non terminé avec une seule caisse sur cible", !controleur.estTermine());
 
@@ -706,6 +706,22 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
             <LINK relation="Type">
               <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="e38718bb-ecc7-4822-98dc-47a8b0fdb766"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Nombre total de tests exécutés]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -730,6 +746,22 @@ System.out.println("\nRésumé des tests : " + testsReussis + " / " + totalTests
             <LINK relation="Type">
               <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="9a38e653-e7e3-41bd-b51a-c2ada377f11a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Nombre de tests réussis]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

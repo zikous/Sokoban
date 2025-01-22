@@ -103,7 +103,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="8b848f8f-5d91-42bc-951e-0cdf6d3c1d18"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return NIVEAUX[niveauCourant];]]></ATT>
+                  <ATT name="Content"><![CDATA[return NIVEAUX[niveauCourant]; // Retourne le niveau actuel]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -158,7 +158,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="46b76538-8cb8-42a4-9398-2251e7722bff"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false;]]></ATT>
+                  <ATT name="Content"><![CDATA[return false; // Dernier niveau atteint]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -173,7 +173,7 @@
                 <ID name="" mc="Infrastructure.Note" uid="22930537-1c73-488d-86ed-0450279cdc3d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (niveauCourant < NIVEAUX.length - 1) {
-    niveauCourant++;
+    niveauCourant++; // Passe au niveau suivant
     return true;
 }
 ]]></ATT>
@@ -231,7 +231,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="4d0e7e70-61da-470a-bd53-c1b412e37135"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return niveauCourant == NIVEAUX.length - 1;]]></ATT>
+                  <ATT name="Content"><![CDATA[return niveauCourant == NIVEAUX.length - 1; // Vérifie si c'est le dernier niveau]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -252,81 +252,89 @@
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"><![CDATA[{
-    		{
-    		{1, 1, 1, 1, 1},
-    		{1, 0, 3, 2, 1},
-    		{1, 0, 4, 0, 1},
-    		{1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1},
-    		{1, 4, 0, 0, 3, 2, 1},
-    		{1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 0, 0, 1},
-    		{1, 0, 3, 0, 3, 0, 1},
-    		{1, 0, 0, 4, 0, 0, 1},
-    		{1, 0, 2, 0, 2, 0, 1},
-    		{1, 0, 0, 0, 0, 0, 1},
-    		{1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 0, 0, 1},
-    		{1, 0, 1, 1, 1, 0, 1},
-    		{1, 0, 1, 2, 1, 0, 1},
-    		{1, 0, 1, 3, 1, 0, 1},
-    		{1, 0, 0, 4, 0, 0, 1},
-    		{1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-    		{1, 0, 3, 0, 1, 0, 3, 0, 2, 1},
-    		{1, 0, 0, 2, 0, 3, 0, 0, 2, 1},
-    		{1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
-    		{1, 0, 0, 0, 0, 0, 0, 0, 2, 1},
-    		{1, 0, 0, 0, 1, 0, 3, 0, 0, 1},
-    		{1, 0, 0, 4, 0, 0, 0, 0, 0, 1},
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 1, 0, 2, 2, 1},
-    		{1, 0, 3, 0, 0, 0, 0, 0, 1},
-    		{1, 0, 0, 3, 1, 0, 2, 2, 1},
-    		{1, 1, 3, 4, 0, 0, 0, 0, 1},
-    		{1, 0, 0, 3, 1, 0, 0, 0, 1},
-    		{1, 0, 1, 0, 1, 1, 0, 0, 1},
-    		{1, 0, 0, 0, 0, 0, 0, 0, 1},
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-    		{1, 0, 3, 0, 1, 0, 3, 0, 0, 1},
-    		{1, 0, 0, 0, 0, 3, 0, 0, 2, 1},
-    		{1, 0, 3, 0, 1, 0, 0, 0, 0, 1},
-    		{1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
-    		{1, 2, 0, 0, 0, 0, 0, 0, 2, 1},
-    		{1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-    		{1, 0, 4, 0, 0, 0, 0, 2, 0, 1},
-    		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-    		},
-    		{
-    		{1, 1, 1, 1, 1, 1},
-    		{1, 0, 0, 0, 0, 1},
-    		{1, 0, 3, 0, 4, 1},
-    		{1, 1, 5, 0, 0, 1},
-    		{1, 0, 5, 0, 1, 1},
-    		{1, 0, 5, 0, 1, 1},
-    		{1, 0, 5, 0, 1, 1},
-    		{1, 0, 2, 0, 1, 1},
-    		{1, 1, 1, 1, 1, 1}
-    		},
-    		}]]></ATT>
+        // Niveau 1
+        {
+            {1, 1, 1, 1, 1},
+            {1, 0, 3, 2, 1},
+            {1, 0, 4, 0, 1},
+            {1, 1, 1, 1, 1}
+        },
+        // Niveau 2
+        {
+            {1, 1, 1, 1, 1, 1, 1},
+            {1, 4, 0, 0, 3, 2, 1},
+            {1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 3
+        {
+            {1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 1},
+            {1, 0, 3, 0, 3, 0, 1},
+            {1, 0, 0, 4, 0, 0, 1},
+            {1, 0, 2, 0, 2, 0, 1},
+            {1, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 4
+        {
+            {1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 1},
+            {1, 0, 1, 1, 1, 0, 1},
+            {1, 0, 1, 2, 1, 0, 1},
+            {1, 0, 1, 3, 1, 0, 1},
+            {1, 0, 0, 4, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 5
+        {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            {1, 0, 3, 0, 1, 0, 3, 0, 2, 1},
+            {1, 0, 0, 2, 0, 3, 0, 0, 2, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 2, 1},
+            {1, 0, 0, 0, 1, 0, 3, 0, 0, 1},
+            {1, 0, 0, 4, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 6
+        {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 1, 0, 2, 2, 1},
+            {1, 0, 3, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 3, 1, 0, 2, 2, 1},
+            {1, 1, 3, 4, 0, 0, 0, 0, 1},
+            {1, 0, 0, 3, 1, 0, 0, 0, 1},
+            {1, 0, 1, 0, 1, 1, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 7
+        {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            {1, 0, 3, 0, 1, 0, 3, 0, 0, 1},
+            {1, 0, 0, 0, 0, 3, 0, 0, 2, 1},
+            {1, 0, 3, 0, 1, 0, 0, 0, 0, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
+            {1, 2, 0, 0, 0, 0, 0, 0, 2, 1},
+            {1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
+            {1, 0, 4, 0, 0, 0, 0, 2, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        },
+        // Niveau 8
+        {
+            {1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 1},
+            {1, 0, 3, 0, 4, 1},
+            {1, 1, 5, 0, 0, 1},
+            {1, 0, 5, 0, 1, 1},
+            {1, 0, 5, 0, 1, 1},
+            {1, 0, 5, 0, 1, 1},
+            {1, 0, 2, 0, 1, 1},
+            {1, 1, 1, 1, 1, 1}
+        }
+    }]]></ATT>
             <ATT name="TargetIsClass">false</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
@@ -426,6 +434,22 @@
             <LINK relation="Type">
               <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="bd854662-21f2-4408-9ff4-12c198e03552"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Niveau actuel]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

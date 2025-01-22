@@ -18,11 +18,11 @@ public abstract class Mobile {
     @objid ("6cc402cd-c3ea-4a16-80d7-ad7d38125c7a")
     public void setZone(Zone zone) {
         if (this.zone != null) {
-            this.zone.setMobile(null);
+            this.zone.setMobile(null); // Détacher du précédent zone
         }
         this.zone = zone;
         if (zone != null) {
-            zone.setMobile(this);
+            zone.setMobile(this); // Attacher au nouveau zone
         }
     }
 

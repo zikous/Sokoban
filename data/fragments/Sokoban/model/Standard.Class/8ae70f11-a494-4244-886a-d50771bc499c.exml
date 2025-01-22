@@ -100,18 +100,18 @@
                   <ATT name="Content"><![CDATA[this.currentDirection = direction;
 
 if (getZone() == null) {
-    return false;
+    return false; // Pas de zone actuelle
 }
 
 Position positionCible = getZone().getPosition().getPositionAdjacente(direction);
 if (positionCible == null) {
-    return false;
+    return false; // Position cible invalide
 }
 
 Zone zoneCible = positionCible.getZone();
 
 if (zoneCible.estLibre()) {
-    setZone(zoneCible);
+    setZone(zoneCible); // Déplacement simple
     return true;
 }
 
@@ -119,8 +119,8 @@ if (zoneCible.getMobile() instanceof Caisse) {
     Position positionApresCaisse = positionCible.getPositionAdjacente(direction);
     if (positionApresCaisse != null && positionApresCaisse.getZone().estLibre()) {
         Caisse caisse = (Caisse) zoneCible.getMobile();
-        caisse.setZone(positionApresCaisse.getZone());
-        setZone(zoneCible);
+        caisse.setZone(positionApresCaisse.getZone()); // Pousser la caisse
+        setZone(zoneCible); // Déplacer le gardien
         return true;
     }
 }
@@ -138,7 +138,7 @@ if (zoneCible.getMobile() instanceof Caisse) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="298d0b21-11f3-41e6-a893-ff20b5b26830"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false;]]></ATT>
+                  <ATT name="Content"><![CDATA[return false; // Déplacement impossible]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

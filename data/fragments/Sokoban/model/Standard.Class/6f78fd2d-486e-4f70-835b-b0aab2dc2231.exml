@@ -178,11 +178,11 @@
                 <ID name="" mc="Infrastructure.Note" uid="e303e7b0-1999-4d9c-a8c5-76bfafea3602"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (this.zone != null) {
-    this.zone.setMobile(null);
+    this.zone.setMobile(null); // Détacher du précédent zone
 }
 this.zone = zone;
 if (zone != null) {
-    zone.setMobile(this);
+    zone.setMobile(this); // Attacher au nouveau zone
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>

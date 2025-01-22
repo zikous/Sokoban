@@ -6,10 +6,10 @@ import entity.*;
 @objid ("37da7c12-95ce-4751-a595-f168f3b118f9")
 public class TestSokoban {
     @objid ("d0ba1d01-d690-49ce-8ddf-1351783cb560")
-    private static int totalTests = 0;
+    private static int totalTests = 0; // Nombre total de tests exécutés
 
     @objid ("670b73ae-846a-4c45-81da-cc2cb5d27d08")
-    private static int testsReussis = 0;
+    private static int testsReussis = 0; // Nombre de tests réussis
 
     @objid ("94196a09-4932-4e36-b884-9ef22dc26816")
     private static void afficherTest(String nomTest) {
@@ -114,7 +114,7 @@ public class TestSokoban {
         controleur.chargerNiveau(niveauTest);
         
         // Pousser la caisse jusqu'à la cible
-        controleur.action(Direction.DROITE);  // Pousser la caisse vers la droite
+        controleur.action(Direction.DROITE);
         verifierCondition("Caisse peut être poussée sur une cible", true);
         verifierCondition("Niveau non terminé avec une seule caisse sur cible", !controleur.estTermine());
         

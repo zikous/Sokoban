@@ -100,9 +100,9 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="362040a6-5dde-4c8b-80cf-a4c0de49b703"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Controleur controleur = new Controleur();
-MaFenetre fenetre = new MaFenetre(controleur);
-fenetre.setVisible(true);
+                  <ATT name="Content"><![CDATA[Controleur controleur = new Controleur(); // Crée le contrôleur du jeu
+MaFenetre fenetre = new MaFenetre(controleur); // Crée la fenêtre principale
+fenetre.setVisible(true); // Rend la fenêtre visible
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>

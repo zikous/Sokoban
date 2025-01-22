@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Entrepot {
-    private List<Position> positions = new ArrayList<>();
+    private List<Position> positions = new ArrayList<>(); // Positions disponibles
 
-    private List<Zone> zones = new ArrayList<>();
+    private List<Zone> zones = new ArrayList<>(); // Zones associées
 
     public void initialiser(int lignes, int colonnes) {
         positions.clear();
@@ -27,7 +27,7 @@ public class Entrepot {
                 return position;
             }
         }
-        return null;
+        return null; // Position non trouvée
     }
 
     public boolean estTermine() {
@@ -60,7 +60,7 @@ public class Entrepot {
                 }
                 break;
             default:
-                throw new IllegalArgumentException("Type d'élément non géré : " + type);
+                throw new IllegalArgumentException("Type non géré : " + type);
         }
     }
 
@@ -77,18 +77,24 @@ public class Entrepot {
         for (int i = 0; i <= maxLigne; i++) {
             for (int j = 0; j <= maxColonne; j++) {
                 Position pos = getPosition(i, j);
-                Zone zone = pos.getZone();
-        
-                char symbole = ' ';
-                if (zone.isEstMur()) {
-                    symbole = '#';
-                } else if (zone.getMobile() instanceof Gardien) {
-                    symbole = '@';
-                } else if (zone.contientCaisse()) {
-                    symbole = zone.isEstCible() ? '*' : '$';
-                } else if (zone.isEstCible()) {
-                    symbole = '.';
+                if (pos == null) {
+                    result += "  ";
+                    continue;
                 }
+                
+                Zone zone = pos.getZone();
+                char symbole = ' ';
+                
+                if (zone.isEstMur()) {
+                    symbole = TypeElement.MUR.getSymbol();
+                } else if (zone.getMobile() instanceof Gardien) {
+                    symbole = zone.isEstCible() ? TypeElement.GARDIEN_CIBLE.getSymbol() : TypeElement.GARDIEN.getSymbol();
+                } else if (zone.contientCaisse()) {
+                    symbole = zone.isEstCible() ? TypeElement.CIBLE_CAISSE.getSymbol() : TypeElement.CAISSE.getSymbol();
+                } else if (zone.isEstCible()) {
+                    symbole = TypeElement.CIBLE.getSymbol();
+                }
+                
                 result += symbole + " ";
             }
             result += "\n";

@@ -3,9 +3,9 @@ package control;
 import entity.*;
 
 public class TestSokoban {
-    private static int totalTests = 0;
+    private static int totalTests = 0; // Nombre total de tests exécutés
 
-    private static int testsReussis = 0;
+    private static int testsReussis = 0; // Nombre de tests réussis
 
     private static void afficherTest(String nomTest) {
         System.out.println("\n=== Test: " + nomTest + " ===");
@@ -104,7 +104,7 @@ public class TestSokoban {
         controleur.chargerNiveau(niveauTest);
         
         // Pousser la caisse jusqu'à la cible
-        controleur.action(Direction.DROITE);  // Pousser la caisse vers la droite
+        controleur.action(Direction.DROITE);
         verifierCondition("Caisse peut être poussée sur une cible", true);
         verifierCondition("Niveau non terminé avec une seule caisse sur cible", !controleur.estTermine());
         

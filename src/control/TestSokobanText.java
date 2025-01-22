@@ -6,12 +6,12 @@ import entity.Direction;
 
 @objid ("ec84e489-bafb-4824-8cf4-41ae8cb5eb6a")
 public class TestSokobanText {
-// Méthode principale pour lancer le jeu
     @objid ("7fadbec0-3ad7-45dc-a85e-7abaa8511f72")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Controleur controleur = new Controleur();
         
+        // Définition du niveau
         int[][] niveau = {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
                 { 1, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
@@ -25,40 +25,38 @@ public class TestSokobanText {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
         };
         
-        controleur.chargerNiveau(niveau);
-        
-        afficherInstructions();
+        controleur.chargerNiveau(niveau); // Charger le niveau
+        afficherInstructions(); // Afficher les instructions
         
         boolean playing = true;
         while (playing) {
             System.out.println("\nPlateau actuel :");
-            // Using the new toString method instead of afficherNiveau
-            System.out.println(controleur.getEntrepot().toString());
-        
+            System.out.println(controleur.getEntrepot().toString()); // Afficher le plateau
+            
             System.out.print("\nEntrez un mouvement (z/q/s/d, x pour quitter, r pour recommencer) : ");
             String input = scanner.nextLine().toLowerCase();
-        
+            
             if (input.equals("x")) {
-                playing = false;
+                playing = false; // Quitter le jeu
                 continue;
             }
-        
+            
             if (input.equals("r")) {
-                controleur.reinitialiserNiveau();
+                controleur.reinitialiserNiveau(); // Recommencer le niveau
                 continue;
             }
-        
-            Direction direction = convertirEntree(input);
+            
+            Direction direction = convertirEntree(input); // Convertir l'entrée en direction
             if (direction != null) {
-                controleur.action(direction);
-        
-                if (controleur.estTermine()) {
+                controleur.action(direction); // Effectuer l'action
+                
+                if (controleur.estTermine()) { // Vérifier si le niveau est terminé
                     System.out.println("\nFélicitations ! Vous avez terminé le niveau !");
                     System.out.println(controleur.getEntrepot().toString());
                     playing = false;
                 }
             } else {
-                System.out.println("Entrée invalide !");
+                System.out.println("Entrée invalide !"); // Gestion des entrées invalides
             }
         }
         
@@ -66,7 +64,6 @@ public class TestSokobanText {
         System.out.println("Merci d'avoir joué !");
     }
 
-// Affiche les instructions et la légende des symboles
     @objid ("c7506ab6-1481-4c68-9428-61f0e73d0d04")
     private static void afficherInstructions() {
         System.out.println("Bienvenue dans Sokoban !");
@@ -85,7 +82,6 @@ public class TestSokobanText {
         System.out.println("* = Caisse sur cible");
     }
 
-// Convertit l'entrée utilisateur en direction correspondante
     @objid ("dcd6d086-0dd5-4a34-9285-e45c36c9969c")
     private static Direction convertirEntree(String input) {
         switch (input) {
@@ -98,7 +94,7 @@ public class TestSokobanText {
             case "d":
                 return Direction.DROITE;
             default:
-                return null;  // Entrée invalide
+                return null; // Entrée invalide
         }
     }
 

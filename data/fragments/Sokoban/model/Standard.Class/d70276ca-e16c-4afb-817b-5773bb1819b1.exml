@@ -479,7 +479,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9de0e9a0-459e-483c-a6b7-c94827b329fa"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cbf4735a-8c89-4e8c-b67c-2f74b7294597"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -517,7 +517,7 @@ switch (direction) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3dfa04fe-a934-413e-bd14-4c1fc731509d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ebb9ded7-155a-48c3-9360-bac1a88aceae"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -645,6 +645,20 @@ switch (direction) {
                         </LINK>
                       </DEPENDENCIES>
                     </OBJECT>
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.Note" uid="b6a38699-70d2-42c3-9672-51e75395092a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"><![CDATA[Positions disponibles]]></ATT>
+                        <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
                   </COMP>
                 </DEPENDENCIES>
               </OBJECT>
@@ -654,7 +668,7 @@ switch (direction) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5ae78238-3fb9-41ab-81ff-ff56b8447ba2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9497f1ab-7481-4d52-b328-4c9303ed3a38"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

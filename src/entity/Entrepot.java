@@ -7,10 +7,10 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 @objid ("7a4676f4-ea89-40ed-b5f6-2561c23dec7a")
 public class Entrepot {
     @objid ("4310f7f9-a42f-4231-9f22-c3fb5a313aaa")
-    private List<Position> positions = new ArrayList<>();
+    private List<Position> positions = new ArrayList<>(); // Positions disponibles
 
     @objid ("de67d322-7095-427b-a023-70a20df7efd9")
-    private List<Zone> zones = new ArrayList<>();
+    private List<Zone> zones = new ArrayList<>(); // Zones associées
 
     @objid ("9ddd3eb1-b3cc-42e3-a42d-b67786b0044c")
     public void initialiser(int lignes, int colonnes) {
@@ -33,7 +33,7 @@ public class Entrepot {
                 return position;
             }
         }
-        return null;
+        return null; // Position non trouvée
     }
 
     @objid ("7a0cd4ae-1ffa-470d-aae2-e6ebba6ace44")
@@ -69,7 +69,7 @@ public class Entrepot {
                 }
                 break;
             default:
-                throw new IllegalArgumentException("Type d'élément non géré : " + type);
+                throw new IllegalArgumentException("Type non géré : " + type);
         }
     }
 
@@ -87,18 +87,24 @@ public class Entrepot {
         for (int i = 0; i <= maxLigne; i++) {
             for (int j = 0; j <= maxColonne; j++) {
                 Position pos = getPosition(i, j);
-                Zone zone = pos.getZone();
-        
-                char symbole = ' ';
-                if (zone.isEstMur()) {
-                    symbole = '#';
-                } else if (zone.getMobile() instanceof Gardien) {
-                    symbole = '@';
-                } else if (zone.contientCaisse()) {
-                    symbole = zone.isEstCible() ? '*' : '$';
-                } else if (zone.isEstCible()) {
-                    symbole = '.';
+                if (pos == null) {
+                    result += "  ";
+                    continue;
                 }
+                
+                Zone zone = pos.getZone();
+                char symbole = ' ';
+                
+                if (zone.isEstMur()) {
+                    symbole = TypeElement.MUR.getSymbol();
+                } else if (zone.getMobile() instanceof Gardien) {
+                    symbole = zone.isEstCible() ? TypeElement.GARDIEN_CIBLE.getSymbol() : TypeElement.GARDIEN.getSymbol();
+                } else if (zone.contientCaisse()) {
+                    symbole = zone.isEstCible() ? TypeElement.CIBLE_CAISSE.getSymbol() : TypeElement.CAISSE.getSymbol();
+                } else if (zone.isEstCible()) {
+                    symbole = TypeElement.CIBLE.getSymbol();
+                }
+                
                 result += symbole + " ";
             }
             result += "\n";

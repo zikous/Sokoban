@@ -60,10 +60,10 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="17da003a-5ad0-4431-80e8-11c87e1ae630"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[super("Sokoban");
+                  <ATT name="Content"><![CDATA[super("Sokoban"); // Titre de la fenêtre
 this.controleur = controleur;
-initFrame();
-afficherEcranAccueil();
+initFrame(); // Initialise la fenêtre
+afficherEcranAccueil(); // Affiche l'écran d'accueil
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -154,15 +154,15 @@ afficherEcranAccueil();
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="beeac888-bbb2-4174-9fe7-c01bb1960a47"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Direction direction = getDirectionFromKeyEvent(e);
+                  <ATT name="Content"><![CDATA[Direction direction = getDirectionFromKeyEvent(e); // Obtient la direction à partir de la touche pressée
 if (direction != null) {
-    controleur.action(direction);
+    controleur.action(direction); // Déplace le gardien
 } else if (e.getKeyCode() == KeyEvent.VK_R) {
-    controleur.reinitialiserNiveau();
+    controleur.reinitialiserNiveau(); // Réinitialise le niveau
 }
-monAfficheur.repaint();
+monAfficheur.repaint(); // Rafraîchit l'affichage
 if (controleur.estTermine()) {
-    handleNiveauTermine();
+    handleNiveauTermine(); // Gère la fin du niveau
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -251,6 +251,20 @@ if (controleur.estTermine()) {
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="16538ab9-6287-4e14-8d8b-e9334123c897"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Non utilisé]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -324,6 +338,20 @@ if (controleur.estTermine()) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="3e940b9d-c2b1-46ea-9636-6785b91838eb"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Non utilisé]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -419,11 +447,11 @@ if (controleur.estTermine()) {
                 <ID name="" mc="Infrastructure.Note" uid="01377752-ff5a-456b-b870-aa9814662403"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[switch (e.getKeyCode()) {
-    case KeyEvent.VK_UP: return Direction.HAUT;
-    case KeyEvent.VK_DOWN: return Direction.BAS;
-    case KeyEvent.VK_LEFT: return Direction.GAUCHE;
-    case KeyEvent.VK_RIGHT: return Direction.DROITE;
-    default: return null;
+    case KeyEvent.VK_UP: return Direction.HAUT; // Haut
+    case KeyEvent.VK_DOWN: return Direction.BAS; // Bas
+    case KeyEvent.VK_LEFT: return Direction.GAUCHE; // Gauche
+    case KeyEvent.VK_RIGHT: return Direction.DROITE; // Droite
+    default: return null; // Touche non reconnue
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -457,16 +485,16 @@ if (controleur.estTermine()) {
                 <ID name="" mc="Infrastructure.Note" uid="7c70d57e-79e1-4162-8ff3-1c22ae219982"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (controleur.estDernierNiveau()) {
-    showMessage("Félicitations ! Vous avez terminé tous les niveaux !", "Jeu terminé");
-    System.exit(0);
+    showMessage("Félicitations ! Vous avez terminé tous les niveaux !", "Jeu terminé"); // Message de fin de jeu
+    System.exit(0); // Quitte le jeu
 } else {
     int choix = showConfirmDialog("Niveau terminé ! Voulez-vous passer au niveau suivant ?", "Niveau terminé");
     if (choix == JOptionPane.YES_OPTION) {
-        controleur.passerAuNiveauSuivant();
+        controleur.passerAuNiveauSuivant(); // Passe au niveau suivant
     } else {
-        handleRejouerOuQuitter();
+        handleRejouerOuQuitter(); // Propose de rejouer ou de quitter
     }
-    monAfficheur.repaint();
+    monAfficheur.repaint(); // Rafraîchit l'affichage
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -499,11 +527,11 @@ if (controleur.estTermine()) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="a0ffb5aa-3a92-420a-9817-4a08b28d6ae0"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[EcranAccueil ecranAccueil = new EcranAccueil(this);
-getContentPane().removeAll();
-getContentPane().add(ecranAccueil);
-revalidate();
-repaint();
+                  <ATT name="Content"><![CDATA[EcranAccueil ecranAccueil = new EcranAccueil(this); // Crée l'écran d'accueil
+getContentPane().removeAll(); // Vide le contenu de la fenêtre
+getContentPane().add(ecranAccueil); // Ajoute l'écran d'accueil
+revalidate(); // Rafraîchit la fenêtre
+repaint(); // Redessine la fenêtre
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -535,14 +563,14 @@ repaint();
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="977d6dca-4ff6-4d2b-917b-23507bfaba5c"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[getContentPane().removeAll();
-this.monAfficheur = new MonAfficheur(controleur);
-getContentPane().add(monAfficheur, BorderLayout.CENTER);
-addKeyListener(this);
-setFocusable(true);
-requestFocusInWindow();
-revalidate();
-repaint();
+                  <ATT name="Content"><![CDATA[getContentPane().removeAll(); // Vide le contenu de la fenêtre
+this.monAfficheur = new MonAfficheur(controleur); // Crée le panneau d'affichage du jeu
+getContentPane().add(monAfficheur, BorderLayout.CENTER); // Ajoute le panneau au centre
+addKeyListener(this); // Ajoute un écouteur de touches
+setFocusable(true); // Permet à la fenêtre de recevoir les événements clavier
+requestFocusInWindow(); // Donne le focus à la fenêtre
+revalidate(); // Rafraîchit la fenêtre
+repaint(); // Redessine la fenêtre
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -574,10 +602,10 @@ repaint();
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="378c949c-5a42-444d-9c5b-f1653e2f0d1e"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-setSize(800, 600);
-setLocationRelativeTo(null);
-setVisible(true);
+                  <ATT name="Content"><![CDATA[setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ferme l'application à la fermeture de la fenêtre
+setSize(800, 600); // Taille de la fenêtre
+setLocationRelativeTo(null); // Centre la fenêtre
+setVisible(true); // Rend la fenêtre visible
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -609,12 +637,12 @@ setVisible(true);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="61554853-a4fd-4786-ab1a-254519ed7e79"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Object[] options = { "Quitter", "Rejouer le niveau" };
+                  <ATT name="Content"><![CDATA[Object[] options = { "Quitter", "Rejouer le niveau" }; // Options pour l'utilisateur
 int choix = showOptionDialog("Que souhaitez-vous faire ?", "Niveau terminé", options);
 if (choix == JOptionPane.YES_OPTION) {
-    System.exit(0);
+    System.exit(0); // Quitte le jeu
 } else {
-    controleur.reinitialiserNiveau();
+    controleur.reinitialiserNiveau(); // Rejoue le niveau
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -735,7 +763,7 @@ if (choix == JOptionPane.YES_OPTION) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="2c70c1cf-2460-48c2-a335-4b50ab3312b4"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[JOptionPane.showMessageDialog(this, message, title, JOptionPane.INFORMATION_MESSAGE);]]></ATT>
+                  <ATT name="Content"><![CDATA[JOptionPane.showMessageDialog(this, message, title, JOptionPane.INFORMATION_MESSAGE); // Affiche un message]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -878,7 +906,7 @@ if (choix == JOptionPane.YES_OPTION) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="d2c3f913-ba8c-435b-b8cc-1cd1e25baea8"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return JOptionPane.showConfirmDialog(this, message, title, JOptionPane.YES_NO_OPTION);]]></ATT>
+                  <ATT name="Content"><![CDATA[return JOptionPane.showConfirmDialog(this, message, title, JOptionPane.YES_NO_OPTION); // Affiche une boîte de dialogue de confirmation]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1087,7 +1115,7 @@ if (choix == JOptionPane.YES_OPTION) {
                 <ID name="" mc="Infrastructure.Note" uid="2640336e-55d2-4dc0-9997-7713dd46abe7"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]);]]></ATT>
+                                                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1204,7 +1232,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ffb4a4ce-dea6-4777-9d7f-2a48eaecbe63"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cdbaaa11-6cca-4ee1-8a96-c7c702ea7818"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1212,6 +1240,22 @@ if (choix == JOptionPane.YES_OPTION) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="9283afea-46e3-4628-9cf1-924a86902e88"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Panneau d'affichage du jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1279,7 +1323,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="926f890b-7c56-45e0-a9b7-4e3d3568da14"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="47738f22-e79a-4410-946a-2e4a37891eb7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1287,6 +1331,22 @@ if (choix == JOptionPane.YES_OPTION) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="06c86b65-5d83-4fdf-be68-1e130e301e23"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Contrôleur du jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

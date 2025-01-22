@@ -652,7 +652,7 @@ position.setZone(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="93df8192-0e52-48e8-879f-6398df7c3a30"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fb2277e4-d84d-4257-8d33-c1b7f576ba51"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -690,7 +690,7 @@ position.setZone(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d31dbc3e-9e48-42f1-a435-027a5362ec5c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c20f6a73-cd65-4495-99b9-70e8425d96fb"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -764,7 +764,7 @@ position.setZone(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="70d18ce4-275e-40b0-8b63-7c8b69b8d849"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="03e4c7e8-271c-4502-bf27-9f9c8fdc3364"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -784,7 +784,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="38ef58bd-d59d-4be5-8d60-10f064be9c76"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="72e34145-fabd-4d92-b5fa-1e6a6d6e3c82"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -856,7 +856,7 @@ position.setZone(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="ecad2cc2-8edd-402f-ae39-fc3039d6ce5b"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="0f469531-7c3e-499e-9b62-1c56019d692d"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -876,7 +876,7 @@ position.setZone(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="89aea4c9-7e30-49ea-a1d1-b0a6755d2b8f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6e04dc10-008b-488f-bd64-278dae3e6410"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

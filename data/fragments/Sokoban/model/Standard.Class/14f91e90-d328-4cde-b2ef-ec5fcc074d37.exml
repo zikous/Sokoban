@@ -60,7 +60,7 @@
                 <ID name="" mc="Infrastructure.Note" uid="5dbdf070-4e96-45ce-98f6-1cf0c17dd2ab"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (!entrepot.estTermine() && gardien.getZone() != null) {
-    gardien.deplacer(direction);
+    gardien.deplacer(direction); // Déplace le gardien dans la direction donnée
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -99,7 +99,7 @@
                   <ATT name="Content"><![CDATA[this.entrepot = new Entrepot();
 this.gardien = new Gardien();
 this.niveauManager = new NiveauManager();
-chargerNiveauCourant();
+chargerNiveauCourant(); // Charge le niveau actuel
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -201,43 +201,49 @@ chargerNiveauCourant();
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="cfb0a58a-6e7f-4544-a391-2c4fccf71ed9"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.niveauInitial = new int[niveau.length][niveau[0].length];
+                  <ATT name="Content"><![CDATA[// Copie le niveau pour la réinitialisation
+this.niveauInitial = new int[niveau.length][niveau[0].length];
 for (int i = 0; i < niveau.length; i++) {
     System.arraycopy(niveau[i], 0, niveauInitial[i], 0, niveau[i].length);
 }
 
-entrepot.clear();
-entrepot.initialiser(niveau.length, niveau[0].length);
+entrepot.clear(); // Réinitialise l'entrepôt
+entrepot.initialiser(niveau.length, niveau[0].length); // Initialise l'entrepôt avec la taille du niveau
 
+// Place les éléments du niveau dans l'entrepôt
 for (int i = 0; i < niveau.length; i++) {
     for (int j = 0; j < niveau[0].length; j++) {
-        switch (niveau[i][j]) {
-            case 1: 
-                entrepot.placerElement(i, j, TypeElement.MUR);
-                break;
-            case 2: 
-                entrepot.placerElement(i, j, TypeElement.CIBLE);
-                break;
-            case 3: 
-                entrepot.placerElement(i, j, TypeElement.CAISSE);
-                break;
-            case 4: 
-                Position pos = entrepot.getPosition(i, j);
-                if (pos != null && pos.getZone().estLibre()) {
-                    gardien.setZone(pos.getZone());
-                }
-                break;
-            case 5: 
-                entrepot.placerElement(i, j, TypeElement.CIBLE);
-                entrepot.placerElement(i, j, TypeElement.CAISSE);
-                break;
-            case 6: 
-                Position posGardien = entrepot.getPosition(i, j);
-                if (posGardien != null && posGardien.getZone().estLibre()) {
-                    gardien.setZone(posGardien.getZone());
-                }
-                entrepot.placerElement(i, j, TypeElement.CIBLE);
-                break;
+        int value = niveau[i][j];
+        if (value != 0) { // 0 représente un espace vide
+            TypeElement type = TypeElement.fromInt(value);
+            switch (type) {
+                case MUR:
+                    entrepot.placerElement(i, j, TypeElement.MUR);
+                    break;
+                case CIBLE:
+                    entrepot.placerElement(i, j, TypeElement.CIBLE);
+                    break;
+                case CAISSE:
+                    entrepot.placerElement(i, j, TypeElement.CAISSE);
+                    break;
+                case GARDIEN:
+                    Position pos = entrepot.getPosition(i, j);
+                    if (pos != null && pos.getZone().estLibre()) {
+                        gardien.setZone(pos.getZone()); // Place le gardien
+                    }
+                    break;
+                case CIBLE_CAISSE:
+                    entrepot.placerElement(i, j, TypeElement.CIBLE);
+                    entrepot.placerElement(i, j, TypeElement.CAISSE);
+                    break;
+                case GARDIEN_CIBLE:
+                    Position posGardien = entrepot.getPosition(i, j);
+                    if (posGardien != null && posGardien.getZone().estLibre()) {
+                        gardien.setZone(posGardien.getZone()); // Place le gardien sur une cible
+                    }
+                    entrepot.placerElement(i, j, TypeElement.CIBLE);
+                    break;
+            }
         }
     }
 }
@@ -296,7 +302,7 @@ for (int i = 0; i < niveau.length; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="59a8173c-d15e-4d1b-bc05-e032a4d4328a"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return entrepot.estTermine();]]></ATT>
+                  <ATT name="Content"><![CDATA[return entrepot.estTermine(); // Vérifie si le niveau est terminé]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -328,7 +334,7 @@ for (int i = 0; i < niveau.length; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="9eb4f464-0d0f-4b71-a317-be2ee7e88e03"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (niveauInitial != null) {
-    chargerNiveau(niveauInitial);
+    chargerNiveau(niveauInitial); // Réinitialise le niveau
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -385,7 +391,7 @@ for (int i = 0; i < niveau.length; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="8ae07575-457d-482c-9ef1-a4872d953dc6"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return entrepot;]]></ATT>
+                  <ATT name="Content"><![CDATA[return entrepot; // Retourne l'entrepôt]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -440,7 +446,7 @@ for (int i = 0; i < niveau.length; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="0c50cc68-73b5-4a85-bf46-89c578335488"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return gardien;]]></ATT>
+                  <ATT name="Content"><![CDATA[return gardien; // Retourne le gardien]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -471,7 +477,7 @@ for (int i = 0; i < niveau.length; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="a1e3001d-be86-4531-af37-91d69d7a06f9"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[chargerNiveau(niveauManager.getNiveauCourant());]]></ATT>
+                  <ATT name="Content"><![CDATA[chargerNiveau(niveauManager.getNiveauCourant()); // Charge le niveau actuel]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -526,7 +532,7 @@ for (int i = 0; i < niveau.length; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="681109eb-fba3-4fe7-9341-39a074a6e118"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return niveauManager.estDernierNiveau();]]></ATT>
+                  <ATT name="Content"><![CDATA[return niveauManager.estDernierNiveau(); // Vérifie si c'est le dernier niveau]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -558,7 +564,7 @@ for (int i = 0; i < niveau.length; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="bdb60907-bf5c-4743-b4e1-7aeaf0c63d01"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (niveauManager.passerAuNiveauSuivant()) {
-    chargerNiveauCourant();
+    chargerNiveauCourant(); // Passe au niveau suivant
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -644,7 +650,7 @@ for (int i = 0; i < niveau.length; i++) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0e5158b8-9f60-4438-bb4a-c6e3091b112d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a708b77e-34dc-43c8-9d7c-cdda342d6cf0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -652,6 +658,22 @@ for (int i = 0; i < niveau.length; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="dbde6278-ed93-44ae-976a-219ee15bf5c6"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Stocke le niveau initial pour la réinitialisation]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -721,7 +743,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c11ad554-b6dd-4335-a9a6-85995e595ed4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="53550a9b-7f16-4de5-a23d-f9abbef5fff8"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -729,6 +751,22 @@ for (int i = 0; i < niveau.length; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="93af053b-0403-4025-ac8e-e081d98f3e11"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Le gardien du jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -796,7 +834,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="57df2dc5-e540-4ac9-944c-5796e1bb3c64"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b3057138-4a0e-446a-b655-2b6c4ae7aa59"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -804,6 +842,22 @@ for (int i = 0; i < niveau.length; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c2a37688-7bb8-4aec-ba92-190d23cb92e4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[L'entrepôt représentant le plateau de jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -871,7 +925,7 @@ for (int i = 0; i < niveau.length; i++) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ba7ba782-5771-4ad6-9c57-3d63c36b7165"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="98b30da2-5df3-469c-917e-3255112eef63"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -879,6 +933,22 @@ for (int i = 0; i < niveau.length; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="5f091bc6-750b-4be3-bbac-19fa8493afee"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Gère les niveaux du jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

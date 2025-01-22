@@ -190,7 +190,7 @@ for (int i = 0; i < lignes; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="e361a871-2b75-474a-9d2d-3e49d7d47fb0"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return null;]]></ATT>
+                  <ATT name="Content"><![CDATA[return null; // Position non trouvée]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -418,7 +418,7 @@ switch (type) {
         }
         break;
     default:
-        throw new IllegalArgumentException("Type d'élément non géré : " + type);
+        throw new IllegalArgumentException("Type non géré : " + type);
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -535,18 +535,24 @@ String result = "";
 for (int i = 0; i <= maxLigne; i++) {
     for (int j = 0; j <= maxColonne; j++) {
         Position pos = getPosition(i, j);
-        Zone zone = pos.getZone();
-
-        char symbole = ' ';
-        if (zone.isEstMur()) {
-            symbole = '#';
-        } else if (zone.getMobile() instanceof Gardien) {
-            symbole = '@';
-        } else if (zone.contientCaisse()) {
-            symbole = zone.isEstCible() ? '*' : '$';
-        } else if (zone.isEstCible()) {
-            symbole = '.';
+        if (pos == null) {
+            result += "  ";
+            continue;
         }
+        
+        Zone zone = pos.getZone();
+        char symbole = ' ';
+        
+        if (zone.isEstMur()) {
+            symbole = TypeElement.MUR.getSymbol();
+        } else if (zone.getMobile() instanceof Gardien) {
+            symbole = zone.isEstCible() ? TypeElement.GARDIEN_CIBLE.getSymbol() : TypeElement.GARDIEN.getSymbol();
+        } else if (zone.contientCaisse()) {
+            symbole = zone.isEstCible() ? TypeElement.CIBLE_CAISSE.getSymbol() : TypeElement.CAISSE.getSymbol();
+        } else if (zone.isEstCible()) {
+            symbole = TypeElement.CIBLE.getSymbol();
+        }
+        
         result += symbole + " ";
     }
     result += "\n";
@@ -658,6 +664,20 @@ for (int i = 0; i <= maxLigne; i++) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaInitValue" mc="Infrastructure.NoteType" uid="00380080-0000-0994-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="7382b2e4-162d-47c2-be0c-b5109a651645"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Zones associées]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

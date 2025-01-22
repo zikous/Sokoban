@@ -12,11 +12,11 @@ public abstract class Mobile {
 
     public void setZone(Zone zone) {
         if (this.zone != null) {
-            this.zone.setMobile(null);
+            this.zone.setMobile(null); // Détacher du précédent zone
         }
         this.zone = zone;
         if (zone != null) {
-            zone.setMobile(this);
+            zone.setMobile(this); // Attacher au nouveau zone
         }
     }
 

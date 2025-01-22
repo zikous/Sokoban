@@ -61,8 +61,8 @@
                 <ID name="" mc="Infrastructure.Note" uid="6476535d-5cc7-4b2d-aab6-bd4c6389704b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.controleur = controleur;
-setPreferredSize(new Dimension(800, 600));
-chargerImages();
+setPreferredSize(new Dimension(800, 600)); // Taille du panneau
+chargerImages(); // Charge les images
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -154,13 +154,14 @@ chargerImages();
                 <ID name="" mc="Infrastructure.Note" uid="32de219c-70e6-4ffd-98d6-29f1e8fdb5d4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[super.paintComponent(g);
-// Dessiner l'arrière-plan (herbe) sur tout le panneau
+// Dessine l'herbe en arrière-plan
 for (int x = 0; x < getWidth(); x += TAILLE_CASE) {
     for (int y = 0; y < getHeight(); y += TAILLE_CASE) {
         dessinerHerbe(g, x, y);
     }
 }
 
+// Parcourt toutes les cases de l'entrepôt pour les afficher
 Entrepot entrepot = controleur.getEntrepot();
 for (int i = 0; i < 20; i++) {
     for (int j = 0; j < 20; j++) {
@@ -169,16 +170,16 @@ for (int i = 0; i < 20; i++) {
         int y = i * TAILLE_CASE;
         if (pos != null) {
             Zone zone = pos.getZone();
-            dessinerSol(g, x, y);
+            dessinerSol(g, x, y); // Dessine le sol
             if (zone.isEstMur()) {
-                dessinerMur(g, x, y);
+                dessinerMur(g, x, y); // Dessine un mur
             } else if (zone.isEstCible() && zone.getMobile() == null) {
-                dessinerCible(g, x, y);
+                dessinerCible(g, x, y); // Dessine une cible vide
             }
             if (zone.getMobile() instanceof Caisse) {
-                dessinerCaisse(g, x, y, zone.isEstCible());
+                dessinerCaisse(g, x, y, zone.isEstCible()); // Dessine une caisse
             } else if (zone.getMobile() instanceof Gardien) {
-                dessinerGardien(g, x, y, zone.isEstCible());
+                dessinerGardien(g, x, y, zone.isEstCible()); // Dessine le gardien
             }
         }
     }
@@ -304,9 +305,9 @@ for (int i = 0; i < 20; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="6412b7e8-79dd-47a3-a5b9-b45deba724c6"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (imgMur != null) {
-    g.drawImage(imgMur, x, y, null);
+    g.drawImage(imgMur, x, y, null); // Dessine l'image du mur
 } else {
-    g.setColor(Color.DARK_GRAY);
+    g.setColor(Color.DARK_GRAY); // Couleur par défaut si l'image est manquante
     g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
 }
 ]]></ATT>
@@ -430,9 +431,9 @@ for (int i = 0; i < 20; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="d1207bf0-9ef2-4f1a-95bb-cc28b0c3525b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (imgCible != null) {
-    g.drawImage(imgCible, x, y, null);
+    g.drawImage(imgCible, x, y, null); // Dessine l'image de la cible
 } else {
-    g.setColor(Color.RED);
+    g.setColor(Color.RED); // Couleur par défaut si l'image est manquante
     int marge = TAILLE_CASE / 4;
     g.fillOval(x + marge, y + marge, TAILLE_CASE - 2 * marge, TAILLE_CASE - 2 * marge);
 }
@@ -579,11 +580,11 @@ for (int i = 0; i < 20; i++) {
                 <ID name="" mc="Infrastructure.Note" uid="f3aff18a-bc6c-440e-b80c-936fad3630ff"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (surCible && imgCaisseSurCible != null) {
-    g.drawImage(imgCaisseSurCible, x, y, null);
+    g.drawImage(imgCaisseSurCible, x, y, null); // Dessine une caisse sur cible
 } else if (imgCaisse != null) {
-    g.drawImage(imgCaisse, x, y, null);
+    g.drawImage(imgCaisse, x, y, null); // Dessine une caisse normale
 } else {
-    g.setColor(surCible ? new Color(139, 69, 19) : Color.ORANGE);
+    g.setColor(surCible ? new Color(139, 69, 19) : Color.ORANGE); // Couleurs par défaut
     g.fillRect(x + 2, y + 2, TAILLE_CASE - 4, TAILLE_CASE - 4);
 }
 ]]></ATT>
@@ -728,14 +729,14 @@ for (int i = 0; i < 20; i++) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="42411af9-3988-4f8c-a079-6a5742284723"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[BufferedImage imageGardien = getImageGardien();
+                  <ATT name="Content"><![CDATA[BufferedImage imageGardien = getImageGardien(); // Obtient l'image du gardien selon sa direction
 if (surCible) {
-    dessinerCible(g, x, y);
+    dessinerCible(g, x, y); // Dessine la cible sous le gardien
 }
 if (imageGardien != null) {
-    g.drawImage(imageGardien, x, y, null);
+    g.drawImage(imageGardien, x, y, null); // Dessine le gardien
 } else {
-    g.setColor(Color.BLUE);
+    g.setColor(Color.BLUE); // Couleur par défaut si l'image est manquante
     g.fillOval(x + 4, y + 4, TAILLE_CASE - 8, TAILLE_CASE - 8);
 }
 ]]></ATT>
@@ -770,6 +771,7 @@ if (imageGardien != null) {
                 <ID name="" mc="Infrastructure.Note" uid="7aaaec0e-88ae-4e90-a285-3511579c11da"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try {
+    // Charge et redimensionne toutes les images
     imgMur = chargerEtRedimensionnerImage("images/mur.png");
     imgSol = chargerEtRedimensionnerImage("images/sol.png");
     imgCible = chargerEtRedimensionnerImage("images/cible.png");
@@ -904,9 +906,9 @@ if (imageGardien != null) {
                 <ID name="" mc="Infrastructure.Note" uid="3dc777c6-74e5-4993-a40c-ada49668f7d4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (imgHerbe != null) {
-    g.drawImage(imgHerbe, x, y, null);
+    g.drawImage(imgHerbe, x, y, null); // Dessine l'herbe
 } else {
-    g.setColor(Color.GREEN);
+    g.setColor(Color.GREEN); // Couleur par défaut si l'image est manquante
     g.fillRect(x, y, TAILLE_CASE, TAILLE_CASE);
 }
 ]]></ATT>
@@ -1030,7 +1032,7 @@ if (imageGardien != null) {
                 <ID name="" mc="Infrastructure.Note" uid="e6d11891-2e54-4705-889c-d63044ffb526"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[if (imgSol != null) {
-    g.drawImage(imgSol, x, y, null);
+    g.drawImage(imgSol, x, y, null); // Dessine le sol
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -1275,10 +1277,10 @@ switch (direction) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="4d21d032-c4fa-436f-862d-ab803c9939e1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[BufferedImage imageOriginale = ImageIO.read(new File(chemin));
+                  <ATT name="Content"><![CDATA[BufferedImage imageOriginale = ImageIO.read(new File(chemin)); // Charge l'image
 BufferedImage imageRedimensionnee = new BufferedImage(TAILLE_CASE, TAILLE_CASE, BufferedImage.TYPE_INT_ARGB);
 Graphics2D g = imageRedimensionnee.createGraphics();
-g.drawImage(imageOriginale, 0, 0, TAILLE_CASE, TAILLE_CASE, null);
+g.drawImage(imageOriginale, 0, 0, TAILLE_CASE, TAILLE_CASE, null); // Redimensionne l'image
 g.dispose();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -1332,6 +1334,22 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="9cd0cb09-14d1-4409-9f05-285031c4fa63"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Taille d'une case en pixels]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -1377,7 +1395,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6d1694bc-cd69-44cf-9f0b-1e1073b6ec23"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1e5325ec-489a-40ab-836f-a7621c18f104"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1385,6 +1403,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b9dfc975-8999-4558-943e-aad4232d866c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image pour les murs]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1434,7 +1468,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a91519ee-1e24-4564-9ed2-1e6e17b4acc8"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="995aad67-1cdc-4f0c-92f2-6e34f2f94435"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1442,6 +1476,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="2e25a409-43aa-4894-a56b-0304c2da0195"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image pour le sol]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1491,7 +1541,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="90f7a07d-fd7f-4726-ac20-8fea6582dd10"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1d3fb96f-9cb9-4bb1-aa46-e27dbd1b57aa"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1499,6 +1549,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="f0514f98-5190-4d32-9a5d-724537418a8a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image pour les cibles]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1548,7 +1614,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="10585e73-12a7-45ca-b70c-1803e8735643"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2f16a444-49c3-4e35-a86f-8f8b274242bd"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1556,6 +1622,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b817dae2-69da-4ae2-9e3a-d9345018e969"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image pour les caisses]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1605,7 +1687,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="63919c97-6d5c-4571-83f5-b21e560c37b9"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e6c746d0-266b-4ea1-928e-df8ebbd29306"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1613,6 +1695,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="07d86535-09ca-4400-a3ea-b98a7206a438"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image pour les caisses sur cibles]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1700,7 +1798,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="72e2e5d7-a843-481a-a6f2-08c07328dd5a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3ed317af-677d-4236-9616-4db58cdf5c7e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1708,6 +1806,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="e4a8c2d7-fae7-48a6-b8a5-42f17c03b069"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image du gardien vers le haut]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1757,7 +1871,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="579cb38d-a2e1-4fc0-86fc-6824aa8706c7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d3c41a32-865e-40aa-aabd-00a91a0b74f6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1765,6 +1879,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="a6990eef-9809-4021-a5f6-b5504799e7a4"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image du gardien vers le bas]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1814,7 +1944,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5609fbee-4466-4aab-87f2-53a44bb12bb3"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9a15c6b7-2642-4005-bf5d-461f3b1eb85f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1822,6 +1952,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c526ef11-1fb3-4885-b1b9-64e5c351c99f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image du gardien vers la gauche]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1871,7 +2017,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="82d51a42-cfa3-4852-bf73-1f9fcd3ad95c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9a3c30f6-f88f-4bd7-8ca6-e99d8e2398ba"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1879,6 +2025,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4e8fc389-2479-427c-90b4-3586fa05df2d"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image du gardien vers la droite]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1928,7 +2090,7 @@ g.dispose();
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e4740177-8356-4149-9ea9-a7f1f36816bc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b31e695b-331e-431d-a78d-0792fdfbefd4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1936,6 +2098,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="1cb709a1-0c50-4de1-9853-892c74f922d0"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Image de fond (herbe)]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -2005,7 +2183,7 @@ g.dispose();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="087a19bb-5ebe-40cb-b55b-467ced480348"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="596e7758-487c-4b7d-bd98-0fd88d9e21ee"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2013,6 +2191,22 @@ g.dispose();
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="74323852-c637-418e-abcb-bc27702beb39"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Contrôleur du jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0fac-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>

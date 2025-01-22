@@ -8,9 +8,9 @@ import control.Controleur;
 public class MainSokoban {
     @objid ("b7713044-c424-4a2b-ada3-7b45ade957ae")
     public static void main(String[] args) {
-        Controleur controleur = new Controleur();
-        MaFenetre fenetre = new MaFenetre(controleur);
-        fenetre.setVisible(true);
+        Controleur controleur = new Controleur(); // Crée le contrôleur du jeu
+        MaFenetre fenetre = new MaFenetre(controleur); // Crée la fenêtre principale
+        fenetre.setVisible(true); // Rend la fenêtre visible
     }
 
 }

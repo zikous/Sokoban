@@ -60,10 +60,10 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="9419aef5-4a38-4c28-ac71-b5fb90cdfca6"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[setLayout(new BorderLayout());
-add(createTitre(), BorderLayout.NORTH);
-add(createPanelInfos(), BorderLayout.CENTER);
-add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH);
+                  <ATT name="Content"><![CDATA[setLayout(new BorderLayout()); // Utilise un BorderLayout pour organiser les composants
+add(createTitre(), BorderLayout.NORTH); // Ajoute le titre en haut
+add(createPanelInfos(), BorderLayout.CENTER); // Ajoute les informations au centre
+add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH); // Ajoute le bouton en bas
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -154,10 +154,10 @@ add(createPanelBouton(fenetrePrincipale), BorderLayout.SOUTH);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="d33fddb1-9e2c-49ae-b579-988c6e13ec51"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[JLabel titre = new JLabel("Sokoban", SwingConstants.CENTER);
-titre.setFont(new Font("Roboto", Font.BOLD, 80));
-titre.setForeground(Color.WHITE);
-titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0));
+                  <ATT name="Content"><![CDATA[JLabel titre = new JLabel("Sokoban", SwingConstants.CENTER); // Crée le titre
+titre.setFont(new Font("Roboto", Font.BOLD, 80)); // Définit la police
+titre.setForeground(Color.WHITE); // Définit la couleur du texte
+titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0)); // Ajoute une marge
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -249,14 +249,14 @@ titre.setBorder(BorderFactory.createEmptyBorder(60, 0, 40, 0));
                 <ID name="" mc="Infrastructure.Note" uid="2bdce7c5-83fb-4a62-8e73-f0c15923a190"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JPanel panelInfos = new JPanel();
-panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS));
-panelInfos.setOpaque(false);
-panelInfos.setBorder(BorderFactory.createEmptyBorder(30, 20, 30, 20));
-panelInfos.add(createCredits());
-panelInfos.add(Box.createRigidArea(new Dimension(0, 30)));
-panelInfos.add(createInstructions("Utilisez les flèches pour déplacer le gardien."));
-panelInfos.add(Box.createRigidArea(new Dimension(0, 10)));
-panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau."));
+panelInfos.setLayout(new BoxLayout(panelInfos, BoxLayout.Y_AXIS)); // Utilise un BoxLayout vertical
+panelInfos.setOpaque(false); // Rend le panneau transparent
+panelInfos.setBorder(BorderFactory.createEmptyBorder(30, 20, 30, 20)); // Ajoute une marge
+panelInfos.add(createCredits()); // Ajoute les crédits
+panelInfos.add(Box.createRigidArea(new Dimension(0, 30))); // Ajoute un espace
+panelInfos.add(createInstructions("Utilisez les flèches pour déplacer le gardien.")); // Ajoute les instructions
+panelInfos.add(Box.createRigidArea(new Dimension(0, 10))); // Ajoute un espace
+panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau.")); // Ajoute les instructions
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -347,10 +347,10 @@ panelInfos.add(createInstructions("Appuyez sur 'R' pour réinitialiser le niveau
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="b3b714b8-1eaf-4bf6-bbe3-dcb502190eb1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[JLabel credits = new JLabel("Fait par Zakaria Bheddar et Mohamed Cheikh Rouhou", SwingConstants.CENTER);
-credits.setFont(new Font("Roboto", Font.ITALIC, 20));
-credits.setForeground(Color.WHITE);
-credits.setAlignmentX(Component.CENTER_ALIGNMENT);
+                  <ATT name="Content"><![CDATA[JLabel credits = new JLabel("Fait par Zakaria Bheddar et Mohamed Cheikh Rouhou", SwingConstants.CENTER); // Crée les crédits
+credits.setFont(new Font("Roboto", Font.ITALIC, 20)); // Définit la police
+credits.setForeground(Color.WHITE); // Définit la couleur du texte
+credits.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -486,10 +486,10 @@ credits.setAlignmentX(Component.CENTER_ALIGNMENT);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="507b79a4-7a58-490d-a640-419eb3eeff29"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[JLabel instructions = new JLabel(text, SwingConstants.CENTER);
-instructions.setFont(new Font("Roboto", Font.PLAIN, 18));
-instructions.setForeground(Color.WHITE);
-instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
+                  <ATT name="Content"><![CDATA[JLabel instructions = new JLabel(text, SwingConstants.CENTER); // Crée les instructions
+instructions.setFont(new Font("Roboto", Font.PLAIN, 18)); // Définit la police
+instructions.setForeground(Color.WHITE); // Définit la couleur du texte
+instructions.setAlignmentX(Component.CENTER_ALIGNMENT); // Centre le texte
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -605,9 +605,9 @@ instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
                 <ID name="" mc="Infrastructure.Note" uid="7ce93839-e070-46ae-b081-b845f23a549d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[JPanel panelBouton = new JPanel();
-panelBouton.setOpaque(false);
-panelBouton.setBorder(BorderFactory.createEmptyBorder(30, 0, 60, 0));
-panelBouton.add(createBoutonCommencer(fenetrePrincipale));
+panelBouton.setOpaque(false); // Rend le panneau transparent
+panelBouton.setBorder(BorderFactory.createEmptyBorder(30, 0, 60, 0)); // Ajoute une marge
+panelBouton.add(createBoutonCommencer(fenetrePrincipale)); // Ajoute le bouton "Commencer"
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -722,25 +722,26 @@ panelBouton.add(createBoutonCommencer(fenetrePrincipale));
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="682a9cb5-089c-43fc-8adb-eca18786c9ca"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[boutonCommencer = new JButton("Commencer");
-boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 24));
-boutonCommencer.setBackground(new Color(33, 150, 243));
-boutonCommencer.setForeground(Color.WHITE);
-boutonCommencer.setFocusPainted(false);
+                  <ATT name="Content"><![CDATA[boutonCommencer = new JButton("Commencer"); // Crée le bouton "Commencer"
+boutonCommencer.setFont(new Font("Roboto", Font.BOLD, 24)); // Définit la police
+boutonCommencer.setBackground(new Color(33, 150, 243)); // Définit la couleur de fond
+boutonCommencer.setForeground(Color.WHITE); // Définit la couleur du texte
+boutonCommencer.setFocusPainted(false); // Désactive la bordure de focus
 boutonCommencer.setBorder(BorderFactory.createCompoundBorder(
-    BorderFactory.createLineBorder(new Color(25, 118, 210), 3),
-    BorderFactory.createEmptyBorder(15, 40, 15, 40)
+    BorderFactory.createLineBorder(new Color(25, 118, 210), 3), // Ajoute une bordure
+    BorderFactory.createEmptyBorder(15, 40, 15, 40) // Ajoute une marge interne
 ));
-boutonCommencer.setCursor(new Cursor(Cursor.HAND_CURSOR));
-boutonCommencer.addActionListener(e -> fenetrePrincipale.demarrerJeu());
+boutonCommencer.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Change le curseur au survol
+boutonCommencer.addActionListener(e -> fenetrePrincipale.demarrerJeu()); // Ajoute un écouteur pour démarrer le jeu
 
+// Effet de survol pour le bouton
 boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
     public void mouseEntered(java.awt.event.MouseEvent evt) {
-        boutonCommencer.setBackground(new Color(25, 118, 210));
+        boutonCommencer.setBackground(new Color(25, 118, 210)); // Change la couleur au survol
     }
 
     public void mouseExited(java.awt.event.MouseEvent evt) {
-        boutonCommencer.setBackground(new Color(33, 150, 243));
+        boutonCommencer.setBackground(new Color(33, 150, 243)); // Revert la couleur après le survol
     }
 });
 ]]></ATT>
@@ -840,7 +841,7 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="fce72f13-b537-40ae-a0a3-90921fb1e14a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="41afa126-793e-4fc7-94ed-1130ca993b10"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -848,6 +849,22 @@ boutonCommencer.addMouseListener(new java.awt.event.MouseAdapter() {
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="7a4964ef-052a-467e-8c99-984b5b01c2b3"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Bouton pour démarrer le jeu]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaInitValueComment" mc="Infrastructure.NoteType" uid="eb8c06dc-0000-0f67-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
