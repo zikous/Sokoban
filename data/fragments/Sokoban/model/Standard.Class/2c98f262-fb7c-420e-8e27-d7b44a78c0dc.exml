@@ -885,8 +885,7 @@ if (choix == JOptionPane.YES_OPTION) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="7a24b309-8f22-433e-973d-0389845306f6"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                                                                                JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options]]></ATT>
+                  <ATT name="Content"><![CDATA[return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1003,7 +1002,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bf34395c-7ed0-4ac0-aba9-12429eecc766"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4c06cb8c-b9c2-4b44-8d49-ab2b545c6536"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1094,7 +1093,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="047e4d58-1676-4c4e-a39a-6d864ea7c058"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c5127a22-69bb-44a7-8e3f-24ea053b9bbb"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

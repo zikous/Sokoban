@@ -134,8 +134,7 @@ public class MaFenetre extends JFrame implements KeyListener {
 
     @objid ("029c6009-96e7-47a4-b255-284107694170")
     private int showOptionDialog(String message, String title, Object[] options) {
-        return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,
-                                                                                                                        JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
+        return JOptionPane.showOptionDialog(this, message, title, JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE, null, options, options[1]); // Affiche une boîte de dialogue avec des options
     }
 
 }
