@@ -1002,7 +1002,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4c06cb8c-b9c2-4b44-8d49-ab2b545c6536"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="422ca573-4f42-493a-9a91-75effc39951b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1093,7 +1093,7 @@ if (choix == JOptionPane.YES_OPTION) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c5127a22-69bb-44a7-8e3f-24ea053b9bbb"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d16a8b68-b9af-452e-afe3-dbd21c9517c7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

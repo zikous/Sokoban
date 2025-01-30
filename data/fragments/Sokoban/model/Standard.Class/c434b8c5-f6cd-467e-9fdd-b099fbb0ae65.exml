@@ -487,7 +487,7 @@ niveauCourant++; // Passe au niveau suivant
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d1772775-5955-4842-abac-23403d55a0fe"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="029639e5-d084-42af-b469-9d3ef1ed589d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

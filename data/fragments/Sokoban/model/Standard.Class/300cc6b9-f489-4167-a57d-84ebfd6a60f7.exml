@@ -246,7 +246,7 @@ if (imageDeFond != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7742b182-b4d6-4935-b4ce-4ef2dfe536e2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ebbd60b7-bd67-480f-b80c-81cf62c9bd40"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

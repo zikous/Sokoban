@@ -1,5 +1,10 @@
-#Thu Jan 30 13:11:08 CET 2025
+#Thu Jan 30 13:39:43 CET 2025
+org.modelio.app.diagram.editor.OpenedDiagrams0='Diagramme de s\u00E9quence du mouvement du gardien' {7d541798-be31-465d-9ba6-e88c8bf0909b} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams3='Script Sequence diagram' {0ec22120-c3cb-4541-a959-ab4a0253263f} Standard.SequenceDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts
+org.modelio.app.diagram.editor.OpenedDiagrams4='Game Sequence diagram' {1f121464-af08-4802-a02c-6f1dd71aa6b8} Standard.SequenceDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
+org.modelio.app.diagram.editor.OpenedDiagrams1='Diagramme de s\u00E9quence du mouvement d'une caisse' {2bafbe12-cd7e-42b1-a672-e1cf7d8beac2} Standard.SequenceDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right
+org.modelio.app.diagram.editor.OpenedDiagrams2='Diagramme de s\u00E9quence du calcul de la position adjacente' {6ba798ec-f3b8-4820-8e4a-005e89da1fa3} Standard.SequenceDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom
