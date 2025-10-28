@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor Analyst as 👤 Analyst
+    participant Excel as 📊 Excel Reviews
+    participant System as 🤖 AI Tool
+    participant PE as ⚙️ Prompt Engineering
+    participant LLM as 🧠 LLM
+    participant Report as 📄 Report
+    
+    Analyst->>Excel: Complete review work<br/>(Findings, Recommendations, Frameworks)
+    Analyst->>System: Upload Excel file
+    
+    System->>Excel: Extract content & context
+    Excel-->>System: Return structured data
+    
+    System->>PE: Send extracted data
+    PE->>PE: Build prompts with:<br/>• Context from Excel<br/>• Structure templates<br/>• Linking instructions
+    PE-->>System: Optimized prompt ready
+    
+    System->>LLM: Send prompt + context
+    LLM->>LLM: Process & generate:<br/>• Connect findings<br/>• Link recommendations<br/>• Create narrative<br/>• Format report
+    LLM-->>System: Generated report content
+    
+    System->>Report: Compile final document
+    Report-->>Analyst: ✅ Ready-to-use report
+    
+    Note over Analyst,Report: ⚡ Automated process eliminates manual rewriting
